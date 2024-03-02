@@ -31,15 +31,16 @@ use App\Http\Controllers\StockReportController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-
+//login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
 Route::get('/auth/register', [AuthController::class, 'showAuthRegister'])->name('auth/register');
 Route::post('/auth/register', [AuthController::class, 'register'])->name('auth/register');
+Route::get('auth/resetpassword', [AuthController::class, 'showAuthResetPassword'])->name('auth/resetpassword');
+Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('auth/resetpassword');
+//pages
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');
 Route::get('/Evento/patient-add', [EventoController::class, 'showEventoPatientAdd'])->name('Evento/patient-add');
@@ -93,41 +94,6 @@ Route::get('/Evento/settings-member', [EventoController::class, 'showEventoSetti
 Route::get('/Evento/settings-email', [EventoController::class, 'showEventoSettingsEmail'])->name('Evento/settings-email');
 Route::get('/Evento/settings-security', [EventoController::class, 'showEventoSettingsSecurity'])->name('Evento/settings-security');
 Route::get('/user-profile', [UserProfileController::class, 'showUserProfile'])->name('user-profile');
-Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
-Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
-//socialite
-Route::get('/auth/{provider}/redirect', function ($provider) {
-
-    return Socialite::driver($provider)->redirect();
-});
-
-Route::get('/auth/{provider}/callback', function ($provider) {
-    try {
-        $SocialiteUser = Socialite::driver($provider)->user();
-    } catch (\Exception $e) {
-        return redirect()->route('auth/login');
-    }
-    $user = User::where([
-        'provider' => $provider,
-        'provider_id' => $SocialiteUser->getId()
-    ])->first();
-    if (!$user) {
-        if (User::where('email', $SocialiteUser->getEmail())->exists()) {
-            return redirect()->route('auth/login')->withErrors('Email already exists');
-        }
-        $user = User::create([
-            'name' => $SocialiteUser->getNickname(),
-            'email' => $SocialiteUser->getEmail(),
-            'provider' => $provider,
-            'provider_id' => $SocialiteUser->getId(),
-            'password' => bcrypt('12345678'),
-            'role' => 'admin',
-            'email_verified_at' => now()
-        ]);
-    }
-    Auth::login($user);
-    return redirect()->route('Evento/index');
-});
 
 
 // Route::get('/auth/github/callback', function () {
