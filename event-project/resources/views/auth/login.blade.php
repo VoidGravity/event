@@ -80,6 +80,7 @@
                                 <ul class="nav justify-center gx-4">
                                     <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="#">Facebook</a></li>
                                     <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="#">Google</a></li>
+                                    <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="/auth/github/redirect">github</a></li>
                                 </ul>
                                 <div class="text-center mt-5">
                                     <span class="fw-500">I don't have an account? <a href="#">Try 15 days free</a></span>

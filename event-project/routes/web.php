@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventoController;
@@ -32,6 +33,8 @@ use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
@@ -92,3 +95,38 @@ Route::get('/Evento/settings-security', [EventoController::class, 'showEventoSet
 Route::get('/user-profile', [UserProfileController::class, 'showUserProfile'])->name('user-profile');
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
+//socialite
+Route::get('/auth/github/redirect', function () {
+
+    return Socialite::driver('github')->redirect();
+});
+ 
+Route::get('/auth/github/callback', function () {
+    $SocialiteUser = Socialite::driver('github')->user();
+    $user= User::where([
+        'provider'=>'github',
+        'provider_id'=>$SocialiteUser->getId()
+        ])->first();
+    if(!$user){
+        $user= User::create([    
+            'name'=>$SocialiteUser->getNickname(),
+            'email'=>$SocialiteUser->getEmail(),
+            'provider'=>'github',
+            'provider_id'=>$SocialiteUser->getId(),
+            'password'=>bcrypt('12345678'),
+            'role'=>'admin',
+            'email_verified_at'=>now()
+        ]);
+    }
+    Auth::login($user);
+    return redirect()->route('Evento/index');
+    
+
+});
+
+
+// Route::get('/auth/github/callback', function () {
+//     $user = Socialite::driver('github')->user();
+ 
+//     // $user->token
+// });
