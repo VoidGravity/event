@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role', 
         'password',
     ];
 
@@ -32,6 +33,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    protected $connection = 'mysql';
+
 
     /**
      * The attributes that should be cast.
@@ -40,6 +43,5 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 }

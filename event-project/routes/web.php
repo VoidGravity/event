@@ -30,9 +30,13 @@ use App\Http\Controllers\StockReportController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
 Route::get('/auth/register', [AuthController::class, 'showAuthRegister'])->name('auth/register');
+Route::post('/auth/register', [AuthController::class, 'register'])->name('auth/register');
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');
 Route::get('/Evento/patient-add', [EventoController::class, 'showEventoPatientAdd'])->name('Evento/patient-add');
@@ -55,7 +59,7 @@ Route::get('/Evento/user-profile', [EventoController::class, 'showEventoUserProf
 Route::get('/Evento/settings', [EventoController::class, 'showEventoSettings'])->name('Evento/settings');
 Route::get('/index', [IndexController::class, 'showIndex'])->name('index');
 Route::get('/Evento/settings-account-log', [EventoController::class, 'showEventoSettingsAccountLog'])->name('Evento/settings-account-log');
-Route::get('/auth/logout', [AuthController::class, 'showAuthLogout'])->name('auth/logout');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth/logout');
 Route::get('/add-customer', [AddCustomerController::class, 'showAddCustomer'])->name('add-customer');
 Route::get('/customer', [CustomerController::class, 'showCustomer'])->name('customer');
 Route::get('/customer-ledger', [CustomerLedgerController::class, 'showCustomerLedger'])->name('customer-ledger');
@@ -86,3 +90,5 @@ Route::get('/Evento/settings-member', [EventoController::class, 'showEventoSetti
 Route::get('/Evento/settings-email', [EventoController::class, 'showEventoSettingsEmail'])->name('Evento/settings-email');
 Route::get('/Evento/settings-security', [EventoController::class, 'showEventoSettingsSecurity'])->name('Evento/settings-security');
 Route::get('/user-profile', [UserProfileController::class, 'showUserProfile'])->name('user-profile');
+Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
