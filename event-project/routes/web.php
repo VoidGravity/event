@@ -96,22 +96,30 @@ Route::get('/user-profile', [UserProfileController::class, 'showUserProfile'])->
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
 //socialite
-Route::get('/auth/github/redirect', function () {
+Route::get('/auth/{provider}/redirect', function ($provider) {
 
-    return Socialite::driver('github')->redirect();
+    return Socialite::driver($provider)->redirect();
 });
  
-Route::get('/auth/github/callback', function () {
-    $SocialiteUser = Socialite::driver('github')->user();
+Route::get('/auth/{provider}/callback', function ($provider) {
+    try {
+    $SocialiteUser = Socialite::driver($provider)->user();
+
+    } catch(\Exception $e){
+        return redirect()->route('auth/login');
+    }
     $user= User::where([
-        'provider'=>'github',
+        'provider'=>$provider,
         'provider_id'=>$SocialiteUser->getId()
         ])->first();
     if(!$user){
+        if(User::where('email',$SocialiteUser->getEmail())->exists()){
+            return redirect()->route('auth/login')->withErrors('Email already exists');
+        }
         $user= User::create([    
             'name'=>$SocialiteUser->getNickname(),
             'email'=>$SocialiteUser->getEmail(),
-            'provider'=>'github',
+            'provider'=>$provider,
             'provider_id'=>$SocialiteUser->getId(),
             'password'=>bcrypt('12345678'),
             'role'=>'admin',
@@ -126,7 +134,7 @@ Route::get('/auth/github/callback', function () {
 
 
 // Route::get('/auth/github/callback', function () {
-//     $user = Socialite::driver('github')->user();
+//     $user = Socialite::driver($provider)->user();
  
 //     // $user->token
 // });

@@ -40,7 +40,20 @@
                                     <div class="nk-block-head-content">
                                         <h5 class="nk-block-title">Sign-In</h5>
                                         <div class="nk-block-des">
-                                            <p>Access the DashLite panel using your email and passcode.</p>
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+
+                                            
+                                                <p>You can try using a different login methode:</p>
+                                            @else
+                                            <p>Access the Evento panel using your email and passcode.</p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
@@ -78,8 +91,8 @@
                                     <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
                                 </div>
                                 <ul class="nav justify-center gx-4">
-                                    <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="#">Facebook</a></li>
-                                    <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="#">Google</a></li>
+                                    <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="/auth/facebook/redirect">Facebook</a></li>
+                                    <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="/auth/google/redirect">Google</a></li>
                                     <li class="nav-item"><a class="link link-primary fw-normal py-2 px-3" href="/auth/github/redirect">github</a></li>
                                 </ul>
                                 <div class="text-center mt-5">
@@ -132,7 +145,7 @@
                                     </ul><!-- .nav -->
                                 </div>
                                 <div class="mt-3">
-                                    <p>&copy; 2023 DashLite. All Rights Reserved.</p>
+                                    <p>&copy; 2023 Evento. All Rights Reserved.</p>
                                 </div>
                             </div><!-- .nk-block -->
                         </div><!-- .nk-split-content -->
