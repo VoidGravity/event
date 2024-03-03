@@ -38,8 +38,13 @@ Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
 Route::get('/auth/register', [AuthController::class, 'showAuthRegister'])->name('auth/register');
 Route::post('/auth/register', [AuthController::class, 'register'])->name('auth/register');
-Route::get('auth/resetpassword', [AuthController::class, 'showAuthResetPassword'])->name('auth/resetpassword');
-Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('auth/resetpassword');
+//reset password
+Route::get('auth/forgot-password', [AuthController::class, 'showAuthForgotPassword'])->name('auth.forgot-password');
+Route::get('password/reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/update', [AuthController::class, 'resetPassword'])->name('password.update');
+Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('password.email');
+Route::get('auth/auth-success', [AuthController::class, 'authSuccess'])->name('auth/auth-success');
+
 //pages
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');

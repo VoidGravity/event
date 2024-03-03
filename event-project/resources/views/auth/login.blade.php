@@ -71,7 +71,7 @@
                                     <div class="form-group">
                                         <div class="form-label-group">
                                             <label class="form-label" for="password">Passcode</label>
-                                            <a class="link link-primary link-sm" tabindex="-1" href="{{route('auth/resetpassword')}}">Forgot Code?</a>
+                                            <a class="link link-primary link-sm" tabindex="-1" href="{{route('auth.forgot-password')}}">Forgot Code?</a>
                                         </div>
                                         <div class="form-control-wrap">
                                             <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">

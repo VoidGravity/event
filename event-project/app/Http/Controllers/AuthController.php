@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Mail\PasswordResetMail;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -17,6 +21,75 @@ class AuthController extends Controller
     {
         //
     }
+    public function showResetForm($token)
+    {
+        return view('auth.password-reset', ['token' => $token]);
+    }
+    public function showAuthForgotPassword()
+    {
+        return view('auth.auth-reset');
+    }
+
+
+    public function AuthResetPassword(Request $request)
+    {
+        // $request->validate([
+        //     'email' => 'required|email',
+        // ]);
+        $email = $request->email;
+        // dd($email);
+        $token = md5($email);
+        $user = DB::table('users')->where('email', $email)->first();
+        if ($user) {
+            DB::table('password_resets')->insert([
+                'email' => $email,
+                'token' => $token,
+            ]);
+            // Send email
+            Mail::to($user->email)->send(new PasswordResetMail($token, $email));
+            return redirect()->route('auth/auth-success');
+        }
+        return back()->withErrors([
+            'message' => 'We can\'t find a user with that email address.'
+        ]);
+    }
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+
+        // Lookup the email based on the token
+        $record = DB::table('password_resets')->where('token', $request->token)->first();
+
+        if (!$record) {
+            return back()->withErrors(['token' => 'Invalid token.']);
+        }
+
+        // Retrieve the user based on the email found in the password_resets table
+        $user = User::where('email', $record->email)->first();
+        if (!$user) {
+            return back()->withErrors(['email' => 'No user found with this email address.']);
+        }
+
+        // Update the user's password
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        // Delete the password reset record
+        DB::table('password_resets')->where('token', $request->token)->delete();
+
+        return redirect()->route('auth/login')->with('status', 'Your password has been reset.');
+    }
+
+    public function authSuccess()
+    {
+        return view('auth.auth-success');
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -120,7 +193,7 @@ class AuthController extends Controller
             // Optionally add role validation if the role is part of the registration form
             // 'role' => 'required|in:patient,doctor,admin', // Example validation rule
         ]);
-        
+
         // Assuming a default role of 'patient' for new registrations
         // If the role comes from the request, use $request->role instead
         // dd($request->all());
@@ -130,7 +203,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password), // Use Hash facade correctly
             'role' => 'patient', // Set the default role or use $request->role if provided and validated
         ]);
-        
+
         // After successful registration, you might want to log the user in and redirect them
         auth()->login($user);
 
@@ -142,14 +215,5 @@ class AuthController extends Controller
     {
         auth()->logout();
         return redirect()->route('auth/login');
-    }
-
-    public function showAuthLogout()
-    {
-        return view('auth/logout');
-    }
-    public function showAuthForgotPassword()
-    {
-        return view('auth.forgot-password');
     }
 }
