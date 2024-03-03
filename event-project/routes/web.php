@@ -52,6 +52,8 @@ Route::get('auth/auth-success', [AuthController::class, 'authSuccess'])->name('a
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');
 Route::get('/Evento/patient-add', [EventoController::class, 'showEventoPatientAdd'])->name('Evento/patient-add');
+Route::post('/Evento/patient-add', [EventoController::class, 'SaveEvent'])->name('Evento/patient-add');
+// Route::post('testroute', [EventoController::class, 'testroute'])->name('testroute'); //hold
 Route::get('/Evento/patient-list', [EventoController::class, 'showEventoPatientList'])->name('Evento/patient-list');
 Route::get('/Evento/patient-profile', [EventoController::class, 'showEventoPatientProfile'])->name('Evento/patient-profile');
 Route::get('/Evento/doctor-nurse-add', [EventoController::class, 'showEventoDoctorNurseAdd'])->name('Evento/doctor-nurse-add');

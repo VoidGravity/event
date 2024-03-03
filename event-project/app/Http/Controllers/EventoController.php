@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -25,6 +26,35 @@ class EventoController extends Controller
     {
         //
     }
+    public function SaveEvent(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+            'payment_methode' => 'required',
+            'description' => 'required',
+            'start_date' => 'required',
+            'location' => 'required',
+            'capacity' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png,gif|max:10000', // Combine image validation with other validations
+        ]);
+
+        $data = $request->except('image'); // Exclude image from mass assignment
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image_name = time() . '.' . $image->getClientOriginalExtension(); // Use getClientOriginalExtension() to get file extension
+            $image->move(public_path('EventImages'), $image_name);
+            $data['image'] = $image_name; // Assign image name to data array
+        }
+
+        // Mass assignment with setting the value of the user 
+        $event = Event::create($data + ['user_id' => auth()->id()]);
+
+        return redirect()->back()->with('success', 'Event created successfully.');
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

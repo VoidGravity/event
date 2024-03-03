@@ -708,196 +708,211 @@
                                 </div><!-- .nk-block-head -->
                                 <div class="nk-block">
                                     <div class="card card-bordered">
-                                        <div class="card-inner-group">
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="card-inner-group">
 
 
-                                            <div class="card-inner">
-                                                <div class="nk-block-head">
-                                                    <div class="nk-block-head-content">
-                                                        <h5 class="title nk-block-title">Madical Condition</h5>
-                                                        <p>Details information about patient current medical condition.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-block">
-                                                    <div class="row gy-4">
-                                                        <div class="col-xxl-6 col-md-8">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Event Title</label>
-                                                                <div class="form-control-wrap">
-                                                                    <input name="title" type="text"
-                                                                        class="form-control" id="Event"
-                                                                        placeholder="title">
-
-                                                                </div>
-                                                            </div>
-                                                        </div><!--col-->
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Event Category</label>
-                                                                <div class="form-control-wrap">
-                                                                    <select name="category_id"
-                                                                        class="form-select js-select2"
-                                                                        data-placeholder="Select Event Category">
-                                                                        <option value="">Select</option>
-                                                                        <option value="option_select_symptoms">General
-                                                                            Event</option>
-                                                                        <option value="option_select_symptoms">Uncommon
-                                                                            Event</option>
-                                                                        <option value="option_select_symptoms">
-                                                                            Inherited Event</option>
-                                                                        <option value="option_select_symptoms">Viral
-                                                                            Event</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div><!--col-->
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Location</label>
-                                                                <div class="form-control-wrap">
-                                                                    <input type="text" name="location"
-                                                                        id="location" class="form-control"
-                                                                        placeholder="type your location">
-                                                                </div>
-                                                            </div>
-                                                        </div><!--col-->
-
-
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-group"> <label
-                                                                            class="form-label">Ticket price</label>
-                                                                        <div
-                                                                            class="form-control-wrap number-spinner-wrap">
-                                                                            <button
-                                                                                class="btn btn-icon btn-outline-light number-spinner-btn number-minus"
-                                                                                data-number="minus"><em
-                                                                                    class="icon ni ni-minus"></em></button>
-                                                                            <input type="price"
-                                                                                class="form-control number-spinner"
-                                                                                value="0"> <button
-                                                                                class="btn btn-icon btn-outline-light number-spinner-btn number-plus"
-                                                                                data-number="plus"><em
-                                                                                    class="icon ni ni-plus"></em></button>
-                                                                        </div>
-                                                                    </div>
-
-
-
-                                                                </div>
-                                                            </div>
-                                                        </div><!--col-->
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Payment Method</label>
-
-                                                                <ul
-                                                                    class="custom-control-group custom-control-vertical w-100">
-                                                                    <li>
-                                                                        <div
-                                                                            class="custom-control custom-control-sm custom-radio custom-control-pro">
-                                                                            <input type="radio"
-                                                                                class="custom-control-input"
-                                                                                name="paymentCheck"
-                                                                                id="paymentCheck1"> <label
-                                                                                class="custom-control-label"
-                                                                                for="paymentCheck1"> <em
-                                                                                    class="icon icon-lg ni ni-cc-paypal"></em><span>Paypal</span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div
-                                                                            class="custom-control custom-control-sm custom-radio custom-control-pro">
-                                                                            <input type="radio"
-                                                                                class="custom-control-input"
-                                                                                name="paymentCheck"
-                                                                                id="paymentCheck2"> <label
-                                                                                class="custom-control-label"
-                                                                                for="paymentCheck2"> <em
-                                                                                    class="icon icon-lg ni ni-cc-stripe"></em><span>Stripe</span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
+                                                <div class="card-inner">
+                                                    <div class="nk-block-head">
+                                                        <div class="nk-block-head-content">
+                                                            <h5 class="title nk-block-title">Event Details</h5>
+                                                            <p>Details information about the Event.
+                                                            </p>
                                                         </div>
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Event Date</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-icon form-icon-right">
-                                                                        <em class="icon ni ni-calendar"></em>
-                                                                    </div>
-                                                                    <input name="start_date" type="text"
-                                                                        class="form-control date-picker"
-                                                                        data-date-format="dd-mm-yyyy"
-                                                                        placeholder="dd-mm-yyyy">
-                                                                </div>
-                                                            </div>
-                                                        </div><!--col-->
+                                                    </div>
+                                                    <div class="nk-block">
+                                                        <div class="row gy-4">
+                                                            <div class="col-xxl-6 col-md-8">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Event Title</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input name="title" type="text"
+                                                                            class="form-control" id="Event"
+                                                                            placeholder="title">
 
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Capacity</label>
-                                                                <div class="form-control-wrap">
-                                                                    <select name="capacity"
-                                                                        class="form-select js-select2"
-                                                                        data-placeholder="Select capacity">
-                                                                        <option value="">Select</option>
-                                                                        <option value="option_select_bednum">4-10
-                                                                        </option>
-                                                                        <option value="option_select_bednum">10-99
-                                                                        </option>
-                                                                        <option value="option_select_bednum">99-1000
-                                                                        </option>
-                                                                        <option value="option_select_bednum">1000-9999
-                                                                        </option>
-                                                                        <option value="option_select_bednum">9999-100k
-                                                                        </option>
-                                                                        <option value="option_select_bednum">100k+
-                                                                        </option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div><!-- .col -->
-                                                        <div class="col-xxl-3 col-md-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Event image</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-file">
-                                                                        <input type="file" multiple
-                                                                            class="form-file-input" id="testReport"
-                                                                            name="image">
-                                                                        <label class="form-file-label"
-                                                                            for="testReport">Choose an image</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div><!--col-->
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Event Description</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="quill-basic">
-                                                                        <p>Please describe little bit!</p>
+                                                            </div><!--col-->
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Event Category</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <select name="category_id"
+                                                                            class="form-select js-select2"
+                                                                            data-placeholder="Select Event Category">
+                                                                            <option value="">Select</option>
+                                                                            <option value="1">
+                                                                                General
+                                                                                Event</option>
+                                                                            <option value="1">
+                                                                                Uncommon
+                                                                                Event</option>
+                                                                            <option value="1">
+                                                                                Inherited Event</option>
+                                                                            <option value="1">
+                                                                                Viral
+                                                                                Event</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
+                                                            </div><!--col-->
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Location</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" name="location"
+                                                                            id="location" class="form-control"
+                                                                            placeholder="type your location">
+                                                                    </div>
+                                                                </div>
+                                                            </div><!--col-->
+
+
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <div class="form-group"> <label
+                                                                                class="form-label">Ticket price</label>
+                                                                            <div
+                                                                                class="form-control-wrap number-spinner-wrap">
+                                                                                <p class="btn btn-icon btn-outline-light number-spinner-btn number-minus"
+                                                                                    data-number="minus"><em
+                                                                                        class="icon ni ni-minus"></em>
+                                                                                </p>
+                                                                                <input name="price" type="price"
+                                                                                    class="form-control number-spinner"
+                                                                                    value="0">
+                                                                                <p class="btn btn-icon btn-outline-light number-spinner-btn number-plus"
+                                                                                    data-number="plus"><em
+                                                                                        class="icon ni ni-plus"></em>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div><!--col-->
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Payment Method</label>
+
+                                                                    <ul
+                                                                        class="custom-control-group custom-control-vertical w-100">
+                                                                        <li>
+                                                                            <div
+                                                                                class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                                                <input type="radio"
+                                                                                    class="custom-control-input"
+                                                                                    name="payment_methode"
+                                                                                    id="paymentCheck1" value="paypal"
+                                                                                    {{ old('payment_methode') == 'paypal' ? 'checked' : '' }}>
+                                                                                <label class="custom-control-label"
+                                                                                    for="paymentCheck1"> <em
+                                                                                        class="icon icon-lg ni ni-cc-paypal"></em><span>Paypal</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div
+                                                                                class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                                                <input type="radio"
+                                                                                    class="custom-control-input"
+                                                                                    name="payment_methode"
+                                                                                    id="paymentCheck2" value="stripe"
+                                                                                    {{ old('payment_methode') == 'stripe' ? 'checked' : '' }}>
+                                                                                <label class="custom-control-label"
+                                                                                    for="paymentCheck2"> <em
+                                                                                        class="icon icon-lg ni ni-cc-stripe"></em><span>Stripe</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                </div>
                                                             </div>
-                                                        </div><!--col-->
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <button type="submit" class="btn btn-primary">Add
-                                                                    Event</button>
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Event Date</label>
+                                                                    <div class="form-control-wrap">
+                                                                        
+                                                                        <input name="start_date" type="date"
+                                                                            class="form-control date-picker"
+                                                                            placeholder="dd-mm-yyyy"
+                                                                            value="{{ old('start_date') }}">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div><!--col-->
+
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Capacity</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <select name="capacity"
+                                                                            class="form-select js-select2"
+                                                                            data-placeholder="Select capacity">
+                                                                            <option value="">Select</option>
+                                                                            <option value="option_select_bednum">4-10
+                                                                            </option>
+                                                                            <option value="option_select_bednum">10-99
+                                                                            </option>
+                                                                            <option value="option_select_bednum">
+                                                                                99-1000
+                                                                            </option>
+                                                                            <option value="option_select_bednum">
+                                                                                1000-9999
+                                                                            </option>
+                                                                            <option value="option_select_bednum">
+                                                                                9999-100k
+                                                                            </option>
+                                                                            <option value="option_select_bednum">100k+
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- .col -->
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Event image</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <div class="form-file">
+                                                                            <input type="file" multiple
+                                                                                class="form-file-input"
+                                                                                id="testReport" name="image">
+                                                                            <label class="form-file-label"
+                                                                                for="testReport">Choose an
+                                                                                image</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!--col-->
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Event Description</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" name="description"
+                                                                            id="description" class="form-control">
+                                                                    </div>
+
+
+                                                                </div>
                                                             </div>
-                                                        </div><!--col-->
-                                                    </div><!--row-->
-                                                </div>
-                                            </div><!-- .card-inner -->
-                                        </div>
+
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary">Add
+                                                                        Event</button>
+                                                                </div>
+                                                            </div><!--col-->
+                                                        </div><!--row-->
+                                                    </div>
+                                                </div><!-- .card-inner -->
+                                            </div>
+
+                                        </form>
                                     </div><!-- .card -->
                                 </div><!-- .nk-block -->
                             </div>
