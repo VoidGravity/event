@@ -21,7 +21,7 @@ class EventFactory extends Factory
             'description' => $this->faker->paragraph(),
             'start_date' => $this->faker->dateTime(),
             'location' => $this->faker->address(),
-            'capacity' => $this->faker->numberBetween(1, 100),
+            'capacity' => $this->faker->randomElement(['4-10', '10-99', '99-1000', '1000-9999', '9999-100k', '100k+']),
             'user_id' => function () {
 
                 return User::factory()->create()->id;

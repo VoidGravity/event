@@ -15,14 +15,17 @@ class CreateEventsTable extends Migration
     {
         Schema::connection('mysql')->create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->dateTime('start_date');
+            $table->string('image')->nullable();//done
+            $table->decimal('price', 8, 2)->nullable();
+            $table->string('title');//done
+            $table->string('payment_methode')->nullable();
+            $table->text('description')->nullable();//kind of done
+            $table->dateTime('start_date');//done
             $table->string('location')->nullable();
-            $table->integer('capacity')->nullable();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('category_id')->constrained();
-            $table->dateTime('deleted_at')->nullable();
+            $table->string('capacity')->nullable(); //done
+            $table->foreignId('user_id')->constrained();//done
+            $table->foreignId('category_id')->constrained(); //done
+            $table->dateTime('deleted_at')->nullable(); //done
 
             $table->timestamps();
         });
