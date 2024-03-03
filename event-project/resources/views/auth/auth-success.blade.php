@@ -33,9 +33,9 @@
                         </div>
                         <div class="nk-block-head">
                             <div class="nk-block-head-content">
-                                <h4 class="nk-block-title">Thank you for submitting form</h4>
+                                <h4 class="nk-block-title">Thank you !</h4>
                                 <div class="nk-block-des text-success">
-                                    <p>You can now sign in with your new password</p>
+                                    <p>Please Check your email for a verification link.</p>
                                 </div>
                             </div>
                         </div>
