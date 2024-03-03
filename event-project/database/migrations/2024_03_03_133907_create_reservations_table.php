@@ -13,8 +13,12 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::connection('mysql')->create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('event_id')->constrained();
+            $table->boolean('confirmed')->default(false);
+            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
     }

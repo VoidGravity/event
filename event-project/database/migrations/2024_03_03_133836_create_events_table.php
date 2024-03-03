@@ -13,8 +13,17 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::connection('mysql')->create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->dateTime('start_date');
+            $table->string('location')->nullable();
+            $table->integer('capacity')->nullable();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('category_id')->constrained();
+            $table->dateTime('deleted_at')->nullable();
+
             $table->timestamps();
         });
     }

@@ -13,9 +13,10 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::connection('mysql')->create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('reservation_id')->constrained();
+            $table->string('code');
         });
     }
 
