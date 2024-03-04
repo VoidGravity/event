@@ -71,6 +71,16 @@ Route::get('/Evento/inventory-items', [EventoController::class, 'showEventoInven
 Route::get('/Evento/bed-group', [EventoController::class, 'showEventoBedGroup'])->name('Evento/bed-group');
 Route::get('/Evento/bed-allotment', [EventoController::class, 'showEventoBedAllotment'])->name('Evento/bed-allotment');
 Route::get('/Evento/department', [EventoController::class, 'showEventoDepartment'])->name('Evento/department');
+//edit/delate category
+Route::get('editCategory/{id}', [EventoController::class, 'showeditCategory'])->name('editCategory');
+Route::post('editCategory/{id}', [EventoController::class, 'editCategory'])->name('editCategory');
+Route::get('deleteCategory/{id}', [EventoController::class, 'DeleteCategory'])->name('deleteCategory');
+Route::get('addCategory', [EventoController::class, 'showaddCategory'])->name('addCategory');
+Route::post('addCategory', [EventoController::class, 'addCategory'])->name('addCategory');
+
+
+
+
 Route::get('/Evento/death-report', [EventoController::class, 'showEventoDeathReport'])->name('Evento/death-report');
 Route::get('/Evento/user-profile', [EventoController::class, 'showEventoUserProfile'])->name('Evento/user-profile');
 Route::get('/Evento/settings', [EventoController::class, 'showEventoSettings'])->name('Evento/settings');

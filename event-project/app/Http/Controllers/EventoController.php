@@ -17,6 +17,20 @@ class EventoController extends Controller
     {
         //
     }
+    public function showaddCategory()
+    {
+        return view('Evento/addCategory');
+    }
+    public function addCategory(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->back()->with('success', 'Category created successfully.');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -85,7 +99,25 @@ class EventoController extends Controller
         $event->save();
         return redirect()->back()->with('success', 'Event updated successfully.');
     }
+    
+    public function editCategory($id,Request $request){
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->back()->with('success', 'Category updated successfully.');
+    }
 
+    public function DeleteCategory($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->back()->with('success', 'Category deleted successfully.');
+    }
+    public function showeditCategory($id)
+    {
+        $category = Category::find($id);
+        return view('Evento/editCategory', compact('category'));
+    }
 
 
     /**
@@ -229,7 +261,8 @@ class EventoController extends Controller
 
     public function showEventoDepartment()
     {
-        return view('Evento/department');
+        $category=Category::all();
+        return view('Evento/department',compact('category'));
     }
 
     public function showEventoDeathReport()
