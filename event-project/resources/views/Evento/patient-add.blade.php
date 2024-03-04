@@ -229,6 +229,10 @@
                                         <a href="{{ route('Evento/patient-profile') }}" class="nk-menu-link"><span
                                                 class="nk-menu-text">Patient Profile</span></a>
                                     </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{ route('Evento/doctor-nurse-list') }}" class="nk-menu-link"><span
+                                                class="nk-menu-text">Event Management</span></a>
+                                    </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item has-sub">
@@ -243,7 +247,7 @@
                                     </li>
                                     <li class="nk-menu-item">
                                         <a href="{{ route('Evento/doctor-nurse-list') }}" class="nk-menu-link"><span
-                                                class="nk-menu-text">Doctors / Nurses</span></a>
+                                                class="nk-menu-text">Event Management</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -742,17 +746,11 @@
                                                                             class="form-select js-select2"
                                                                             data-placeholder="Select Event Category">
                                                                             <option value="">Select</option>
-                                                                            <option value="1">
-                                                                                General
-                                                                                Event</option>
-                                                                            <option value="1">
-                                                                                Uncommon
-                                                                                Event</option>
-                                                                            <option value="1">
-                                                                                Inherited Event</option>
-                                                                            <option value="1">
-                                                                                Viral
-                                                                                Event</option>
+                                                                            @foreach ($category as $item)
+                                                                                <option value="{{ $item->id }}">
+                                                                                    {{ $item->name }}</option>
+                                                                           @endforeach
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -855,20 +853,20 @@
                                                                             class="form-select js-select2"
                                                                             data-placeholder="Select capacity">
                                                                             <option value="">Select</option>
-                                                                            <option value="option_select_bednum">4-10
+                                                                            <option value="4-10">4-10
                                                                             </option>
-                                                                            <option value="option_select_bednum">10-99
+                                                                            <option value="0-99">10-99
                                                                             </option>
-                                                                            <option value="option_select_bednum">
+                                                                            <option value="99-1000">
                                                                                 99-1000
                                                                             </option>
-                                                                            <option value="option_select_bednum">
+                                                                            <option value="1000-9999">
                                                                                 1000-9999
                                                                             </option>
-                                                                            <option value="option_select_bednum">
+                                                                            <option value="9999-100k">
                                                                                 9999-100k
                                                                             </option>
-                                                                            <option value="option_select_bednum">100k+
+                                                                            <option value="100k+">100k+
                                                                             </option>
                                                                         </select>
                                                                     </div>

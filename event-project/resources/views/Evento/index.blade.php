@@ -201,6 +201,9 @@
                                     <li class="nk-menu-item">
                                         <a href="{{route('Evento/patient-profile')}}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
                                     </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
+                                    </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item has-sub">

@@ -202,6 +202,9 @@
                                     <li class="nk-menu-item">
                                         <a href="{{route('Evento/patient-profile')}}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
                                     </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
+                                    </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item has-sub">
@@ -627,8 +630,13 @@
                                     </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
                                 <div class="row g-gs">
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                    
+                                    @foreach ($event as $item)
+
+                                    <div class="col-sm-6 col-lg-6 col-xxl-6">
+                                            
                                         <div class="card card-bordered">
+                                            
                                             <div class="card-inner">
                                                 <div class="team">
                                                     <div class="team-options">
@@ -636,301 +644,38 @@
                                                             <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                             <div class="dropdown-menu dropdown-menu-end">
                                                                 <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+
+                                                                    <li><a href="{{route('delateEvent',$item->id)}}"><em class="icon ni ni-delete"></em><span>Delate Event</span></a></li>
+                                                                    <li><a href="{{route('editEvent',$item->id)}}"><em class="icon ni ni-edit"></em><span>Edit Event</span></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="user-card user-card-s2">
                                                         <div class="user-avatar lg bg-primary">
-                                                            <img src="{{asset('images/avatar/c-sm.jpg')}}" alt="">
+                                                            <img src="{{asset('EventImages/'.$item->image)}}" alt="EVENT IMAGE">
                                                         </div>
                                                         <div class="user-info">
-                                                            <h6>Victoria Lynch </h6>
-                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
-                                                            <span class="sub-text">FCPS</span>
+                                                            <h6>{{$item->title}} </h6>
+                                                            <span class="badge rounded-pill bg-primary">{{$item->category->name}}</span>
+                                                            <span class="sub-text">{{$item->start_date}}</span>
                                                         </div>
                                                     </div>
                                                     <ul class="team-info">
-                                                        <li><span>Department</span><span>Gastroenterology</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                        <li><span>Capacity</span><span>{{$item->capacity}}</span></li>
+                                                        <li><span>location</span><span>{{$item->location}}</span></li>
+                                                        <li><span>Ticket price</span><span>{{$item->price}}</span></li>
                                                     </ul>
                                                     <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Details</span></a>
                                                     </div>
                                                 </div><!-- .team -->
                                             </div><!-- .card-inner -->
                                         </div><!-- .card -->
+                                        
                                     </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-primary">
-                                                            <span>AB</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Abu Bin Ishtiyak</h6>
-                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
-                                                            <span class="sub-text">MBBS, FCPS</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Department</span><span>Medicine</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-primary">
-                                                            <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Ashley Lawson</h6>
-                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
-                                                            <span class="sub-text">MBBS, FCPS, Surgon</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Department</span><span>Orthopaedics</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-info-dim">
-                                                            <span>JL</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Joe Larson</h6>
-                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
-                                                            <span class="sub-text">Head Nurse</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Shift</span><span>Morning</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-danger-dim">
-                                                            <span>JM</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Jane Montgomery</h6>
-                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
-                                                            <span class="sub-text">Clinical Nurse</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Shift</span><span>Night</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-primary">
-                                                            <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Patrick Newman</h6>
-                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
-                                                            <span class="sub-text">MBBS</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Department</span><span>Medicine</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-primary">
-                                                            <img src="{{asset('images/avatar/d-sm.jpg')}}" alt="">
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Jane Harris</h6>
-                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
-                                                            <span class="sub-text">Assistant Nurse</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Shift</span><span>Evening</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
-                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
-                                        <div class="card card-bordered">
-                                            <div class="card-inner">
-                                                <div class="team">
-                                                    <div class="team-options">
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-card user-card-s2">
-                                                        <div class="user-avatar lg bg-primary-dim">
-                                                            <span>FB</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <h6>Frances Burns</h6>
-                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
-                                                            <span class="sub-text">Assistant Nurse</span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="team-info">
-                                                        <li><span>Shift</span><span>Evening</span></li>
-                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
-                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
-                                                        <li><span>Email</span><span>info@softnio.com</span></li>
-                                                    </ul>
-                                                    <div class="team-view">
-                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
-                                                    </div>
-                                                </div><!-- .team -->
-                                            </div><!-- .card-inner -->
-                                        </div><!-- .card -->
-                                    </div><!-- .col -->
+                                    @endforeach
+                                   
                                 </div>
                             </div>
                         </div>

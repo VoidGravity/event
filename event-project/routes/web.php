@@ -53,6 +53,9 @@ Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name(
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');
 Route::get('/Evento/patient-add', [EventoController::class, 'showEventoPatientAdd'])->name('Evento/patient-add');
 Route::post('/Evento/patient-add', [EventoController::class, 'SaveEvent'])->name('Evento/patient-add');
+Route::get('delateEvent/{id}', [EventoController::class, 'delateEvent'])->name('delateEvent');
+Route::get('editEvent/{id}', [EventoController::class, 'showeditEvent'])->name('editEvent');
+Route::post('editEvent/{id}', [EventoController::class, 'editEvent'])->name('editEvent');
 // Route::post('testroute', [EventoController::class, 'testroute'])->name('testroute'); //hold
 Route::get('/Evento/patient-list', [EventoController::class, 'showEventoPatientList'])->name('Evento/patient-list');
 Route::get('/Evento/patient-profile', [EventoController::class, 'showEventoPatientProfile'])->name('Evento/patient-profile');

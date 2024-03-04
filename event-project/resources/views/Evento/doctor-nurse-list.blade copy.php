@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Invoice List | DashLite Admin Template</title>
+    <title>Doctors / Nurse List | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -614,282 +614,327 @@
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
-                                <div class="nk-block-head">
-                                    <div class="nk-block-between g-3">
+                                <div class="nk-block-head nk-block-head-sm">
+                                    <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Invoices</h3>
-                                            <div class="nk-block-des text-soft">
-                                                <p>You have total 937 invoices.</p>
-                                            </div>
+                                            <h3 class="nk-block-title page-title">Doctor/Nurse</h3>
                                         </div><!-- .nk-block-head-content -->
                                         <div class="nk-block-head-content">
                                             <ul class="nk-block-tools g-3">
-                                                <li>
-                                                    <div class="drodown">
-                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <ul class="link-list-opt no-bdr">
-                                                                <li><a href="#"><span>Add New</span></a></li>
-                                                                <li><a href="#"><span>Import</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                                <li class="nk-block-tools-opt">
+                                                    <a href="{{route('Evento/doctor-nurse-add')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                                    <a href="{{route('Evento/doctor-nurse-add')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Doctor / Nurse</span></a>
                                                 </li>
                                             </ul>
                                         </div><!-- .nk-block-head-content -->
                                     </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
-                                <div class="nk-block">
-                                    <div class="card card-bordered card-stretch">
-                                        <div class="card-inner-group">
+                                <div class="row g-gs">
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
                                             <div class="card-inner">
-                                                <div class="card-title-group">
-                                                    <div class="card-title">
-                                                        <h5 class="title">All Invoice</h5>
-                                                    </div>
-                                                    <div class="card-tools me-n1">
-                                                        <ul class="btn-toolbar">
-                                                            <li>
-                                                                <a href="#" class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
-                                                            </li><!-- li -->
-                                                            <li class="btn-toolbar-sep"></li><!-- li -->
-                                                            <li>
-                                                                <div class="dropdown">
-                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                        <em class="icon ni ni-setting"></em>
-                                                                    </a>
-                                                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
-                                                                        <ul class="link-check">
-                                                                            <li><span>Show</span></li>
-                                                                            <li class="active"><a href="#">10</a></li>
-                                                                            <li><a href="#">20</a></li>
-                                                                            <li><a href="#">50</a></li>
-                                                                        </ul>
-                                                                        <ul class="link-check">
-                                                                            <li><span>Order</span></li>
-                                                                            <li class="active"><a href="#">DESC</a></li>
-                                                                            <li><a href="#">ASC</a></li>
-                                                                        </ul>
-                                                                        <ul class="link-check">
-                                                                            <li><span>Density</span></li>
-                                                                            <li class="active"><a href="#">Regular</a></li>
-                                                                            <li><a href="#">Compact</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div><!-- .dropdown -->
-                                                            </li><!-- li -->
-                                                        </ul><!-- .btn-toolbar -->
-                                                    </div><!-- card-tools -->
-                                                    <div class="card-search search-wrap" data-search="search">
-                                                        <div class="search-content">
-                                                            <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
-                                                            <input type="text" class="form-control form-control-sm border-transparent form-focus-none" placeholder="Quick search by order id">
-                                                            <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                    </div><!-- card-search -->
-                                                </div><!-- .card-title-group -->
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary">
+                                                            <img src="{{asset('images/avatar/c-sm.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Victoria Lynch </h6>
+                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
+                                                            <span class="sub-text">FCPS</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Department</span><span>Gastroenterology</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
                                             </div><!-- .card-inner -->
-                                            <div class="card-inner p-0">
-                                                <table class="table table-orders">
-                                                    <thead class="tb-odr-head">
-                                                        <tr class="tb-odr-item">
-                                                            <th class="tb-odr-info">
-                                                                <span class="tb-odr-id">Order ID</span>
-                                                                <span class="tb-odr-date d-none d-md-inline-block">Date</span>
-                                                            </th>
-                                                            <th class="tb-odr-amount">
-                                                                <span class="tb-odr-total">Amount</span>
-                                                                <span class="tb-odr-status d-none d-md-inline-block">Status</span>
-                                                            </th>
-                                                            <th class="tb-odr-action">&nbsp;</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="tb-odr-body">
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#746F5K2</a></span>
-                                                                <span class="tb-odr-date">23 Jan 2019, 10:45pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$2300.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-success">Complete</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#546H74W</a></span>
-                                                                <span class="tb-odr-date">12 Jan 2020, 10:45pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$120.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-warning">Pending</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#87X6A44</a></span>
-                                                                <span class="tb-odr-date">26 Dec 2019, 12:15 pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$560.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-success">Complete</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#986G531</a></span>
-                                                                <span class="tb-odr-date">21 Jan 2019, 6 :12 am</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$3654.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-danger">Cancelled</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#326T4M9</a></span>
-                                                                <span class="tb-odr-date">21 Jan 2019, 6 :12 am</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$200.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-success">Complete</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#746F5K2</a></span>
-                                                                <span class="tb-odr-date">23 Jan 2019, 10:45pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$2300.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-success">Complete</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#546H74W</a></span>
-                                                                <span class="tb-odr-date">12 Jan 2020, 10:45pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$120.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-warning">Pending</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                        <tr class="tb-odr-item">
-                                                            <td class="tb-odr-info">
-                                                                <span class="tb-odr-id"><a href="{{route('Evento/invoice-details')}}">#87X6A44</a></span>
-                                                                <span class="tb-odr-date">26 Dec 2019, 12:15 pm</span>
-                                                            </td>
-                                                            <td class="tb-odr-amount">
-                                                                <span class="tb-odr-total">
-                                                                    <span class="amount">$560.00</span>
-                                                                </span>
-                                                                <span class="tb-odr-status">
-                                                                    <span class="badge badge-dot bg-success">Complete</span>
-                                                                </span>
-                                                            </td>
-                                                            <td class="tb-odr-action">
-                                                                <div class="tb-odr-btns d-none d-sm-inline">
-                                                                    <a href="{{route('Evento/invoice-print')}}" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                                    <a href="{{route('Evento/invoice-details')}}" class="btn btn-dim btn-sm btn-primary">View</a>
-                                                                </div>
-                                                                <a href="{{route('Evento/invoice-details')}}" class="btn btn-pd-auto d-sm-none"><em class="icon ni ni-chevron-right"></em></a>
-                                                            </td>
-                                                        </tr><!-- .tb-odr-item -->
-                                                    </tbody>
-                                                </table>
-                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
                                             <div class="card-inner">
-                                                <ul class="pagination justify-content-center justify-content-md-start">
-                                                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                                </ul><!-- .pagination -->
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary">
+                                                            <span>AB</span>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Abu Bin Ishtiyak</h6>
+                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
+                                                            <span class="sub-text">MBBS, FCPS</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Department</span><span>Medicine</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
                                             </div><!-- .card-inner -->
-                                        </div><!-- .card-inner-group -->
-                                    </div><!-- .card -->
-                                </div><!-- .nk-block -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary">
+                                                            <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Ashley Lawson</h6>
+                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
+                                                            <span class="sub-text">MBBS, FCPS, Surgon</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Department</span><span>Orthopaedics</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-info-dim">
+                                                            <span>JL</span>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Joe Larson</h6>
+                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
+                                                            <span class="sub-text">Head Nurse</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Shift</span><span>Morning</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-danger-dim">
+                                                            <span>JM</span>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Jane Montgomery</h6>
+                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
+                                                            <span class="sub-text">Clinical Nurse</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Shift</span><span>Night</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary">
+                                                            <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Patrick Newman</h6>
+                                                            <span class="badge rounded-pill bg-primary">Doctor</span>
+                                                            <span class="sub-text">MBBS</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Department</span><span>Medicine</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary">
+                                                            <img src="{{asset('images/avatar/d-sm.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Jane Harris</h6>
+                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
+                                                            <span class="sub-text">Assistant Nurse</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Shift</span><span>Evening</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="team">
+                                                    <div class="team-options">
+                                                        <div class="drodown">
+                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-card user-card-s2">
+                                                        <div class="user-avatar lg bg-primary-dim">
+                                                            <span>FB</span>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h6>Frances Burns</h6>
+                                                            <span class="badge rounded-pill badge-dim bg-info">Nurse</span>
+                                                            <span class="sub-text">Assistant Nurse</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="team-info">
+                                                        <li><span>Shift</span><span>Evening</span></li>
+                                                        <li><span>Join Date</span><span>24 Jun 2015</span></li>
+                                                        <li><span>Contact</span><span>+88 01713-123656</span></li>
+                                                        <li><span>Email</span><span>info@softnio.com</span></li>
+                                                    </ul>
+                                                    <div class="team-view">
+                                                        <a href="#" class="btn btn-block btn-dim btn-primary"><span>View Profile</span></a>
+                                                    </div>
+                                                </div><!-- .team -->
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card -->
+                                    </div><!-- .col -->
+                                </div>
                             </div>
                         </div>
                     </div>

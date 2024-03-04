@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,37 @@ class EventoController extends Controller
         $event = Event::create($data + ['user_id' => auth()->id()]);
 
         return redirect()->back()->with('success', 'Event created successfully.');
+    }
+    public function delateEvent($id)
+    {
+        $event = Event::find($id);
+        $event->delete();
+        return redirect()->back()->with('success', 'Event deleted successfully.');
+    }
+    public function ShoweditEvent($id)
+    {
+        $event = Event::find($id);
+        $category=Category::all();
+        return view('Evento/editEvent', compact('event','category'));
+    }
+    public function editEvent($id,Request $request){
+        $event = Event::find($id);
+        $event->title = $request->title;
+        $event->price = $request->price;
+        $event->payment_methode = $request->payment_methode;
+        $event->description = $request->description;
+        $event->start_date = $request->start_date;
+        $event->location = $request->location;
+        $event->capacity = $request->capacity;
+        $event->category_id = $request->category_id;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image_name = time() . '.' . $image->getClientOriginalExtension(); // Use getClientOriginalExtension() to get file extension
+            $image->move(public_path('EventImages'), $image_name);
+            $event->image = $image_name; // Assign image name to data array
+        }
+        $event->save();
+        return redirect()->back()->with('success', 'Event updated successfully.');
     }
 
 
@@ -124,7 +156,8 @@ class EventoController extends Controller
 
     public function showEventoPatientAdd()
     {
-        return view('Evento/patient-add');
+        $category=Category::all();
+        return view('Evento/patient-add',compact('category'));
     }
 
     public function showEventoPatientList()
@@ -144,7 +177,9 @@ class EventoController extends Controller
 
     public function showEventoDoctorNurseList()
     {
-        return view('Evento/doctor-nurse-list');
+        //event with category
+        $event=Event::with('category')->get();
+        return view('Evento/doctor-nurse-list',compact('event'));
     }
 
     public function showEventoIncomeList()
