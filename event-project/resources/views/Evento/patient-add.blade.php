@@ -765,7 +765,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div><!--col-->
-
+                                                            {{-- todo: crud event --}}
 
                                                             <div class="col-xxl-3 col-md-4">
                                                                 <div class="form-group">
