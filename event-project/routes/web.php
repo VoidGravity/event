@@ -31,6 +31,7 @@ use App\Http\Controllers\StockReportController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\UserSettingsController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 Route::get('/', function () {
@@ -77,7 +78,8 @@ Route::post('editCategory/{id}', [EventoController::class, 'editCategory'])->nam
 Route::get('deleteCategory/{id}', [EventoController::class, 'DeleteCategory'])->name('deleteCategory');
 Route::get('addCategory', [EventoController::class, 'showaddCategory'])->name('addCategory');
 Route::post('addCategory', [EventoController::class, 'addCategory'])->name('addCategory');
-
+//settings : 
+Route::post('/updateSettings', [UserSettingsController::class, 'updateSettings'])->name('updateSettings');
 
 
 

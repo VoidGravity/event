@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\UserSetting;
 
 class User extends Authenticatable
 {
@@ -20,7 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'role', 
+        'role',
         'password',
         'provider',
         'provider_id',
@@ -38,6 +39,12 @@ class User extends Authenticatable
     ];
     protected $connection = 'mysql';
 
+    // In User model
+    public function settings()
+    {
+        return $this->hasOne(UserSetting::class);
+    }
+
 
     /**
      * The attributes that should be cast.
@@ -46,5 +53,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'user_id' => 'integer',
     ];
 }

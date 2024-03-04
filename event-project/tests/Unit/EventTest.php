@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\Event;
+use App\Models\UserSetting;
 use Database\Factories\EventFactory;
 
 class EventTest extends TestCase
@@ -31,5 +32,19 @@ class EventTest extends TestCase
         $this->assertNotNull($event->capacity);
         $this->assertNotNull($event->user_id);
         $this->assertNotNull($event->category_id);
+    }
+    public function testUserSettingSeeding()
+    {
+        // Run the UserSettingSeeder
+        $this->artisan('db:seed', ['--class' => 'UserSettingSeeder']);
+
+        // Retrieve the first UserSetting document
+        $userSetting = UserSetting::first();
+
+        // Assert that the UserSetting was seeded correctly with everything disabled
+        $this->assertNotNull($userSetting);
+        $this->assertFalse($userSetting->autoReservation);
+        $this->assertFalse($userSetting->autoApproval);
+        $this->assertFalse($userSetting->autoCreation);
     }
 }
