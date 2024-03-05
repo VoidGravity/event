@@ -12,10 +12,21 @@ class UserSettingsController extends Controller
     {
         $user = auth()->user();
         $User_id = $user->id;
+        if ($request->autoApprouval == NULL) {
+            $autoApproval = "off";
+        } else {
+            $autoApproval = "on";
+        }
+        if ($request->autoCreation == NULL) {
+            $autoCreation = "off";
+        } else {
+            $autoCreation = "on";
+        }
         UserSetting::where('_id', $User_id)->update([
             'autoReservation' => $request->autoReservation,
-            'autoApproval' => $request->autoApproval,
-            'autoCreation' => $request->autoCreation,
+            'autoApproval' => $autoApproval,
+            'autoCreation' => $autoCreation,
         ]);
+        return redirect()->back()->with('success', 'Settings updated successfully.');
     }
 }

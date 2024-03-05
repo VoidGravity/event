@@ -715,6 +715,10 @@
                                                         <div class="alert alert-success">
                                                             {{ session('status') }}
                                                         </div>
+                                                        @elseif(session('error'))
+                                                        <div class="alert alert-danger">
+                                                            {{ session('error') }}
+                                                        </div>
                                                         @endif
                                                         
                                                         <div class="nk-block-head-content align-self-start d-lg-none">
@@ -752,7 +756,7 @@
                                                                         <div class="custom-control custom-radio">
                                                                             <input type="radio"
                                                                                 class="custom-control-input"
-                                                                                name="reg-public" id="reg-disable" value="off">
+                                                                                name="autoReservation" id="reg-disable" value="off">
                                                                             <label class="custom-control-label"
                                                                                 for="reg-disable">Disable</label>
                                                                         </div>

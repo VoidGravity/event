@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\UserSetting;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -26,10 +27,18 @@ class EventoController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-        $category = new Category();
-        $category->name = $request->name;
-        $category->save();
-        return redirect()->back()->with('success', 'Category created successfully.');
+        $user = auth()->user();
+        $User_id = $user->id;
+        $Settings = UserSetting::where('_id', $User_id)->first();
+
+        if ($Settings->autoCreation == "on") {
+            $category = new Category();
+            $category->name = $request->name;
+            $category->save();
+            return redirect()->back()->with('status', 'Category created successfully.');
+        } else {
+            return redirect()->back()->with('error', 'You are not allowed to create category.');
+        }
     }
 
     /**
@@ -77,10 +86,11 @@ class EventoController extends Controller
     public function ShoweditEvent($id)
     {
         $event = Event::find($id);
-        $category=Category::all();
-        return view('Evento/editEvent', compact('event','category'));
+        $category = Category::all();
+        return view('Evento/editEvent', compact('event', 'category'));
     }
-    public function editEvent($id,Request $request){
+    public function editEvent($id, Request $request)
+    {
         $event = Event::find($id);
         $event->title = $request->title;
         $event->price = $request->price;
@@ -99,8 +109,9 @@ class EventoController extends Controller
         $event->save();
         return redirect()->back()->with('success', 'Event updated successfully.');
     }
-    
-    public function editCategory($id,Request $request){
+
+    public function editCategory($id, Request $request)
+    {
         $category = Category::find($id);
         $category->name = $request->name;
         $category->save();
@@ -188,8 +199,8 @@ class EventoController extends Controller
 
     public function showEventoPatientAdd()
     {
-        $category=Category::all();
-        return view('Evento/patient-add',compact('category'));
+        $category = Category::all();
+        return view('Evento/patient-add', compact('category'));
     }
 
     public function showEventoPatientList()
@@ -210,8 +221,8 @@ class EventoController extends Controller
     public function showEventoDoctorNurseList()
     {
         //event with category
-        $event=Event::with('category')->get();
-        return view('Evento/doctor-nurse-list',compact('event'));
+        $event = Event::with('category')->get();
+        return view('Evento/doctor-nurse-list', compact('event'));
     }
 
     public function showEventoIncomeList()
@@ -261,8 +272,8 @@ class EventoController extends Controller
 
     public function showEventoDepartment()
     {
-        $category=Category::all();
-        return view('Evento/department',compact('category'));
+        $category = Category::all();
+        return view('Evento/department', compact('category'));
     }
 
     public function showEventoDeathReport()
