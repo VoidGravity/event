@@ -743,7 +743,7 @@
                                                                         <div class="custom-control custom-radio">
                                                                             <input type="radio"
                                                                                 class="custom-control-input"
-                                                                                name="autoReservation" id="autoReservation">
+                                                                                name="autoReservation" id="autoReservation" value="on">
                                                                             <label class="custom-control-label"
                                                                                 for="autoReservation">Enable</label>
                                                                         </div>
@@ -752,7 +752,7 @@
                                                                         <div class="custom-control custom-radio">
                                                                             <input type="radio"
                                                                                 class="custom-control-input"
-                                                                                name="reg-public" id="reg-disable">
+                                                                                name="reg-public" id="reg-disable" value="off">
                                                                             <label class="custom-control-label"
                                                                                 for="reg-disable">Disable</label>
                                                                         </div>
