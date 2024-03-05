@@ -35,7 +35,7 @@ use App\Http\Controllers\UserSettingsController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 Route::get('/', function () {
-    return view('front.events');
+    return view('front.single');
 });
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
