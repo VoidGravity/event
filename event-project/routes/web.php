@@ -32,14 +32,21 @@ use App\Http\Controllers\SupportController;
 use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserSettingsController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-Route::get('/sucess', function () {
-    return view('front.sucess');
+
+Route::get('/success', function (Request $request) {
+    if ($request->has('success') && $request->input('success') == 'true') {
+        // Payment was successful
+        session()->flash('success', 'Payment successful!');
+    } else {
+        // Payment failed
+        session()->flash('error', 'Payment failed.');
+    }
+    return view('front.success');
 })->name('success');
-Route::get('/suscess', function () {
-    return view('front.sucess');
-})->name('cancel');
+
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');

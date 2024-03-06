@@ -24,28 +24,26 @@ class EventoController extends Controller
     {
         $name = Event::find($request->id)->title;
         $price = Event::find($request->id)->price;
-
         Stripe::setApiKey(config('stripe.sk'));
-        $session =Session::create([
-            'payment_method_types' => ['card'],
-            'line_items' => [
-                [
-                    'price_data' => [
-                        'currency' => 'USD',
-                        'product_data' => [
-                            'name' => $name,
-                        ],
-                        'unit_amount' => $price/1,
-                    ],
-                    'quantity' => 1,
-                ],
-            ],
-            'mode' => 'payment',
-            'success_url' => route('success'),
-            'cancel_url' => route('cancel'),
-        ]);
-        return redirect()->away($session->url);
 
+        $session = Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'USD',
+                    'product_data' => [
+                        'name' => $name,
+                    ],
+                    'unit_amount' => $price / 1,
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            'success_url' => route('success', [], true) . '?success=true',
+            'cancel_url' => route('success', [], true) . '?success=false',
+        ]);
+
+        return redirect()->away($session->url);
     }
     public function frontFilter(Request $request)
     {
@@ -53,8 +51,8 @@ class EventoController extends Controller
             'categories' => 'required_without:location',
             'location' => 'required_without:category_id',
         ]);
-        
-        
+
+
         if ($request->has('location') && $request->location != null) {
             $event = Event::where('location', 'like', '%' . $request->location . '%')->with('category')->get();
         } elseif ($request->has('start_date') && $request->start_date != null) {
@@ -65,7 +63,7 @@ class EventoController extends Controller
 
         return view('front/events', compact('event'));
     }
-   
+
     public function showSingle($id)
     {
         $event = Event::with('category')->find($id);
@@ -75,8 +73,8 @@ class EventoController extends Controller
     {
         //with pagination
         $event = Event::with('category')->paginate(16);
-        
-        
+
+
         return view('front/events', compact('event'));
     }
     public function showaddCategory()
@@ -379,16 +377,16 @@ class EventoController extends Controller
     public function frontSearch(Request $request)
     {
         //dd($request->all());
-        
-            $event = Event::where('title', 'like', '%' . $request->title . '%')
-                ->with('category')
-             ->get();
-        
+
+        $event = Event::where('title', 'like', '%' . $request->title . '%')
+            ->with('category')
+            ->get();
+
         if ($request->has('start_date') && $request->start_date != null) {
             $event = Event::where('title', 'like', '%' . $request->title . '%')
-            ->orWhere('start_date', 'like', '%' . $request->start_date . '%')
+                ->orWhere('start_date', 'like', '%' . $request->start_date . '%')
                 ->with('category')
-             ->get();
+                ->get();
         }
         return view('front/events', compact('event'));
     }

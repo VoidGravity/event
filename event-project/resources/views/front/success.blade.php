@@ -121,7 +121,9 @@
                                         </div>Back to event
                                     </button></div>
                                 <div class="mt-8 rounded-lg px-6 gl:w-full xl:w-[1120px] xl:px-0">
+                                    
                                     <div class="bg-white p-6">
+                                        @if (session()->has('success')) 
                                         <h1 class="text-3xl font-semibold">You're going!</h1>
                                         <div class="relative overflow-hidden block md:hidden mt-3 rounded-xs" style="height: 140px;"><img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="286" height="140" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg " srcset="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=384 1x, https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640 2x" src="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640" style="color: transparent;"></div>
                                         <div class="mt-6 grid grid-cols-2 gap-6">
@@ -156,6 +158,10 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @elseif (session()->has('error'))
+                                        <h1 class="text-3xl font-semibold">Somthing went wrong with your payment</h1>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>
