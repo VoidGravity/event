@@ -32,20 +32,23 @@ use App\Http\Controllers\SupportController;
 use App\Http\Controllers\GeneralSettingsController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserSettingsController;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-Route::get('/success', function (Request $request) {
-    if ($request->has('success') && $request->input('success') == 'true') {
-        // Payment was successful
-        session()->flash('success', 'Payment successful!');
-    } else {
-        // Payment failed
-        session()->flash('error', 'Payment failed.');
-    }
-    return view('front.success');
-})->name('success');
+// Route::get('/success', function (Request $request) {
+//     if ($request->has('success') && $request->input('success') == 'true') {
+//         session()->flash('success', 'Payment successful!');
+//     } else {
+//         session()->flash('error', 'Payment failed.');
+//     }
+//     return view('front.success');
+// })->name('success');
+
+// transforming the above to normal routes 
+Route::get('/success', [Reservation::class, 'showSucess'])->name('success');
+Route::get('/fail', [Reservation::class, 'showSucess'])->name('fail');
 
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');

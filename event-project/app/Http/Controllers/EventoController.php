@@ -39,12 +39,13 @@ class EventoController extends Controller
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => route('success', [], true) . '?success=true',
-            'cancel_url' => route('success', [], true) . '?success=false',
+            'success_url' => route('success'),
+            'cancel_url' => route('fail'),
         ]);
 
         return redirect()->away($session->url);
     }
+
     public function frontFilter(Request $request)
     {
         $validated = $request->validate([

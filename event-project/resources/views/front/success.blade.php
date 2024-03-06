@@ -123,7 +123,6 @@
                                 <div class="mt-8 rounded-lg px-6 gl:w-full xl:w-[1120px] xl:px-0">
                                     
                                     <div class="bg-white p-6">
-                                        @if (session()->has('success')) 
                                         <h1 class="text-3xl font-semibold">You're going!</h1>
                                         <div class="relative overflow-hidden block md:hidden mt-3 rounded-xs" style="height: 140px;"><img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="286" height="140" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg " srcset="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=384 1x, https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640 2x" src="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640" style="color: transparent;"></div>
                                         <div class="mt-6 grid grid-cols-2 gap-6">
@@ -150,7 +149,7 @@
                                                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8232 5.23741C10.9807 5.07992 11.25 5.19146 11.25 5.41419L11.25 14.25C11.25 14.6642 11.5858 15 12 15C12.4142 15 12.75 14.6642 12.75 14.25V5.41418C12.75 5.19146 13.0193 5.07992 13.1768 5.23741L15.9697 8.0303C16.2626 8.32319 16.7374 8.32319 17.0303 8.0303C17.3232 7.73741 17.3232 7.26253 17.0303 6.96964L13.2374 3.17675C12.554 2.49333 11.446 2.49333 10.7626 3.17675L6.96967 6.96964C6.67678 7.26253 6.67678 7.73741 6.96967 8.0303C7.26256 8.32319 7.73744 8.32319 8.03033 8.0303L10.8232 5.23741ZM9.25 10H6C4.89543 10 4 10.8954 4 12V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V12C20 10.8954 19.1046 10 18 10H14.75V11.5H18C18.2761 11.5 18.5 11.7239 18.5 12V20C18.5 20.2761 18.2761 20.5 18 20.5H6C5.72386 20.5 5.5 20.2761 5.5 20V12C5.5 11.7239 5.72386 11.5 6 11.5H9.25V10Z"></path>
                                                                                 </svg></div>
                                                                         </div>
-                                                                        <div class="px-2"> Share </div>
+                                                                        <div class="px-2"> Export as pdf </div>
                                                                     </div>
                                                                 </button></div>
                                                         </div>
@@ -158,9 +157,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @elseif (session()->has('error'))
-                                        <h1 class="text-3xl font-semibold">Somthing went wrong with your payment</h1>
-                                        @endif
+                                      
 
                                     </div>
                                 </div>
