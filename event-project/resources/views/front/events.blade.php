@@ -181,10 +181,21 @@
                                                 </a>
                                             </div>
                                         @endforeach
+                                        
                                     </div>
                                 </div>
+                                
                                 <div class="md:max-w-screen px-4"><a href="https://www.meetup.com/find/?source=EVENTS&amp;eventType=inPerson&amp;sortField=DATETIME&amp;location=nl--Naaldwijk" class="whitespace-nowrap font-medium text-viridian block smd:hidden" data-event-label="eventsShelf IRL-seeAll variant2">See all events</a></div>
                             </div>
+                             
+                            
+                            <div class="flex justify-center">
+                                {{ $event->links() }}
+                            </div>
+
+                            {{-- paginatios --}}
+
+
 
                         </div>
 

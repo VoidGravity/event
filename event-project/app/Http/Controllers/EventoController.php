@@ -44,7 +44,8 @@ class EventoController extends Controller
     }
     public function showLanding()
     {
-        $event = Event::with('category')->get();
+        //with pagination
+        $event = Event::with('category')->paginate(6);
 
         return view('front/events', compact('event'));
     }
