@@ -18,6 +18,11 @@ class EventoController extends Controller
     {
         //
     }
+    public function showCheckout()
+    {
+        // Stripe
+
+    }
     public function frontFilter(Request $request)
     {
         $validated = $request->validate([
@@ -45,8 +50,9 @@ class EventoController extends Controller
     public function showLanding()
     {
         //with pagination
-        $event = Event::with('category')->paginate(6);
-
+        $event = Event::with('category')->paginate(16);
+        
+        
         return view('front/events', compact('event'));
     }
     public function showaddCategory()

@@ -34,9 +34,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserSettingsController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-// Route::get('/', function () {
-//     return view('front.events');
-// });
+Route::get('/hey', function () {
+    return view('front.sucess');
+});
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
@@ -48,7 +48,9 @@ Route::get('password/reset/{token}', [AuthController::class, 'showResetForm'])->
 Route::post('password/update', [AuthController::class, 'resetPassword'])->name('password.update');
 Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('password.email');
 Route::get('auth/auth-success', [AuthController::class, 'authSuccess'])->name('auth/auth-success');
-
+//checkout 
+Route::get('/checkout', [EventoController::class, 'showCheckout'])->name('checkout');
+Route::get('/checkout/success', [EventoController::class, 'checkoutSuccess'])->name('checkout/sucess');
 //pages
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');
 Route::get('/Evento/appointment', [EventoController::class, 'showEventoAppointment'])->name('Evento/appointment');

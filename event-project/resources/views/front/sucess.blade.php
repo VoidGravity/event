@@ -88,9 +88,7 @@
 </head>
 
 <body class="font-body" style="overflow: visible; height: auto">
-    <script>
-        0
-    </script>
+
     <div id="__next"><noscript id="google-tag-manager"></noscript>
         <div role="status" aria-live="polite" class="sr-only"></div>
         <div class=""><a class="text-viridian focus:p-2 bg-white c1r8us06" href="#main">Skip to content</a>
@@ -100,6 +98,7 @@
                     <div class="fixed left-0 top-0 z-progress h-[3px] w-full w-full bg-[#00a6bf] drop-shadow" style="margin-left: -100%; transition: margin-left 200ms linear 0s;">
                         <div class="absolute right-0 block h-full w-[100px] opacity-100" style="box-shadow: rgb(0, 166, 191) 0px 0px 10px, rgb(0, 166, 191) 0px 0px 5px; transform: rotate(3deg) translate(0px, -4px);"></div>
                     </div>
+
                 </div>
                 @include('inc.evento-front-nav')
                 <div class="flex flex-grow flex-col">
@@ -107,112 +106,52 @@
                         <div class="flex flex-grow flex-col items-center"></div>
                         <div class="px-5 w-full border-b border-shadowColor bg-white py-2 lg:py-6" data-event-label="top">
                             <div class="md:max-w-screen mx-auto">
-                                <h1 class="overflow-hidden overflow-ellipsis text-3xl font-bold leading-snug">{{ $event->title }} </h1><a href="https://www.meetup.com/new-zealand-backpackers/events/299156767//attendees/" class="block w-fit hover:no-underline" data-event-label="hosted-by" aria-label="Hosted By Chogo R.">
+                                <h1 class="overflow-hidden overflow-ellipsis text-3xl font-bold leading-snug">{{ @$event->title }} </h1><a href="https://www.meetup.com/new-zealand-backpackers/events/299156767//attendees/" class="block w-fit hover:no-underline" data-event-label="hosted-by" aria-label="Hosted By Chogo R.">
                                 </a>
                             </div>
-                        </div><span style="font-size:0"></span>
-                        <div class="flex w-full flex-col items-center justify-between border-t border-gray2 bg-gray1 pb-6 lg:px-5">
-                            <div class="md:max-w-screen w-full bg-gray1">
-                                <div class="flex flex-col-reverse lg:flex-row">
-                                    <div class="flex flex-grow flex-col lg:mt-5 lg:max-w-2xl" data-event-label="body">
-                                        <div class="emrv9za" data-event-label="event-home">
-                                            <div></div>
-                                            <div id="event-details" class="px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full">
-                                                <div class="mb-5 flex items-center justify-between">
-                                                    <h2 class="text-xl font-semibold">Details</h2>
-                                                </div>
-                                                <div class="break-words">
-                                                    {{ $event->description }}
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div>
-                                            <div class="mt-6 font-semibold px-6 sm:px-4 xl:px-0">
-                                                <section id="topics" class="flex flex-wrap gap-x-2">
-                                                    <a id="topics-link-0" class="bg-[#dbedf0] block cursor-pointer font-medium hover:bg-[#c9e5e8] hover:no-underline no-underline p-1.5 rounded-lg text-gray7 text-sm mb-2 whitespace-nowrap">{{ $event->category->name }}</a>
-                                                </section>
-                                            </div>
-                                        </div>
-
-                                        <div class="xs:block sm:hidden">
-                                            <div class="mx-auto mb-8 mt-6 h-[50px] w-[320px]">
-                                                <div>
-                                                    <div class="" id="meetup_banner_event_home_mobile"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="w-100 lg:mx-0 lg:ml-28 lg:mt-10 lg:w-90" data-event-label="info">
-                                        <div class="px-5 lg:px-0"></div>
-                                        <div class="top-24">
-                                            <div class="hidden lg:mb-4 lg:block">
-                                                <div class="rounded-2xl bg-white lg:p-6"><a id="event-group-link" class="hover:no-underline" data-event-label="event-group" href="https://www.meetup.com/new-zealand-backpackers/">
-                                                        <div class="flex items-center py-4 lg:py-0 ">
-                                                            <div class="dewqijm">
-                                                                <img alt="Photo of Alpine Trekkers,NZ group" data-testid="next-image" loading="lazy" width="360" height="360" decoding="async" data-nimg="1" class="rounded" style="color:transparent" src="{{ asset('EventImages/' . $event->image) }}">
-                                                            </div>
-
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            <div id="event-info" class="text-sm">
-                                                <div class="bg-white px-5 pb-3 pt-6 sm:pb-4.5 lg:py-5 lg:rounded-t-2xl">
-                                                    <div>
-                                                        <div class="sm:min-h-max min-h-[40px]">
-                                                            <div>
-                                                                <div class="flex">
-                                                                    <div>
-                                                                        <div style="width: 24px; height: 24px;" data-icon-c="icon-15">
-                                                                            <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray5 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/time-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:24px;height:24px;width:24px;height:24px" data-icon="icon-15">
-                                                                                    <title>icon</title>
-                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C7.30558 20.5 3.5 16.6944 3.5 12C3.5 7.30558 7.30558 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12ZM22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM14.4697 15.5303C14.7626 15.8232 15.2374 15.8232 15.5303 15.5303C15.8232 15.2374 15.8232 14.7626 15.5303 14.4697L12.8232 11.7626C12.7763 11.7157 12.75 11.6521 12.75 11.5858L12.75 6C12.75 5.58579 12.4142 5.25 12 5.25C11.5858 5.25 11.25 5.58579 11.25 6L11.25 11.5858C11.25 12.0499 11.4344 12.495 11.7626 12.8232L14.4697 15.5303Z"></path>
+                            <div class="flex">
+                                <div class="ml-7 md:ml-0"><button class="bg-tranparent flex items-center gap-2.5 border-none pt-4 font-medium hover:cursor-pointer hover:no-underline" type="button">
+                                        <div style="width: 24px; height: 24px;" data-icon-c="icon-391">
+                                            <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/arrow-left-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:24px;height:24px;width:24px;height:24px" data-icon="icon-391">
+                                                    <title>icon</title>
+                                                    <line x1="8.75" y1="12" x2="17.25" y2="12" stroke="white" stroke-width="1.5" stroke-linecap="round"></line>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5302 4.53033C11.8231 4.23744 11.8231 3.76256 11.5302 3.46967C11.2373 3.17678 10.7624 3.17678 10.4695 3.46967L3.17663 10.7626C2.49321 11.446 2.49321 12.554 3.17663 13.2374L10.4695 20.5303C10.7624 20.8232 11.2373 20.8232 11.5302 20.5303C11.8231 20.2374 11.8231 19.7626 11.5302 19.4697L4.81051 12.75H21.2499C21.6641 12.75 21.9999 12.4142 21.9999 12C21.9999 11.5858 21.6641 11.25 21.2499 11.25H4.81051L11.5302 4.53033Z"></path>
+                                                </svg></div>
+                                        </div>Back to event
+                                    </button></div>
+                                <div class="mt-8 rounded-lg px-6 gl:w-full xl:w-[1120px] xl:px-0">
+                                    <div class="bg-white p-6">
+                                        <h1 class="text-3xl font-semibold">You're going!</h1>
+                                        <div class="relative overflow-hidden block md:hidden mt-3 rounded-xs" style="height: 140px;"><img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="286" height="140" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg " srcset="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=384 1x, https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640 2x" src="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640" style="color: transparent;"></div>
+                                        <div class="mt-6 grid grid-cols-2 gap-6">
+                                            <div class="relative overflow-hidden hidden md:block rounded-lg" style="height: 243px;"><img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="432" height="243" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg" srcset="https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=640 1x, https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=1080 2x" src="https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=1080" style="color: transparent;"></div>
+                                            <div>
+                                                <p class="font-semibold leading-6">Meetup HTB Morocco : 9th Event</p><span class="my-2 flex items-center text-primary">
+                                                    <div style="width: 20px; height: 20px;" data-icon-c="icon-392">
+                                                        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="injected-svg fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/calendar-confirmed-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px;width:20px;height:20px" data-icon="icon-392">
+                                                                <title>icon</title>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C6 2.44772 6.44772 2 7 2C7.55228 2 8 2.44772 8 3V4H16V3C16 2.44772 16.4477 2 17 2C17.5523 2 18 2.44772 18 3V4H19C20.1046 4 21 4.89543 21 6V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V6C3 4.89543 3.89543 4 5 4H6V3ZM19 5.5H5C4.72386 5.5 4.5 5.72386 4.5 6V19C4.5 19.2761 4.72386 19.5 5 19.5H19C19.2761 19.5 19.5 19.2761 19.5 19V6C19.5 5.72386 19.2761 5.5 19 5.5ZM18 8.75C18 9.16421 17.6642 9.5 17.25 9.5H6.75C6.33579 9.5 6 9.16421 6 8.75C6 8.33579 6.33579 8 6.75 8H17.25C17.6642 8 18 8.33579 18 8.75ZM16.0715 12.4857C16.3397 12.1701 16.3013 11.6968 15.9857 11.4285C15.6701 11.1603 15.1968 11.1987 14.9285 11.5143L11.1752 15.93L9.49827 14.4394C9.18869 14.1643 8.71463 14.1921 8.43944 14.5017C8.16425 14.8113 8.19214 15.2854 8.50173 15.5606L10.3697 17.2209C10.8937 17.6868 11.6984 17.6305 12.1525 17.0962L16.0715 12.4857Z"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="flex flex-col text-sm uppercase leading-5 tracking-tight ml-1 text-sm normal-case leading-6 md:text-base"><time class="" datetime="2024-03-08T21:00:00+01:00[Africa/Casablanca]" title="Fri Mar 08 2024 21:00:00 GMT+0200 (Israel Standard Time)">Fri, Mar 8 · 8:00 PM GMT+1</time></div>
+                                                </span>
+                                                <div class="mt-6 sm:mt-0">
+                                                    <div class="my-2.5">
+                                                        <div><button tabindex="0" role="button" class="cursor-pointer text-viridian ds-font-body-medium xs:w-[316px] sm:w-full max-w-[380px] mb-4 s17sl16g" data-event-label="add-event-to-calendar" aria-expanded="true">Add to calendar</button></div>
+                                                        <div class="flex gap-4">
+                                                            <div class="sm:w-full"><button class="h-12 items-center max-w-[380px] xs:w-[316px] sm:w-full  flex justify-center font-medium py-3.5 lg:py-2.5 lg:px-8 px-4 rounded-lg border-2 border-viridian rounded-lg leading-8 transition-all fill-current text-viridian hover:border-buttonHoverSecondary focus:outline focus:outline-offset-2 focus:outline-2 focus:outline-viridian" aria-label="Share event Meetup HTB Morocco : 9th Event" tabindex="0" data-element-name="share-btn-share-click" data-event-label="share-btn-share-click" data-testid="share-btn">
+                                                                    <div class="flex items-center flex-row-reverse">
+                                                                        <div data-icon-c="icon-393">
+                                                                            <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/share-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-icon="icon-393">
+                                                                                    <title>Share this event</title>
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8232 5.23741C10.9807 5.07992 11.25 5.19146 11.25 5.41419L11.25 14.25C11.25 14.6642 11.5858 15 12 15C12.4142 15 12.75 14.6642 12.75 14.25V5.41418C12.75 5.19146 13.0193 5.07992 13.1768 5.23741L15.9697 8.0303C16.2626 8.32319 16.7374 8.32319 17.0303 8.0303C17.3232 7.73741 17.3232 7.26253 17.0303 6.96964L13.2374 3.17675C12.554 2.49333 11.446 2.49333 10.7626 3.17675L6.96967 6.96964C6.67678 7.26253 6.67678 7.73741 6.96967 8.0303C7.26256 8.32319 7.73744 8.32319 8.03033 8.0303L10.8232 5.23741ZM9.25 10H6C4.89543 10 4 10.8954 4 12V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V12C20 10.8954 19.1046 10 18 10H14.75V11.5H18C18.2761 11.5 18.5 11.7239 18.5 12V20C18.5 20.2761 18.2761 20.5 18 20.5H6C5.72386 20.5 5.5 20.2761 5.5 20V12C5.5 11.7239 5.72386 11.5 6 11.5H9.25V10Z"></path>
                                                                                 </svg></div>
                                                                         </div>
+                                                                        <div class="px-2"> Share </div>
                                                                     </div>
-                                                                    <div>
-                                                                        <div class="pl-4 md:pl-4.5 lg:pl-5"><time class="">{{ $event->start_date }}</time></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                </button></div>
                                                         </div>
-                                                        <div class="relative ml-10 lg:ml-11" data-testid="add-to-calendar"></div>
-                                                        <div class="flex flex-col">
-                                                            <div class="flex mt-5">
-                                                                <div style="width:24px;height:24px" data-icon-c="icon-3">
-                                                                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray5 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/map-marker-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:24px;height:24px;width:24px;height:24px" data-icon="icon-3">
-                                                                            <title>icon</title>
-                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 13.9971 16.3 17.3706 12.1839 20.1101C12.0724 20.1843 11.9276 20.1843 11.8161 20.1101C7.70005 17.3706 5.5 13.9971 5.5 10C5.5 6.41015 8.41015 3.5 12 3.5C15.5899 3.5 18.5 6.41015 18.5 10ZM20 10C20 14.6519 17.4032 18.4382 13.015 21.3588C12.4001 21.7681 11.5999 21.7681 10.985 21.3588C6.59679 18.4382 4 14.6519 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10ZM13.5 10C13.5 10.8284 12.8284 11.5 12 11.5C11.1716 11.5 10.5 10.8284 10.5 10C10.5 9.17157 11.1716 8.5 12 8.5C12.8284 8.5 13.5 9.17157 13.5 10ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10Z"></path>
-                                                                        </svg></div>
-                                                                </div>
-                                                                <div class="overflow-hidden pl-4 md:pl-4.5 lg:pl-5"><a class="hover:text-viridian hover:no-underline" data-testid="venue-name-link" data-event-label="event-location" target="_blank" href="https://www.google.com/maps/search/?api=1&amp;query=31.60081%2C%20-8.025237">{{ $event->location }}</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="w-full border-b border-gray2 lg:hidden" data-event-label="info">
-                                                        <div class="rounded-2xl bg-white lg:p-6"><a id="event-group-mobile-link" class="hover:no-underline" data-event-label="event-group" href="https://www.meetup.com/new-zealand-backpackers/">
-                                                                <div class="flex items-center py-4 lg:py-0 ">
-                                                                    <div class="dewqijm"><img alt="Photo of Alpine Trekkers,NZ group" data-testid="next-image" loading="lazy" width="56" height="56" decoding="async" data-nimg="1" class="rounded" style="color:transparent" srcset="https://secure-content.meetupstatic.com/images/classic-events/493057151/56x56.jpg?w=56?w=64 1x, https://secure-content.meetupstatic.com/images/classic-events/493057151/56x56.jpg?w=56?w=128 2x" src="https://secure-content.meetupstatic.com/images/classic-events/493057151/56x56.jpg?w=56?w=128"></div>
-                                                                    <div class="ml-4">
-                                                                        <div class="text-sm font-medium leading-5">Alpine Trekkers,NZ</div>
-                                                                        <div class="mt-1 flex h-5 flex-row text-sm text-gray6"><span class="mr-1"><span class="capitalize">public</span> group</span>
-                                                                            <div class="z-10 h-5 w-5"><button tabindex="0" aria-label="This group’s content, including its members and event details, are visible to the public." class="m-0 flex h-5 w-5 items-center justify-center rounded-full bg-white"><img alt="question" loading="lazy" width="18" height="18" decoding="async" data-nimg="1" class="h-full w-full" style="color:transparent" srcset="https://secure.meetupstatic.com/next/images/QuestionV2.svg?w=32 1x, https://secure.meetupstatic.com/next/images/QuestionV2.svg?w=48 2x" src="https://secure.meetupstatic.com/next/images/QuestionV2.svg?w=48"></button></div>
-                                                                        </div>
-                                                                        <div></div>
-                                                                    </div>
-                                                                </div>
-                                                            </a></div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="hidden lg:block">
-                                                <hr class="w-full border-gray3 my-12 md:my-6">
-                                                <div class="w-[300px]">
-                                                    <div>
-                                                        <div class="" id="meetup_events_MREC_2"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,46 +159,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full"></div>
-                            <div class="px-6 sm:px-4 xl:px-0 md:max-w-screen w-full"></div>
 
-                        </div>
-                        <div class="sticky bottom-0 z-10 w-full bg-white px-5 py-5 xl:px-0" data-event-label="action-bar" style="bottom: 0px;">
-                            <div class="md:max-w-screen mx-auto">
-                                <div class="flex justify-between text-gray7">
-                                    <div class="hidden flex-col justify-center sm:flex">
-                                        <div>
-                                            <div class="flex flex-col text-sm uppercase leading-5 tracking-tight text-base"><time class="" datetime="2024-04-27T05:00:00+03:00[Asia/Jerusalem]" title="Sat Apr 27 2024 05:00:00 GMT+0300 (Israel Daylight Time)">{{ $event->start_date }}</time></div>
-                                        </div>
-                                        <div>
-                                            <p class="font-semibold">{{ $event->title }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-full sm:w-auto">
-                                        <div class="flex items-center justify-around">
-                                            <div class="flex items-center md:block">
-                                                <div class="flex flex-col">
-                                                    <div class="flex items-center"><span class="font-semibold">{{ $event->price }} DH</span></div>
-                                                    <div class="flex items-center">
-
-                                                        <span class="font-semibold">{{ $event->capacity }} seats</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ml-5 flex items-center space-x-3 sm:space-x-5">
-
-                                                <div class="flex items-center">
-                                                    <a href="{{route('checkout')}}" data-testid="attend-irl-btn" data-event-label="event-rsvp-Attend" class="relative whitespace-nowrap rounded-lg border border-peach bg-peach px-8 py-2.5 font-semibold leading-8 text-white">
-                                                        <span class="">Buy ticket</span>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </main>
                 </div>
                 @include('inc.evento-front-footer')
