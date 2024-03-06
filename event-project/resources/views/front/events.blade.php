@@ -115,31 +115,24 @@
                                 <div class="w-full smd:w-auto">
                                     <div class="-mr-4 flex overflow-x-auto pb-4 pr-6 md:mr-0 md:overflow-visible md:pr-0">
                                         <div class="mr-4">
-                                            <form class="relative flex justify-between">
+                                            <form class="relative flex justify-between" method="POST" action="{{route('front/filter')}}">
+                                                @csrf
                                                 <div class="form-group flex items-center">
                                                     <div class="mr-2 flex items-center">
-                                                        <select name="categories" id="category-select" class="max-h-12 w-max bg-gray1 p-4 font-medium text-gray7 xs:bg-viridian xs:text-white t1yexj96 r15p7x3l">
+                                                        <select name="location" id="category-select" class="max-h-12 w-max bg-gray1 p-4 font-medium text-gray7 xs:bg-viridian xs:text-white t1yexj96 r15p7x3l">
                                                             <option value="">Place</option>
-                                                            <option value="books">Books</option>
-                                                            <option value="electronics">Electronics</option>
-                                                            <option value="clothing">Clothing</option>
-                                                            <option value="sports">Sports Equipment</option>
-                                                            <option value="home_goods">Home Goods</option>
-                                                            <option value="toys">Toys</option>
-                                                            <option value="groceries">Groceries</option>
+                                                            @foreach ($event as $item)
+                                                                <option value="{{$item->id}}">{{$item->location}}</option>
+                                                            @endforeach
                                                         </select>
 
                                                     </div>
                                                     <div class="mr-2 flex items-center">
                                                         <select name="categories" id="category-select" class="max-h-12 w-max bg-gray1 p-4 font-medium text-gray7 xs:bg-viridian xs:text-white t1yexj96 r15p7x3l">
                                                             <option value="">Category</option>
-                                                            <option value="books">Books</option>
-                                                            <option value="electronics">Electronics</option>
-                                                            <option value="clothing">Clothing</option>
-                                                            <option value="sports">Sports Equipment</option>
-                                                            <option value="home_goods">Home Goods</option>
-                                                            <option value="toys">Toys</option>
-                                                            <option value="groceries">Groceries</option>
+                                                            @foreach ($event as $item)
+                                                                <option value="{{$item->id}}">{{$item->category->name}}</option>
+                                                            @endforeach
                                                         </select>
 
                                                     </div>

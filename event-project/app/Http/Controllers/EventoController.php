@@ -18,6 +18,25 @@ class EventoController extends Controller
     {
         //
     }
+    public function frontFilter(Request $request)
+    {
+        $validated = $request->validate([
+            'categories' => 'required_without:location',
+            'location' => 'required_without:category_id',
+        ]);
+        
+        
+        if ($request->has('location') && $request->location != null) {
+            $event = Event::where('location', 'like', '%' . $request->location . '%')->with('category')->get();
+        } elseif ($request->has('start_date') && $request->start_date != null) {
+            $event = Event::where('start_date', 'like', '%' . $request->start_date . '%')->with('category')->get();
+        } elseif ($request->has('category_id') && $request->categories != null) {
+            $event = Event::where('category_id', $request->categories)->with('category')->get();
+        }
+
+        return view('front/events', compact('event'));
+    }
+   
     public function showSingle($id)
     {
         $event = Event::with('category')->find($id);

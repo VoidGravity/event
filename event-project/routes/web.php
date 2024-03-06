@@ -87,7 +87,8 @@ Route::post('addCategory', [EventoController::class, 'addCategory'])->name('addC
 Route::post('/updateSettings', [UserSettingsController::class, 'updateSettings'])->name('updateSettings');
 //single
 Route::get('/single/{id}', [EventoController::class, 'showSingle'])->name('single');
-
+//front filter
+Route::post('front/filter', [EventoController::class, 'frontFilter'])->name('front/filter');
 
 Route::get('/Evento/death-report', [EventoController::class, 'showEventoDeathReport'])->name('Evento/death-report');
 Route::get('/Evento/user-profile', [EventoController::class, 'showEventoUserProfile'])->name('Evento/user-profile');
