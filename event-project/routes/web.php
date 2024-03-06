@@ -34,9 +34,12 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserSettingsController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-Route::get('/hey', function () {
+Route::get('/sucess', function () {
     return view('front.sucess');
-});
+})->name('success');
+Route::get('/suscess', function () {
+    return view('front.sucess');
+})->name('cancel');
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
@@ -49,7 +52,7 @@ Route::post('password/update', [AuthController::class, 'resetPassword'])->name('
 Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('password.email');
 Route::get('auth/auth-success', [AuthController::class, 'authSuccess'])->name('auth/auth-success');
 //checkout 
-Route::get('/checkout', [EventoController::class, 'showCheckout'])->name('checkout');
+Route::get('/checkout/{id}', [EventoController::class, 'showCheckout'])->name('checkout');
 Route::get('/checkout/success', [EventoController::class, 'checkoutSuccess'])->name('checkout/sucess');
 //pages
 Route::get('/Evento/index', [EventoController::class, 'showEventoIndex'])->name('Evento/index');

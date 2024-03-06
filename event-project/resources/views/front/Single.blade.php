@@ -249,9 +249,10 @@
                                             <div class="ml-5 flex items-center space-x-3 sm:space-x-5">
 
                                                 <div class="flex items-center">
-                                                    <a href="{{route('checkout')}}" data-testid="attend-irl-btn" data-event-label="event-rsvp-Attend" class="relative whitespace-nowrap rounded-lg border border-peach bg-peach px-8 py-2.5 font-semibold leading-8 text-white">
+                                                    <a href="{{route('checkout',['id'=>$event->id])}}" class="relative whitespace-nowrap rounded-lg border border-peach bg-peach px-8 py-2.5 font-semibold leading-8 text-white">
                                                         <span class="">Buy ticket</span>
                                                     </a>
+                                                    {{-- <a href="{{route('checkout',['id'=>$event->id])}}" class="relative whitespace-nowrap rounded-lg border border-peach bg-peach px-8 py-2.5 font-semibold leading-8 text-white"></a> --}}
                                                 </div>
 
                                             </div>

@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\UserSetting;
 use Illuminate\Http\Request;
+use Stripe\Checkout\Session;
+use Stripe\Stripe;
 
 class EventoController extends Controller
 {
@@ -18,9 +20,31 @@ class EventoController extends Controller
     {
         //
     }
-    public function showCheckout()
+    public function showCheckout(Request $request)
     {
-        // Stripe
+        $name = Event::find($request->id)->title;
+        $price = Event::find($request->id)->price;
+
+        Stripe::setApiKey(config('stripe.sk'));
+        $session =Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [
+                [
+                    'price_data' => [
+                        'currency' => 'USD',
+                        'product_data' => [
+                            'name' => $name,
+                        ],
+                        'unit_amount' => $price/1,
+                    ],
+                    'quantity' => 1,
+                ],
+            ],
+            'mode' => 'payment',
+            'success_url' => route('success'),
+            'cancel_url' => route('cancel'),
+        ]);
+        return redirect()->away($session->url);
 
     }
     public function frontFilter(Request $request)
