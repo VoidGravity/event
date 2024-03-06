@@ -18,6 +18,11 @@ class EventoController extends Controller
     {
         //
     }
+    public function showSingle($id)
+    {
+        $event = Event::with('category')->find($id);
+        return view('front/single', compact('event'));
+    }
     public function showLanding()
     {
         $event = Event::with('category')->get();

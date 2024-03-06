@@ -107,7 +107,7 @@
                         <div class="flex flex-grow flex-col items-center"></div>
                         <div class="px-5 w-full border-b border-shadowColor bg-white py-2 lg:py-6" data-event-label="top">
                             <div class="md:max-w-screen mx-auto">
-                                <h1 class="overflow-hidden overflow-ellipsis text-3xl font-bold leading-snug">Event title </h1><a href="https://www.meetup.com/new-zealand-backpackers/events/299156767//attendees/" class="block w-fit hover:no-underline" data-event-label="hosted-by" aria-label="Hosted By Chogo R.">
+                                <h1 class="overflow-hidden overflow-ellipsis text-3xl font-bold leading-snug">{{$event->title}} </h1><a href="https://www.meetup.com/new-zealand-backpackers/events/299156767//attendees/" class="block w-fit hover:no-underline" data-event-label="hosted-by" aria-label="Hosted By Chogo R.">
                                 </a>
                             </div>
                         </div><span style="font-size:0"></span>
@@ -122,7 +122,7 @@
                                                     <h2 class="text-xl font-semibold">Details</h2>
                                                 </div>
                                                 <div class="break-words">
-                                                    description
+                                                    {{$event->description}}
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +130,7 @@
                                         <div>
                                             <div class="mt-6 font-semibold px-6 sm:px-4 xl:px-0">
                                                 <section id="topics" class="flex flex-wrap gap-x-2">
-                                                    <a id="topics-link-0" class="bg-[#dbedf0] block cursor-pointer font-medium hover:bg-[#c9e5e8] hover:no-underline no-underline p-1.5 rounded-lg text-gray7 text-sm mb-2 whitespace-nowrap">Category</a>
+                                                    <a id="topics-link-0" class="bg-[#dbedf0] block cursor-pointer font-medium hover:bg-[#c9e5e8] hover:no-underline no-underline p-1.5 rounded-lg text-gray7 text-sm mb-2 whitespace-nowrap">{{$event->category->name}}</a>
                                                 </section>
                                             </div>
                                         </div>
@@ -150,7 +150,8 @@
                                             <div class="hidden lg:mb-4 lg:block">
                                                 <div class="rounded-2xl bg-white lg:p-6"><a id="event-group-link" class="hover:no-underline" data-event-label="event-group" href="https://www.meetup.com/new-zealand-backpackers/">
                                                         <div class="flex items-center py-4 lg:py-0 ">
-                                                            <div class="dewqijm"><img alt="Photo of Alpine Trekkers,NZ group" data-testid="next-image" loading="lazy" width="360" height="360" decoding="async" data-nimg="1" class="rounded" style="color:transparent" src="https://secure-content.meetupstatic.com/images/classic-events/493057151/56x56.jpg?w=56?w=128"></div>
+                                                            <div class="dewqijm">
+                                                                <img alt="Photo of Alpine Trekkers,NZ group" data-testid="next-image" loading="lazy" width="360" height="360" decoding="async" data-nimg="1" class="rounded" style="color:transparent" src="{{asset('EventImages/'.$event->image)}}"></div>
 
                                                         </div>
                                                     </a></div>
@@ -170,7 +171,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div>
-                                                                        <div class="pl-4 md:pl-4.5 lg:pl-5"><time class="">Saturday, April 27, 2024 at 2:00 PM to Tuesday, April 30, 2024 at 8:00 AM NZST</time></div>
+                                                                        <div class="pl-4 md:pl-4.5 lg:pl-5"><time class="">{{$event->start_date}}</time></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -184,8 +185,7 @@
                                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 13.9971 16.3 17.3706 12.1839 20.1101C12.0724 20.1843 11.9276 20.1843 11.8161 20.1101C7.70005 17.3706 5.5 13.9971 5.5 10C5.5 6.41015 8.41015 3.5 12 3.5C15.5899 3.5 18.5 6.41015 18.5 10ZM20 10C20 14.6519 17.4032 18.4382 13.015 21.3588C12.4001 21.7681 11.5999 21.7681 10.985 21.3588C6.59679 18.4382 4 14.6519 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10ZM13.5 10C13.5 10.8284 12.8284 11.5 12 11.5C11.1716 11.5 10.5 10.8284 10.5 10C10.5 9.17157 11.1716 8.5 12 8.5C12.8284 8.5 13.5 9.17157 13.5 10ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10Z"></path>
                                                                         </svg></div>
                                                                 </div>
-                                                                <div class="overflow-hidden pl-4 md:pl-4.5 lg:pl-5"><a class="hover:text-viridian hover:no-underline" data-testid="venue-name-link" data-event-label="event-location" target="_blank" href="https://www.google.com/maps/search/?api=1&amp;query=31.60081%2C%20-8.025237">Marrakesh Menara Airport</a>
-                                                                    <div class="text-gray6" data-testid="location-info"> · Marrakech</div>
+                                                                <div class="overflow-hidden pl-4 md:pl-4.5 lg:pl-5"><a class="hover:text-viridian hover:no-underline" data-testid="venue-name-link" data-event-label="event-location" target="_blank" href="https://www.google.com/maps/search/?api=1&amp;query=31.60081%2C%20-8.025237">{{$event->location}}</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -228,20 +228,20 @@
                                 <div class="flex justify-between text-gray7">
                                     <div class="hidden flex-col justify-center sm:flex">
                                         <div>
-                                            <div class="flex flex-col text-sm uppercase leading-5 tracking-tight text-base"><time class="" datetime="2024-04-27T05:00:00+03:00[Asia/Jerusalem]" title="Sat Apr 27 2024 05:00:00 GMT+0300 (Israel Daylight Time)">date</time></div>
+                                            <div class="flex flex-col text-sm uppercase leading-5 tracking-tight text-base"><time class="" datetime="2024-04-27T05:00:00+03:00[Asia/Jerusalem]" title="Sat Apr 27 2024 05:00:00 GMT+0300 (Israel Daylight Time)">{{$event->start_date}}</time></div>
                                         </div>
                                         <div>
-                                            <p class="font-semibold">Title</p>
+                                            <p class="font-semibold">{{$event->title}}</p>
                                         </div>
                                     </div>
                                     <div class="w-full sm:w-auto">
                                         <div class="flex items-center justify-around">
                                             <div class="flex items-center md:block">
                                                 <div class="flex flex-col">
-                                                    <div class="flex items-center"><span class="font-semibold">Price</span></div>
+                                                    <div class="flex items-center"><span class="font-semibold">{{$event->price}} DH</span></div>
                                                     <div class="flex items-center">
                                                          
-                                                        <span class="font-semibold">Availabe place</span></div>
+                                                        <span class="font-semibold">{{$event->capacity}} seats</span></div>
                                                 </div>
                                             </div>
                                             <div class="ml-5 flex items-center space-x-3 sm:space-x-5">

@@ -162,7 +162,7 @@
                                     <div class="flex flex-col flex-wrap gap-2 bg-gray1 smd:flex-row smd:gap-9 smd:bg-white">
                                         @foreach ($event as $item)
                                             <div data-recommendationid="" data-recommendationsource="" data-eventref="299161216" class="relative z-0 flex h-full break-words bg-transparent bg-white bg-cover bg-clip-padding p-0 transition-shadow duration-300 bg-white px-4 pt-6 pb-5 smd:px-0 smd:pt-0 smd:flex-row smd:justify-start smd:rounded e3uszjm">
-                                                <a class="group relative inline w-full cursor-pointer hover:no-underline" href="here route for single" data-event-label="eventsShelf IRL-Event card variant2">
+                                                <a class="group relative inline w-full cursor-pointer hover:no-underline" href="{{route('single',['id'=>$item->id])}}" data-event-label="eventsShelf IRL-Event card variant2">
                                                     <div class="flex h-full w-full flex-row smd:flex-col smd:flex-col-reverse">
                                                         <div class="grow space-y-2 pr-4 smd:mt-3">
                                                             <h3 class="text-lg font-semibold leading-6 line-clamp-4 group-hover:underline smd:text-xl smd:leading-6 h1lk27w4">

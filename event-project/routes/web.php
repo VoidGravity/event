@@ -85,7 +85,8 @@ Route::get('addCategory', [EventoController::class, 'showaddCategory'])->name('a
 Route::post('addCategory', [EventoController::class, 'addCategory'])->name('addCategory');
 //settings : 
 Route::post('/updateSettings', [UserSettingsController::class, 'updateSettings'])->name('updateSettings');
-
+//single
+Route::get('/single/{id}', [EventoController::class, 'showSingle'])->name('single');
 
 
 Route::get('/Evento/death-report', [EventoController::class, 'showEventoDeathReport'])->name('Evento/death-report');
