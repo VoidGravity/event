@@ -128,7 +128,7 @@
                                                             <option value="toys">Toys</option>
                                                             <option value="groceries">Groceries</option>
                                                         </select>
-                                                    
+
                                                     </div>
                                                     <div class="mr-2 flex items-center">
                                                         <select name="categories" id="category-select" class="max-h-12 w-max bg-gray1 p-4 font-medium text-gray7 xs:bg-viridian xs:text-white t1yexj96 r15p7x3l">
@@ -141,13 +141,13 @@
                                                             <option value="toys">Toys</option>
                                                             <option value="groceries">Groceries</option>
                                                         </select>
-                                                        
+
                                                     </div>
 
                                                 </div>
 
                                                 <button type="submit" class="max-h-12 w-max bg-gray1 p-4 font-medium text-gray7 xs:bg-viridian xs:text-white t1yexj96 r15p7x3l">
-                                                    
+
                                                     <svg class="mr-1 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                                     </svg>
@@ -160,54 +160,59 @@
 
                                 <div class="mb-2 px-0 smd:w-[580px] gl:mb-10 gl:w-[888px] gl:px-0 xl:w-[1196px]">
                                     <div class="flex flex-col flex-wrap gap-2 bg-gray1 smd:flex-row smd:gap-9 smd:bg-white">
-                                        <div data-recommendationid="" data-recommendationsource="" data-eventref="299161216" class="relative z-0 flex h-full break-words bg-transparent bg-white bg-cover bg-clip-padding p-0 transition-shadow duration-300 bg-white px-4 pt-6 pb-5 smd:px-0 smd:pt-0 smd:flex-row smd:justify-start smd:rounded e3uszjm">
-                                            <a class="group relative inline w-full cursor-pointer hover:no-underline" href="https://www.meetup.com/the-hague-pasta-workshops-meetup-group/events/299161216/" data-event-label="eventsShelf IRL-Event card variant2">
-                                                <div class="flex h-full w-full flex-row smd:flex-col smd:flex-col-reverse">
-                                                    <div class="grow space-y-2 pr-4 smd:mt-3">
-                                                        <h3 class="text-lg font-semibold leading-6 line-clamp-4 group-hover:underline smd:text-xl smd:leading-6 h1lk27w4">
-                                                            Event title</h3>
-                                                        <p class="text-sm font-medium text-gray6 line-clamp-2">Event place</p>
-                                                        <div>
-                                                            <div class="flex items-center space-x-1.5 text-gray7">
-                                                                <div style="width: 20px; height: 20px;" data-icon-c="icon-2">
-                                                                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/calendar-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px;width:20px;height:20px" data-icon="icon-2">
-                                                                            <title>date and time</title>
-                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 5.5H5C4.72386 5.5 4.5 5.72386 4.5 6V19C4.5 19.2761 4.72386 19.5 5 19.5H19C19.2761 19.5 19.5 19.2761 19.5 19V6C19.5 5.72386 19.2761 5.5 19 5.5ZM5 4C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V6C21 4.89543 20.1046 4 19 4H5Z">
-                                                                            </path>
-                                                                            <path d="M6 3C6 2.44772 6.44772 2 7 2C7.55228 2 8 2.44772 8 3V4C8 4.55228 7.55228 5 7 5C6.44772 5 6 4.55228 6 4V3Z">
-                                                                            </path>
-                                                                            <path d="M16 3C16 2.44772 16.4477 2 17 2C17.5523 2 18 2.44772 18 3V4C18 4.55228 17.5523 5 17 5C16.4477 5 16 4.55228 16 4V3Z">
-                                                                            </path>
-                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 8.75C18 9.16421 17.6642 9.5 17.25 9.5L6.75 9.5C6.33579 9.5 6 9.16421 6 8.75C6 8.33579 6.33579 8 6.75 8L17.25 8C17.6642 8 18 8.33579 18 8.75Z">
-                                                                            </path>
-                                                                        </svg></div>
+                                        @foreach ($event as $item)
+                                            <div data-recommendationid="" data-recommendationsource="" data-eventref="299161216" class="relative z-0 flex h-full break-words bg-transparent bg-white bg-cover bg-clip-padding p-0 transition-shadow duration-300 bg-white px-4 pt-6 pb-5 smd:px-0 smd:pt-0 smd:flex-row smd:justify-start smd:rounded e3uszjm">
+                                                <a class="group relative inline w-full cursor-pointer hover:no-underline" href="here route for single" data-event-label="eventsShelf IRL-Event card variant2">
+                                                    <div class="flex h-full w-full flex-row smd:flex-col smd:flex-col-reverse">
+                                                        <div class="grow space-y-2 pr-4 smd:mt-3">
+                                                            <h3 class="text-lg font-semibold leading-6 line-clamp-4 group-hover:underline smd:text-xl smd:leading-6 h1lk27w4">
+                                                                {{ $item->title }}</h3>
+                                                            <p class="text-sm font-medium text-gray6 line-clamp-2">{{ $item->location }}</p>
+                                                            <div>
+                                                                <div class="flex items-center space-x-1.5 text-gray7">
+                                                                    <div style="width: 20px; height: 20px;" data-icon-c="icon-2">
+                                                                        <div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/calendar-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px;width:20px;height:20px" data-icon="icon-2">
+                                                                                <title>date and time</title>
+                                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 5.5H5C4.72386 5.5 4.5 5.72386 4.5 6V19C4.5 19.2761 4.72386 19.5 5 19.5H19C19.2761 19.5 19.5 19.2761 19.5 19V6C19.5 5.72386 19.2761 5.5 19 5.5ZM5 4C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V6C21 4.89543 20.1046 4 19 4H5Z">
+                                                                                </path>
+                                                                                <path d="M6 3C6 2.44772 6.44772 2 7 2C7.55228 2 8 2.44772 8 3V4C8 4.55228 7.55228 5 7 5C6.44772 5 6 4.55228 6 4V3Z">
+                                                                                </path>
+                                                                                <path d="M16 3C16 2.44772 16.4477 2 17 2C17.5523 2 18 2.44772 18 3V4C18 4.55228 17.5523 5 17 5C16.4477 5 16 4.55228 16 4V3Z">
+                                                                                </path>
+                                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 8.75C18 9.16421 17.6642 9.5 17.25 9.5L6.75 9.5C6.33579 9.5 6 9.16421 6 8.75C6 8.33579 6.33579 8 6.75 8L17.25 8C17.6642 8 18 8.33579 18 8.75Z">
+                                                                                </path>
+                                                                            </svg>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex flex-col text-sm uppercase leading-5 tracking-tight">
+                                                                        <time class="" datetime="2024-03-16T15:00:00+01:00[Europe/Amsterdam]" title="Sat Mar 16 2024 15:00:00 GMT+0200 (Israel Standard Time)">
+                                                                            {{ $item->start_date }} </time>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="flex flex-col text-sm uppercase leading-5 tracking-tight">
-                                                                    <time class="" datetime="2024-03-16T15:00:00+01:00[Europe/Amsterdam]" title="Sat Mar 16 2024 15:00:00 GMT+0200 (Israel Standard Time)">
-                                                                        Event date</time>
+                                                            </div>
+                                                            <div class="flex flex-wrap gap-x-4 gl:pt-1">
+
+                                                                <div class="flex items-center space-x-1.5 text-gray7">
+                                                                    <div style="width: 20px; height: 20px;" data-icon-c="icon-4">
+                                                                        <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/ticket-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px;width:20px;height:20px" data-icon="icon-4">
+                                                                                <title>cost</title>
+                                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 6C16.7403 6 17.3866 5.5978 17.7324 5H20C20.5523 5 21 5.44772 21 6V8.12602C19.2748 8.57006 18 10.1362 18 12C18 13.8638 19.2748 15.4299 21 15.874V18C21 18.5523 20.5523 19 20 19H17.7324C17.3866 18.4022 16.7403 18 16 18C15.2597 18 14.6134 18.4022 14.2676 19H4C3.44772 19 3 18.5523 3 18V15.874C4.72523 15.4299 6 13.8638 6 12C6 10.1362 4.72523 8.57006 3 8.12602V6C3 5.44772 3.44772 5 4 5H14.2676C14.6134 5.5978 15.2597 6 16 6ZM19 12C19 10.3431 20.3431 9 22 9V6C22 4.89543 21.1046 4 20 4H17C17 4.55228 16.5523 5 16 5C15.4477 5 15 4.55228 15 4H4C2.89543 4 2 4.89543 2 6V9C3.65685 9 5 10.3431 5 12C5 13.6569 3.65685 15 2 15V18C2 19.1046 2.89543 20 4 20H15C15 19.4477 15.4477 19 16 19C16.5523 19 17 19.4477 17 20H20C21.1046 20 22 19.1046 22 18V15C20.3431 15 19 13.6569 19 12ZM16 9C16.5523 9 17 8.55229 17 8C17 7.44772 16.5523 7 16 7C15.4477 7 15 7.44772 15 8C15 8.55229 15.4477 9 16 9ZM16 13C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11C15.4477 11 15 11.4477 15 12C15 12.5523 15.4477 13 16 13ZM17 16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16C15 15.4477 15.4477 15 16 15C16.5523 15 17 15.4477 17 16Z">
+                                                                                </path>
+                                                                            </svg></div>
+                                                                    </div><span class="inline">{{ $item->price }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="flex flex-wrap gap-x-4 gl:pt-1">
-
-                                                            <div class="flex items-center space-x-1.5 text-gray7">
-                                                                <div style="width: 20px; height: 20px;" data-icon-c="icon-4">
-                                                                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/ticket-outline.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px;width:20px;height:20px" data-icon="icon-4">
-                                                                            <title>cost</title>
-                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 6C16.7403 6 17.3866 5.5978 17.7324 5H20C20.5523 5 21 5.44772 21 6V8.12602C19.2748 8.57006 18 10.1362 18 12C18 13.8638 19.2748 15.4299 21 15.874V18C21 18.5523 20.5523 19 20 19H17.7324C17.3866 18.4022 16.7403 18 16 18C15.2597 18 14.6134 18.4022 14.2676 19H4C3.44772 19 3 18.5523 3 18V15.874C4.72523 15.4299 6 13.8638 6 12C6 10.1362 4.72523 8.57006 3 8.12602V6C3 5.44772 3.44772 5 4 5H14.2676C14.6134 5.5978 15.2597 6 16 6ZM19 12C19 10.3431 20.3431 9 22 9V6C22 4.89543 21.1046 4 20 4H17C17 4.55228 16.5523 5 16 5C15.4477 5 15 4.55228 15 4H4C2.89543 4 2 4.89543 2 6V9C3.65685 9 5 10.3431 5 12C5 13.6569 3.65685 15 2 15V18C2 19.1046 2.89543 20 4 20H15C15 19.4477 15.4477 19 16 19C16.5523 19 17 19.4477 17 20H20C21.1046 20 22 19.1046 22 18V15C20.3431 15 19 13.6569 19 12ZM16 9C16.5523 9 17 8.55229 17 8C17 7.44772 16.5523 7 16 7C15.4477 7 15 7.44772 15 8C15 8.55229 15.4477 9 16 9ZM16 13C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11C15.4477 11 15 11.4477 15 12C15 12.5523 15.4477 13 16 13ZM17 16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16C15 15.4477 15.4477 15 16 15C16.5523 15 17 15.4477 17 16Z">
-                                                                            </path>
-                                                                        </svg></div>
-                                                                </div><span class="inline">Event Price</span>
+                                                        <div class="ml-3 bg-transparent smd:ml-0 gl:mr-0 d1umy16x">
+                                                            <div class="relative overflow-hidden bg-transparent w-full" style="height: 153px;">
+                                                                <img alt="Pasta Workshop - Beginner" loading="lazy" width="272" height="153" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg w-full h-full absolute top-0 left-0 object-cover object-center group-hover:opacity-80" src="{{ asset('EventImages/' . $item->image) }}" style="color: transparent;">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="ml-3 bg-transparent smd:ml-0 gl:mr-0 d1umy16x">
-                                                        <div class="relative overflow-hidden bg-transparent w-full" style="height: 153px;"><img alt="Pasta Workshop - Beginner" loading="lazy" width="272" height="153" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg w-full h-full absolute top-0 left-0 object-cover object-center group-hover:opacity-80" srcset="https://secure.meetupstatic.com/photos/event/8/4/c/9/event_519093993.webp?w=384 1x, https://secure.meetupstatic.com/photos/event/8/4/c/9/event_519093993.webp?w=640 2x" src="https://secure.meetupstatic.com/photos/event/8/4/c/9/event_519093993.webp?w=640" style="color: transparent;"></div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
+                                                </a>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="md:max-w-screen px-4"><a href="https://www.meetup.com/find/?source=EVENTS&amp;eventType=inPerson&amp;sortField=DATETIME&amp;location=nl--Naaldwijk" class="whitespace-nowrap font-medium text-viridian block smd:hidden" data-event-label="eventsShelf IRL-seeAll variant2">See all events</a></div>

@@ -18,6 +18,12 @@ class EventoController extends Controller
     {
         //
     }
+    public function showLanding()
+    {
+        $event = Event::with('category')->get();
+
+        return view('front/events', compact('event'));
+    }
     public function showaddCategory()
     {
         return view('Evento/addCategory');
@@ -314,5 +320,21 @@ class EventoController extends Controller
     public function showEventoSettingsSecurity()
     {
         return view('Evento/settings-security');
+    }
+    public function frontSearch(Request $request)
+    {
+        //dd($request->all());
+        
+            $event = Event::where('title', 'like', '%' . $request->title . '%')
+                ->with('category')
+             ->get();
+        
+        if ($request->has('start_date') && $request->start_date != null) {
+            $event = Event::where('title', 'like', '%' . $request->title . '%')
+            ->orWhere('start_date', 'like', '%' . $request->start_date . '%')
+                ->with('category')
+             ->get();
+        }
+        return view('front/events', compact('event'));
     }
 }

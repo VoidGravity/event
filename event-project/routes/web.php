@@ -34,9 +34,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserSettingsController;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-Route::get('/', function () {
-    return view('front.single');
-});
+// Route::get('/', function () {
+//     return view('front.events');
+// });
 //login
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
@@ -59,6 +59,11 @@ Route::get('editEvent/{id}', [EventoController::class, 'showeditEvent'])->name('
 Route::post('editEvent/{id}', [EventoController::class, 'editEvent'])->name('editEvent');
 // Route::post('testroute', [EventoController::class, 'testroute'])->name('testroute'); //hold
 Route::get('/Evento/patient-list', [EventoController::class, 'showEventoPatientList'])->name('Evento/patient-list');
+//event user
+Route::get('/', [EventoController::class, 'showLanding'])->name('Evento/landning');
+//search
+Route::post('/front/search', [EventoController::class, 'frontSearch'])->name('front/search');
+//end seearch
 Route::get('/Evento/patient-profile', [EventoController::class, 'showEventoPatientProfile'])->name('Evento/patient-profile');
 Route::get('/Evento/doctor-nurse-add', [EventoController::class, 'showEventoDoctorNurseAdd'])->name('Evento/doctor-nurse-add');
 Route::get('/Evento/doctor-nurse-list', [EventoController::class, 'showEventoDoctorNurseList'])->name('Evento/doctor-nurse-list');
