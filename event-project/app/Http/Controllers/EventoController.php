@@ -6,8 +6,9 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\UserSetting;
 use Illuminate\Http\Request;
-use Stripe\Checkout\Session;
 use Stripe\Stripe;
+use Stripe\Checkout\Session;
+
 
 class EventoController extends Controller
 {
@@ -34,13 +35,21 @@ class EventoController extends Controller
                     'product_data' => [
                         'name' => $name,
                     ],
-                    'unit_amount' => $price / 1,
+                    'unit_amount' => 100,
                 ],
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
             'success_url' => route('success'),
             'cancel_url' => route('fail'),
+
+            'metadata' => [
+                // 'event_id' => 1,
+                // 'user_id' => 1,
+                'event_id' => $request->id,
+                'user_id' => auth()->user()->id,
+            ],
+
         ]);
 
         return redirect()->away($session->url);

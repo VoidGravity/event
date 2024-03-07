@@ -17,8 +17,8 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('event_id')->constrained();
-            $table->boolean('confirmed')->default(false);
-            $table->dateTime('deleted_at')->nullable();
+            $table->string('stripe_payment_intent_id')->unique();
+            // $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
     }
