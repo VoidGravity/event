@@ -40,6 +40,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/success', [ReservationController::class, 'showSucess'])->name('success');
 Route::get('/fail', [ReservationController::class, 'showFail'])->name('fail');
+Route::get('/downloadPDF/{id}', [EventoController::class, 'downloadPDF'])->name('downloadPDF');
 // Route::get('/webhook', [ApiControl::class, 'showSucess'])->name('fail');
 
 //login

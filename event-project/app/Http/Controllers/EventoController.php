@@ -8,7 +8,7 @@ use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
-
+use PDF;
 
 class EventoController extends Controller
 {
@@ -20,6 +20,18 @@ class EventoController extends Controller
     public function index()
     {
         //
+    }
+    public function downloadPDF($id)
+    {
+        $event = Event::find(1);
+        $imagePath = public_path('images/logo.png');
+        $type = pathinfo($imagePath, PATHINFO_EXTENSION);
+        // convert image to base64
+        $data = file_get_contents($imagePath);
+        $imageData = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+        $pdf = PDF::loadView('front.test', compact('imageData'));
+        return $pdf->download('test.pdf');
     }
     public function showCheckout(Request $request)
     {

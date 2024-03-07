@@ -55,7 +55,9 @@
                                             <img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="286" height="140" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg " src="https://secure-content.meetupstatic.com/images/classic-events/516027012/286x140.webp?w=640" style="color: transparent;">
                                         </div>
                                         <div class="mt-6 grid grid-cols-2 gap-6">
-                                            <div class="relative overflow-hidden hidden md:block rounded-lg" style="height: 243px;"><img alt="Meetup HTB Morocco : 9th Event" loading="lazy" width="432" height="243" decoding="async" data-nimg="1" class="rounded-t-lg rounded-lg" srcset="https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=640 1x, https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=1080 2x" src="https://secure-content.meetupstatic.com/images/classic-events/516027012/432x243.webp?w=1080" style="color: transparent;"></div>
+                                            <div class="relative overflow-hidden hidden md:block rounded-lg">
+                                                {!! DNS2D::getBarcodeHTML('123456', 'QRCODE', 24, 24) !!}
+                                            </div>
                                             <div>
                                                 <p class="font-semibold leading-6">Meetup HTB Morocco : 9th Event</p><span class="my-2 flex items-center text-primary">
                                                     <div style="width: 20px; height: 20px;" data-icon-c="icon-392">
