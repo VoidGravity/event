@@ -20,7 +20,7 @@ class ReservationController extends Controller
 
         return view('front.success');
     }
-    public function fail(Request $request)
+    public function showFail(Request $request)
     {
         Log::info('Payment failure', $request->all());
 
