@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ticket;
+use App\Models\Event;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,12 +14,13 @@ use Stripe\Webhook;
 
 class ReservationController extends Controller
 {
-    public function showSucess(Request $request)
+    public function showSucess()
     {
-        Log::info('Payment success', $request->all());
+        
+        $userid = auth()->user()->id;
+        $reservation = Reservation::where('user_id', $userid)->first();
 
-
-        return view('front.success');
+        return view('front.success', compact('reservation'));
     }
     public function showFail(Request $request)
     {

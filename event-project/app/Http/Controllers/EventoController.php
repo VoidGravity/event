@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Reservation;
 use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
@@ -23,14 +24,14 @@ class EventoController extends Controller
     }
     public function downloadPDF($id)
     {
-        $event = Event::find(1);
-        $imagePath = public_path('images/logo.png');
+        $Reservation = Reservation::find($id)->with('event')->first();
+        $imagePath = public_path('EventImages/' . $Reservation->event->image);
         $type = pathinfo($imagePath, PATHINFO_EXTENSION);
         // convert image to base64
         $data = file_get_contents($imagePath);
         $imageData = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
-        $pdf = PDF::loadView('front.test', compact('imageData'));
+        $pdf = PDF::loadView('front.test', compact('imageData','Reservation'));
         return $pdf->download('test.pdf');
     }
     public function showCheckout(Request $request)
@@ -46,6 +47,7 @@ class EventoController extends Controller
                     'currency' => 'USD',
                     'product_data' => [
                         'name' => $name,
+
                     ],
                     'unit_amount' => 100,
                 ],
@@ -402,13 +404,13 @@ class EventoController extends Controller
 
         $event = Event::where('title', 'like', '%' . $request->title . '%')
             ->with('category')
-            ->get();
+            ->paginate(16);
 
         if ($request->has('start_date') && $request->start_date != null) {
             $event = Event::where('title', 'like', '%' . $request->title . '%')
                 ->orWhere('start_date', 'like', '%' . $request->start_date . '%')
                 ->with('category')
-                ->get();
+                ->paginate(16);
         }
         return view('front/events', compact('event'));
     }
