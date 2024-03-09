@@ -173,9 +173,7 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        // Pass the raw password to auth()->attempt()
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed...
             return redirect()->route('Evento/index');
         }
 
