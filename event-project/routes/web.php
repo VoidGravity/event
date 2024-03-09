@@ -93,6 +93,8 @@ Route::get('addCategory', [EventoController::class, 'showaddCategory'])->name('a
 Route::post('addCategory', [EventoController::class, 'addCategory'])->name('addCategory');
 //settings : 
 Route::post('/updateSettings', [UserSettingsController::class, 'updateSettings'])->name('updateSettings');
+Route::get('delate/user/{id}', [UserSettingsController::class, 'delateUser'])->name('delate/user');
+Route::post('updateUserRole', [UserSettingsController::class, 'updateUserRole'])->name('updateUserRole');
 //single
 Route::get('/single/{id}', [EventoController::class, 'showSingle'])->name('single');
 //front filter

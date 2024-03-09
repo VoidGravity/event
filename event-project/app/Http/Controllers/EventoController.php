@@ -392,7 +392,7 @@ class EventoController extends Controller
 
     public function showEventoSettingsMember()
     {
-        $user= User::with('roles')->get();
+        $user= User::with('role')->get();
         $role = role::all();
         return view('Evento/settings-member',compact('user','role'));
     }

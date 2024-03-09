@@ -631,8 +631,8 @@
                                                     </div><!-- .nk-block-between -->
                                                 </div><!-- .nk-block-head -->
                                                 <div class="form-group">
-                                                    {{-- <form action="" method="POST"> --}}
-
+                                                    <form action="{{route('updateUserRole')}}" method="POST">
+                                                        @csrf
                                                         <div class="row g-gs">
                                                             <div class="col-md-6">
                                                                 <label class="form-label">Select User</label>
@@ -653,14 +653,14 @@
                                                                     <select name="role" class="form-select js-select2" data-placeholder="Select Role">
                                                                         <option value="">Select Role</option>
                                                                         @forEach($role as $item)
-                                                                        <option value="{{$item->id}}">{{$item->role}}</option>
+                                                                        <option value="{{$item->id}}">{{$item->name}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
                                                             </div><!-- .col -->
                                                         </div>
                                                         <button type="submit" class="btn btn-primary mt-2">Add Selected</button>
-                                                    {{-- </form> --}}
+                                                    </form>
                                                 </div>
                                                 <div class="nk-block card card-bordered mt-5">
                                                     <table class="table table-ulogs">
@@ -678,9 +678,9 @@
                                                             <tr>
                                                                 <td class="tb-col-os">{{$item->name}}</td>
                                                                 <td class="tb-col-ip"><span class="sub-text">{{$item->email}}</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">{{$item->roles->role}}</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">{{$item->role->name}}</span></td>
                                                                 <td class="tb-col-time"><span>{{$item->created_at}}</span>
-                                                                <td class="tb-col-action"><a href="{{route('delate/user',['id'=>{{$item->id}}])}}" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td class="tb-col-action"><a href="{{route('delate/user',['id'=>$item->id])}}" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
                                                             </tr>
                                                             @endforeach
                                                             

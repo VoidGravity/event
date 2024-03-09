@@ -29,4 +29,25 @@ class UserSettingsController extends Controller
         ]);
         return redirect()->back()->with('success', 'Settings updated successfully.');
     }
+    public function delateUser($id)
+    {
+        $user = User::findOrFail($id);
+        
+        // Delete related records in the events table
+        // You might need to do similar operations for other related models
+        $user->events()->delete(); // Only if it's safe to delete these records
+    
+        // After all related records are deleted, delete the user
+        $user->delete();
+    
+        return redirect()->back()->with('success', 'User deleted successfully.');
+    }
+    public function updateUserRole(Request $request){
+        // dd($request->all());
+        $user = User::findOrFail($request->user);
+        $user->role_id = $request->role;
+        $user->save();
+        return redirect()->back()->with('success', 'User role updated successfully.');
+    }
+    
 }

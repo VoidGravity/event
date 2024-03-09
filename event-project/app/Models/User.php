@@ -44,10 +44,15 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserSetting::class);
     }
-    public function roles()
+    public function role()
     {
-        return $this->hasOne(Role::class);
+        return $this->belongsTo(Role::class);
     }
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
 
 
     /**
