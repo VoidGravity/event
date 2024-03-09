@@ -24,6 +24,20 @@ class EventoController extends Controller
     {
         //
     }
+    public function approuveReservation($id)
+    {
+        $reservation = Reservation::find($id);
+        $reservation->status = "approved";
+        $reservation->save();
+        return redirect()->back()->with('success', 'Reservation approved successfully.');
+    }
+    public function cancellReservation($id)
+    {
+        $reservation = Reservation::find($id);
+        $reservation->status = "cancelled";
+        $reservation->save();
+        return redirect()->back()->with('success', 'Reservation canceled successfully.');
+    }
     public function downloadPDF($id)
     {
         $Reservation = Reservation::find($id)->with('event')->first();

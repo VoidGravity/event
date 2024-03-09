@@ -162,7 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
-
+        //my own custom one
+        App\Providers\ViewServiceProvider::class,
 
         /*
          * Package Service Providers...

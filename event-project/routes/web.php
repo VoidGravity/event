@@ -99,6 +99,10 @@ Route::post('updateUserRole', [UserSettingsController::class, 'updateUserRole'])
 Route::get('/single/{id}', [EventoController::class, 'showSingle'])->name('single');
 //front filter
 Route::post('front/filter', [EventoController::class, 'frontFilter'])->name('front/filter');
+//approuve / cancell reservaition
+
+Route::get('approuve/reservation/{id}', [EventoController::class, 'approuveReservation'])->name('approuve/reservation');
+Route::get('cancel/reservation/{id}', [EventoController::class, 'cancellReservation'])->name('cancel/reservation');
 
 Route::get('/Evento/death-report', [EventoController::class, 'showEventoDeathReport'])->name('Evento/death-report');
 Route::get('/Evento/user-profile', [EventoController::class, 'showEventoUserProfile'])->name('Evento/user-profile');
