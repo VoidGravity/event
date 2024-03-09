@@ -20,7 +20,8 @@ class Event extends Model
         'user_id',
         'category_id',
         'deleted_at',
-        'image'
+        'image',
+        'auto_reserve',
     ];
     public function user()
     {

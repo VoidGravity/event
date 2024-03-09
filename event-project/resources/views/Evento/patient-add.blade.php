@@ -833,6 +833,42 @@
                                                             </div>
                                                             <div class="col-xxl-3 col-md-4">
                                                                 <div class="form-group">
+                                                                    <label class="form-label">Auto Reserve</label>
+
+                                                                    <ul
+                                                                        class="custom-control-group custom-control-vertical w-100">
+                                                                        <li>
+                                                                            <div
+                                                                                class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                                                <input type="radio"
+                                                                                    class="custom-control-input"
+                                                                                    name="auto_reserve"
+                                                                                    id="reserve1" value="ON"
+                                                                                    {{ old('auto_reserve') == 'ON' ? 'checked' : '' }}>
+                                                                                <label class="custom-control-label"
+                                                                                    for="reserve1"> </em><span>ON</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div
+                                                                                class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                                                <input type="radio"
+                                                                                    class="custom-control-input"
+                                                                                    name="auto_reserve"
+                                                                                    id="reserve2" value="OFF"
+                                                                                    {{ old('auto_reserve') == 'OFF' ? 'checked' : '' }}>
+                                                                                <label class="custom-control-label"
+                                                                                    for="reserve2"> <span>OFF</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xxl-3 col-md-4">
+                                                                <div class="form-group">
                                                                     <label class="form-label">Event Date</label>
                                                                     <div class="form-control-wrap">
                                                                         

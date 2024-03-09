@@ -13,21 +13,21 @@
     <title>test</title>
     <!-- StyleSheets  -->
     {{-- @vite(['resources/css/dashlite.css','resources/js/scripts.js','resources/js/bundle.js']) --}}
-    <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/dashlite.css') }}">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=3.2.3">
 </head>
 
 <body class="nk-body ui-rounder npc-default has-sidebar ">
     <div class="nk-app-root">
         <div class="nk-sidebar" data-content="sidebarMenu">
-            
+
             <div class="nk-sidebar-main is-light">
                 <div class="nk-sidebar-inner" data-simplebar>
                     <div class="nk-menu-content" data-content="navPharmacy">
                         <h5 class="title">Pharmacy</h5>
                         <ul class="nk-menu">
                             <li class="nk-menu-item">
-                                <a href="{{route('index')}}" class="nk-menu-link">
+                                <a href="{{ route('index') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                     <span class="nk-menu-text">Dashboard</span>
                                 </a>
@@ -39,13 +39,13 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('add-customer')}}" class="nk-menu-link"><span class="nk-menu-text">Add Customer</span></a>
+                                        <a href="{{ route('add-customer') }}" class="nk-menu-link"><span class="nk-menu-text">Add Customer</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('customer')}}" class="nk-menu-link"><span class="nk-menu-text">Customer List</span></a>
+                                        <a href="{{ route('customer') }}" class="nk-menu-link"><span class="nk-menu-text">Customer List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('customer-ledger')}}" class="nk-menu-link"><span class="nk-menu-text">Customer Ledger</span></a>
+                                        <a href="{{ route('customer-ledger') }}" class="nk-menu-link"><span class="nk-menu-text">Customer Ledger</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -56,13 +56,13 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('add-medicine')}}" class="nk-menu-link"><span class="nk-menu-text">Add Medicine</span></a>
+                                        <a href="{{ route('add-medicine') }}" class="nk-menu-link"><span class="nk-menu-text">Add Medicine</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('medicine-list')}}" class="nk-menu-link"><span class="nk-menu-text">Medicine List</span></a>
+                                        <a href="{{ route('medicine-list') }}" class="nk-menu-link"><span class="nk-menu-text">Medicine List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('medicine-details')}}" class="nk-menu-link"><span class="nk-menu-text">Medicine Details</span></a>
+                                        <a href="{{ route('medicine-details') }}" class="nk-menu-link"><span class="nk-menu-text">Medicine Details</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -73,10 +73,10 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('manufacturer')}}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer List</span></a>
+                                        <a href="{{ route('manufacturer') }}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('manufacturer-ledger')}}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer Ledger</span></a>
+                                        <a href="{{ route('manufacturer-ledger') }}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer Ledger</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -87,16 +87,16 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('add-wastage-return')}}" class="nk-menu-link"><span class="nk-menu-text">Add Wastage Return</span></a>
+                                        <a href="{{ route('add-wastage-return') }}" class="nk-menu-link"><span class="nk-menu-text">Add Wastage Return</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('wastage-return')}}" class="nk-menu-link"><span class="nk-menu-text">Wastage Return List</span></a>
+                                        <a href="{{ route('wastage-return') }}" class="nk-menu-link"><span class="nk-menu-text">Wastage Return List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('add-manufacturer-return')}}" class="nk-menu-link"><span class="nk-menu-text">Add Manufacture Return</span></a>
+                                        <a href="{{ route('add-manufacturer-return') }}" class="nk-menu-link"><span class="nk-menu-text">Add Manufacture Return</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('manufacturer-return')}}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer Return List</span></a>
+                                        <a href="{{ route('manufacturer-return') }}" class="nk-menu-link"><span class="nk-menu-text">Manufacturer Return List</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -107,16 +107,16 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('member')}}" class="nk-menu-link"><span class="nk-menu-text">Member</span></a>
+                                        <a href="{{ route('member') }}" class="nk-menu-link"><span class="nk-menu-text">Member</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('members-profile-regular')}}" class="nk-menu-link"><span class="nk-menu-text">Members Profile</span></a>
+                                        <a href="{{ route('members-profile-regular') }}" class="nk-menu-link"><span class="nk-menu-text">Members Profile</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('attendence')}}" class="nk-menu-link"><span class="nk-menu-text">Attendence</span></a>
+                                        <a href="{{ route('attendence') }}" class="nk-menu-link"><span class="nk-menu-text">Attendence</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('salary')}}" class="nk-menu-link"><span class="nk-menu-text">Salary</span></a>
+                                        <a href="{{ route('salary') }}" class="nk-menu-link"><span class="nk-menu-text">Salary</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -127,16 +127,16 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
+                                        <a href="{{ route('income-list') }}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
+                                        <a href="{{ route('expense-list') }}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
+                                        <a href="{{ route('invoice-list') }}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
+                                        <a href="{{ route('invoice-details') }}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -147,24 +147,24 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('sales-report')}}" class="nk-menu-link"><span class="nk-menu-text">Sales Report</span></a>
+                                        <a href="{{ route('sales-report') }}" class="nk-menu-link"><span class="nk-menu-text">Sales Report</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('purchase-report')}}" class="nk-menu-link"><span class="nk-menu-text">Purchase Report</span></a>
+                                        <a href="{{ route('purchase-report') }}" class="nk-menu-link"><span class="nk-menu-text">Purchase Report</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('stock-report')}}" class="nk-menu-link"><span class="nk-menu-text">Stock Report</span></a>
+                                        <a href="{{ route('stock-report') }}" class="nk-menu-link"><span class="nk-menu-text">Stock Report</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{route('support')}}" class="nk-menu-link">
+                                <a href="{{ route('support') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-msg-fill"></em></span>
                                     <span class="nk-menu-text">Support</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{route('general-settings')}}" class="nk-menu-link">
+                                <a href="{{ route('general-settings') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
                                     <span class="nk-menu-text">Setting</span>
                                 </a>
@@ -175,13 +175,13 @@
                         <h5 class="title">Hospital Manegment</h5>
                         <ul class="nk-menu">
                             <li class="nk-menu-item">
-                                <a href="{{route('Evento/index')}}" class="nk-menu-link">
+                                <a href="{{ route('Evento/index') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                     <span class="nk-menu-text">Dashboard</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{route('Evento/appointment')}}" class="nk-menu-link">
+                                <a href="{{ route('Evento/appointment') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-note-add-fill"></em></span>
                                     <span class="nk-menu-text">Appointment List</span>
                                 </a>
@@ -193,16 +193,16 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Event</span></a>
+                                        <a href="{{ route('Evento/patient-add') }}" class="nk-menu-link"><span class="nk-menu-text">Add Event</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-list')}}" class="nk-menu-link"><span class="nk-menu-text">IPD / OPD Patients</span></a>
+                                        <a href="{{ route('Evento/patient-list') }}" class="nk-menu-link"><span class="nk-menu-text">IPD / OPD Patients</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-profile')}}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
+                                        <a href="{{ route('Evento/patient-profile') }}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
+                                        <a href="{{ route('Evento/doctor-nurse-list') }}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -213,10 +213,10 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Doctor / Nurses</span></a>
+                                        <a href="{{ route('Evento/doctor-nurse-add') }}" class="nk-menu-link"><span class="nk-menu-text">Add Doctor / Nurses</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
+                                        <a href="{{ route('Evento/doctor-nurse-list') }}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -227,16 +227,16 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
+                                        <a href="{{ route('Evento/income-list') }}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expense</span></a>
+                                        <a href="{{ route('Evento/expense-list') }}" class="nk-menu-link"><span class="nk-menu-text">Expense</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
+                                        <a href="{{ route('Evento/invoice-list') }}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
+                                        <a href="{{ route('Evento/invoice-details') }}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -247,13 +247,13 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/birth-report')}}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
+                                        <a href="{{ route('Evento/birth-report') }}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/blood-bank')}}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
+                                        <a href="{{ route('Evento/blood-bank') }}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/inventory-items')}}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
+                                        <a href="{{ route('Evento/inventory-items') }}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
@@ -264,38 +264,34 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-group')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Group</span></a>
+                                        <a href="{{ route('Evento/bed-group') }}" class="nk-menu-link"><span class="nk-menu-text">Bed Group</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-allotment')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Allotment</span></a>
+                                        <a href="{{ route('Evento/bed-allotment') }}" class="nk-menu-link"><span class="nk-menu-text">Bed Allotment</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/department')}}" class="nk-menu-link"><span class="nk-menu-text">Department</span></a>
+                                        <a href="{{ route('Evento/department') }}" class="nk-menu-link"><span class="nk-menu-text">Department</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('Evento/death-report')}}" class="nk-menu-link"><span class="nk-menu-text">Death Report</span></a>
+                                        <a href="{{ route('Evento/death-report') }}" class="nk-menu-link"><span class="nk-menu-text">Death Report</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
+                                <a href="{{ route('Evento/user-profile') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
                                     <span class="nk-menu-text">User Profile</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{route('Evento/settings')}}" class="nk-menu-link">
+                                <a href="{{ route('Evento/settings') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
                                     <span class="nk-menu-text">Setting</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                         </ul><!-- .nk-menu -->
                     </div>
-                    
-                    
-                    
-                    
-                    
+
                 </div>
             </div>
         </div>
@@ -311,9 +307,9 @@
                                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                             </div>
                             <div class="nk-header-brand d-xl-none">
-                                <a href="{{route('index')}}" class="logo-link">
-                                    <img class="logo-light logo-img" src="{{asset('images/logo.png')}}" srcset="./images/logo2x.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="{{asset('images/logo-dark.png')}}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                <a href="{{ route('index') }}" class="logo-link">
+                                    <img class="logo-light logo-img" src="{{ asset('images/logo.png') }}" srcset="./images/logo2x.png 2x" alt="logo">
+                                    <img class="logo-dark logo-img" src="{{ asset('images/logo-dark.png') }}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-search ms-3 ms-xl-0">
@@ -379,7 +375,7 @@
                                                     <li class="chat-item">
                                                         <a class="chat-link" href="#">
                                                             <div class="chat-media user-avatar">
-                                                                <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
+                                                                <img src="{{ asset('images/avatar/b-sm.jpg') }}" alt="">
                                                             </div>
                                                             <div class="chat-info">
                                                                 <div class="chat-from">
@@ -396,7 +392,7 @@
                                                         <a class="chat-link" href="#">
                                                             <div class="chat-media user-avatar user-avatar-multiple">
                                                                 <div class="user-avatar">
-                                                                    <img src="{{asset('images/avatar/c-sm.jpg')}}" alt="">
+                                                                    <img src="{{ asset('images/avatar/c-sm.jpg') }}" alt="">
                                                                 </div>
                                                                 <div class="user-avatar">
                                                                     <span>AB</span>
@@ -419,7 +415,7 @@
                                                     <li class="chat-item">
                                                         <a class="chat-link" href="#">
                                                             <div class="chat-media user-avatar">
-                                                                <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
+                                                                <img src="{{ asset('images/avatar/a-sm.jpg') }}" alt="">
                                                                 <span class="status dot dot-lg dot-success"></span>
                                                             </div>
                                                             <div class="chat-info">
@@ -534,32 +530,32 @@
                                     <li class="dropdown language-dropdown d-none d-sm-block me-n1">
                                         <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
                                             <div class="quick-icon border border-light">
-                                                <img class="icon" src="{{asset('images/flags/english-sq.png')}}" alt="">
+                                                <img class="icon" src="{{ asset('images/flags/english-sq.png') }}" alt="">
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-s1">
                                             <ul class="language-list">
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="{{asset('images/flags/english.png')}}" alt="" class="language-flag">
+                                                        <img src="{{ asset('images/flags/english.png') }}" alt="" class="language-flag">
                                                         <span class="language-name">English</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="{{asset('images/flags/spanish.png')}}" alt="" class="language-flag">
+                                                        <img src="{{ asset('images/flags/spanish.png') }}" alt="" class="language-flag">
                                                         <span class="language-name">Español</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="{{asset('images/flags/french.png')}}" alt="" class="language-flag">
+                                                        <img src="{{ asset('images/flags/french.png') }}" alt="" class="language-flag">
                                                         <span class="language-name">Français</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="{{asset('images/flags/turkey.png')}}" alt="" class="language-flag">
+                                                        <img src="{{ asset('images/flags/turkey.png') }}" alt="" class="language-flag">
                                                         <span class="language-name">Türkçe</span>
                                                     </a>
                                                 </li>
@@ -588,15 +584,15 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="{{route('Evento/user-profile')}}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="{{route('Evento/settings')}}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="{{route('Evento/settings-account-log')}}"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li><a href="{{ route('Evento/user-profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    <li><a href="{{ route('Evento/settings') }}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                    <li><a href="{{ route('Evento/settings-account-log') }}"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                                                     <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                                 </ul>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="{{route('auth/logout')}}"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a href="{{ route('auth/logout') }}"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
 
                                                 </ul>
                                             </div>
@@ -652,18 +648,47 @@
                                                 <div class="nk-ecwg nk-ecwg6">
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
+                                                            <?php
+                                                            $approvedEventCount = 0;
+                                                            $organisateurCount = 0;
+                                                            $reservationCount = 0;
+                                                            $categoryCount = 0;
+                                                            $today = date('Y-m-d'); 
+                                                            foreach ($event as $eventItem) {
+                                                                if ($eventItem->status === 'active') {
+                                                                    // Replace with your actual condition
+                                                                    $approvedEventCount++;
+                                                                }
+                                                            }
+                                                            foreach ($user as $userItem) {
+                                                                if ($userItem->role === 'organisateur') {
+                                                                    $organisateurCount++;
+                                                                }
+                                                            }
+                                                            foreach ($reservation as $reservationItem) {
+                                                                if ($reservationItem->status === 'approuved') {
+                                                                    $reservationCount++;
+                                                                }
+                                                            }
+                                                        
+                                                            foreach ($category as $categoryItem) {
+                                                                if (date('Y-m-d', strtotime($categoryItem->created_at)) === $today) {
+                                                                    $categoryCount++;
+                                                                }
+                                                            }
+                                                            ?>
                                                             <div class="card-title">
-                                                                <h6 class="title">IPD Income</h6>
+                                                                <h6 class="title">Total events</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$10,945</div>
+                                                                <div class="amount">{{ count($event) }}</div>
                                                                 <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="ipdIncome"></canvas>
                                                                 </div>
                                                             </div>
-                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div>
+
+                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $approvedEventCount }}</span><span> Aprouved</span></div>
                                                         </div>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .nk-ecwg -->
@@ -675,17 +700,17 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title">
-                                                                <h6 class="title">OPD Income</h6>
+                                                                <h6 class="title">Total Users</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$12,338</div>
+                                                                <div class="amount">{{ count($user) }}</div>
                                                                 <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="opdIncome"></canvas>
+                                                                    {{-- <canvas class="ecommerce-line-chart-s3" id="opdIncome"></canvas> --}}
                                                                 </div>
                                                             </div>
-                                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs. last week</span></div>
+                                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>{{ $organisateurCount }}</span><span> organisateur</span></div>
                                                         </div>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .nk-ecwg -->
@@ -697,394 +722,48 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title ">
-                                                                <h6 class="title">Labotory Income</h6>
+                                                                <h6 class="title">Reservation</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$20,847</div>
+                                                                <div class="amount">
+                                                                    {{ count($reservation) }}</div>
                                                                 <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="labIncome"></canvas>
+                                                                    {{-- <canvas class="ecommerce-line-chart-s3" id="labIncome"></canvas> --}}
                                                                 </div>
                                                             </div>
-                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div>
+                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $reservationCount }}</span><span>Aprouved reservations</span></div>
                                                         </div>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .nk-ecwg -->
                                             </div><!-- .card -->
                                         </div><!-- .col -->
+
                                         <div class="col-xxl-3 col-sm-6">
                                             <div class="card">
                                                 <div class="nk-ecwg nk-ecwg6">
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
-                                                            <div class="card-title">
-                                                                <h6 class="title">Expense</h6>
+                                                            <div class="card-title ">
+                                                                <h6 class="title">Categories</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$23,485</div>
+                                                                <div class="amount">
+                                                                    {{ count($category) }}</div>
                                                                 <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="todayExpense"></canvas>
+                                                                    {{-- <canvas class="ecommerce-line-chart-s3" id="labIncome"></canvas> --}}
                                                                 </div>
                                                             </div>
-                                                            <div class="info"><span class="change up text-primary"><em class="icon ni ni-arrow-long-up"></em>1.34%</span><span> vs. last week</span></div>
+                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $categoryCount }}</span><span>Added today</span></div>
                                                         </div>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .nk-ecwg -->
                                             </div><!-- .card -->
                                         </div><!-- .col -->
-                                        <div class="col-md-6 col-xxl-3">
-                                            <div class="card h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group mb-2">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Hospital Statistics</h6>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="nk-store-statistics">
-                                                        <li class="item">
-                                                            <div class="info">
-                                                                <div class="title">Todays' Appointment</div>
-                                                                <div class="count">470</div>
-                                                            </div>
-                                                            <em class="icon ni bg-blue-dim ni-list-index-fill"></em>
-                                                        </li>
-                                                        <li class="item">
-                                                            <div class="info">
-                                                                <div class="title">Doctors</div>
-                                                                <div class="count">152</div>
-                                                            </div>
-                                                            <em class="icon bg-primary-dim ni ni-plus-medi"></em>
-                                                        </li>
-                                                        <li class="item">
-                                                            <div class="info">
-                                                                <div class="title">Patients</div>
-                                                                <div class="count">2,327</div>
-                                                            </div>
-                                                            <em class="icon bg-info-dim ni ni-users"></em>
-                                                        </li>
-                                                        <li class="item">
-                                                            <div class="info">
-                                                                <div class="title">Nurses</div>
-                                                                <div class="count">674</div>
-                                                            </div>
-                                                            <em class="icon bg-pink-dim ni ni ni-plus-fill-c"></em>
-                                                        </li>
-                                                        <li class="item">
-                                                            <div class="info">
-                                                                <div class="title">Department</div>
-                                                                <div class="count">12</div>
-                                                            </div>
-                                                            <em class="icon bg-purple-dim ni ni-network"></em>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- .card-inner -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-6 col-xxl-3">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start pb-3 g-2">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Total Revenue</h6>
-                                                            <p>In 30 days income of this hospital.</p>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help" data-bs-toggle="tooltip" data-bs-placement="left" title="Revenue of this month"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="analytic-au">
-                                                        <div class="analytic-data-group analytic-au-group g-3">
-                                                            <div class="analytic-data analytic-au-data">
-                                                                <div class="title">Monthly</div>
-                                                                <div class="amount">98K</div>
-                                                                <div class="change up"><em class="icon ni ni-arrow-long-up"></em>4.63%</div>
-                                                            </div>
-                                                            <div class="analytic-data analytic-au-data">
-                                                                <div class="title">Weekly</div>
-                                                                <div class="amount">9.69K</div>
-                                                                <div class="change down"><em class="icon ni ni-arrow-long-down"></em>1.92%</div>
-                                                            </div>
-                                                            <div class="analytic-data analytic-au-data">
-                                                                <div class="title">Daily (Avg)</div>
-                                                                <div class="amount">3.94K</div>
-                                                                <div class="change up"><em class="icon ni ni-arrow-long-up"></em>3.45%</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="analytic-au-ck">
-                                                            <canvas class="analytics-au-chart" id="analyticAuData"></canvas>
-                                                        </div>
-                                                        <div class="chart-label-group">
-                                                            <div class="chart-label">01 Jan, 2020</div>
-                                                            <div class="chart-label">30 Jan, 2020</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-lg-8 col-xxl-6">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group pb-3 g-2">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Income vs Expenses</h6>
-                                                            <p>Last 30 days Income vs Expenses Statistics.</p>
-                                                        </div>
-                                                        <div class="card-tools shrink-0 d-none d-sm-block">
-                                                            <ul class="nav nav-switch-s2 nav-tabs bg-white">
-                                                                <li class="nav-item"><a href="#" class="nav-link">7 D</a></li>
-                                                                <li class="nav-item"><a href="#" class="nav-link active">1 M</a></li>
-                                                                <li class="nav-item"><a href="#" class="nav-link">3 M</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="analytic-ov">
-                                                        <div class="analytic-data-group analytic-ov-group g-3">
-                                                            <div class="analytic-data analytic-ov-data">
-                                                                <div class="title">Month</div>
-                                                                <div class="amount">12.57K</div>
-                                                                <div class="change up"><em class="icon ni ni-arrow-long-up"></em>12.37%</div>
-                                                            </div>
-                                                            <div class="analytic-data analytic-ov-data">
-                                                                <div class="title">Week</div>
-                                                                <div class="amount">3.98K</div>
-                                                                <div class="change up"><em class="icon ni ni-arrow-long-up"></em>47.74%</div>
-                                                            </div>
-                                                            <div class="analytic-data analytic-ov-data">
-                                                                <div class="title">Month</div>
-                                                                <div class="amount">4.49K</div>
-                                                                <div class="change up"><em class="icon ni ni-arrow-long-up"></em>12.37%</div>
-                                                            </div>
-                                                            <div class="analytic-data analytic-ov-data">
-                                                                <div class="title">Week</div>
-                                                                <div class="amount">1.15K</div>
-                                                                <div class="change down"><em class="icon ni ni-arrow-long-down"></em>0.35%</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="analytic-ov-ck">
-                                                            <canvas class="analytics-line-large" id="analyticOvData"></canvas>
-                                                        </div>
-                                                        <div class="chart-label-group ms-5">
-                                                            <div class="chart-label">01 Jan, 2020</div>
-                                                            <div class="chart-label d-none d-sm-block">15 Jan, 2020</div>
-                                                            <div class="chart-label">30 Jan, 2020</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-6 col-lg-4 col-xxl-4">
-                                            <div class="card card-bordered card-full">
-                                                <div class="card-inner-group">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title">
-                                                                <h6 class="title">New Patients</h6>
-                                                            </div>
-                                                            <div class="card-tools">
-                                                                <a href="#" class="link">View All</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-inner card-inner-md">
-                                                        <div class="user-card">
-                                                            <div class="user-avatar bg-primary-dim">
-                                                                <span>AB</span>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                                <span class="sub-text">info@softnio.com</span>
-                                                            </div>
-                                                            <div class="user-action">
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger me-n1" data-bs-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-inner card-inner-md">
-                                                        <div class="user-card">
-                                                            <div class="user-avatar bg-pink-dim">
-                                                                <span>SW</span>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <span class="lead-text">Sharon Walker</span>
-                                                                <span class="sub-text">sharon-90@example.com</span>
-                                                            </div>
-                                                            <div class="user-action">
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger me-n1" data-bs-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-inner card-inner-md">
-                                                        <div class="user-card">
-                                                            <div class="user-avatar bg-warning-dim">
-                                                                <span>GO</span>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <span class="lead-text">Gloria Oliver</span>
-                                                                <span class="sub-text">gloria_72@example.com</span>
-                                                            </div>
-                                                            <div class="user-action">
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger me-n1" data-bs-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-inner card-inner-md">
-                                                        <div class="user-card">
-                                                            <div class="user-avatar bg-success-dim">
-                                                                <span>PS</span>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <span class="lead-text">Phillip Sullivan</span>
-                                                                <span class="sub-text">phillip-85@example.com</span>
-                                                            </div>
-                                                            <div class="user-action">
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger me-n1" data-bs-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-6 col-xxl-4">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner border-bottom">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Support Requests</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <a href="#" class="link">View All</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <ul class="nk-support">
-                                                    <li class="nk-support-item">
-                                                        <div class="user-avatar">
-                                                            <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
-                                                        </div>
-                                                        <div class="nk-support-content">
-                                                            <div class="title">
-                                                                <span>Vincent Lopez</span><span class="badge badge-dot badge-dot-xs bg-warning ms-1">Pending</span>
-                                                            </div>
-                                                            <p>Thanks for contact us with your issues...</p>
-                                                            <span class="time">6 min ago</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="nk-support-item">
-                                                        <div class="user-avatar bg-purple-dim">
-                                                            <span>DM</span>
-                                                        </div>
-                                                        <div class="nk-support-content">
-                                                            <div class="title">
-                                                                <span>Daniel Moore</span><span class="badge badge-dot badge-dot-xs bg-info ms-1">Open</span>
-                                                            </div>
-                                                            <p>Thanks for contact us with your issues...</p>
-                                                            <span class="time">2 Hours ago</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="nk-support-item">
-                                                        <div class="user-avatar">
-                                                            <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
-                                                        </div>
-                                                        <div class="nk-support-content">
-                                                            <div class="title">
-                                                                <span>Larry Henry</span><span class="badge badge-dot badge-dot-xs bg-success ms-1">Solved</span>
-                                                            </div>
-                                                            <p>Thanks for contact us with your issues...</p>
-                                                            <span class="time">3 Hours ago</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-6 col-xxl-4">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner border-bottom">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Notifications</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <a href="#" class="link">View All</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-inner">
-                                                    <div class="timeline">
-                                                        <h6 class="timeline-head">November, 2019</h6>
-                                                        <ul class="timeline-list">
-                                                            <li class="timeline-item">
-                                                                <div class="timeline-status bg-primary is-outline"></div>
-                                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                                <div class="timeline-data">
-                                                                    <h6 class="timeline-title">Test Reports In Labotory Sample</h6>
-                                                                    <div class="timeline-des">
-                                                                        <p>Re-check tets results asap.</p>
-                                                                        <span class="time">09:30am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="timeline-item">
-                                                                <div class="timeline-status bg-primary"></div>
-                                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                                <div class="timeline-data">
-                                                                    <h6 class="timeline-title">Office Hours in Lockdown</h6>
-                                                                    <div class="timeline-des">
-                                                                        <p>About hospital policies in lockdown.</p>
-                                                                        <span class="time">09:30am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="timeline-item">
-                                                                <div class="timeline-status bg-pink"></div>
-                                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                                <div class="timeline-data">
-                                                                    <h6 class="timeline-title">COVID-19 Tests Result Report</h6>
-                                                                    <div class="timeline-des">
-                                                                        <p>About COVID-19 patients tests.</p>
-                                                                        <span class="time">09:30am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
+
                                     </div><!-- .row -->
                                 </div><!-- .nk-block -->
                             </div>
@@ -1109,109 +788,109 @@
                         <ul class="country-list text-center gy-2">
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/arg.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/arg.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Argentina</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/aus.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/aus.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Australia</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/bangladesh.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/bangladesh.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Bangladesh</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/canada.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/canada.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Canada <small>(English)</small></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/china.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/china.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Centrafricaine</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/china.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/china.png') }}" alt="" class="country-flag">
                                     <span class="country-name">China</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/french.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/french.png') }}" alt="" class="country-flag">
                                     <span class="country-name">France</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/germany.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/germany.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Germany</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/iran.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/iran.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Iran</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/italy.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/italy.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Italy</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/mexico.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/mexico.png') }}" alt="" class="country-flag">
                                     <span class="country-name">México</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/philipine.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/philipine.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Philippines</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/portugal.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/portugal.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Portugal</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/s-africa.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/s-africa.png') }}" alt="" class="country-flag">
                                     <span class="country-name">South Africa</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/spanish.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/spanish.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Spain</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/switzerland.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/switzerland.png') }}" alt="" class="country-flag">
                                     <span class="country-name">Switzerland</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/uk.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/uk.png') }}" alt="" class="country-flag">
                                     <span class="country-name">United Kingdom</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="country-item">
-                                    <img src="{{asset('images/flags/english.png')}}" alt="" class="country-flag">
+                                    <img src="{{ asset('images/flags/english.png') }}" alt="" class="country-flag">
                                     <span class="country-name">United State</span>
                                 </a>
                             </li>
@@ -1222,10 +901,10 @@
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
     <!-- JavaScript -->
-    <script src="{{asset('js/bundle.js')}}"></script>
-    
-    <script src="{{asset('js/scripts.js')}}"></script>
-    <script src="{{asset('js/charts/gd-hospital.js')}}"></script>
+    <script src="{{ asset('js/bundle.js') }}"></script>
+
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/charts/gd-hospital.js') }}"></script>
 </body>
 
 </html>

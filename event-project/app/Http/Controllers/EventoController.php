@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Reservation;
+use App\Models\Role;
+use App\Models\User;
 use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
@@ -272,7 +274,11 @@ class EventoController extends Controller
 
     public function showEventoIndex()
     {
-        return view('Evento/index');
+        $event = Event::with('category')->get();
+        $reservation = Reservation::with('event')->get();
+        $user = User::all();
+        $category = Category::all();
+        return view('Evento/index',compact('event','reservation','user','category'));
     }
 
     public function showEventoAppointment()
@@ -303,7 +309,6 @@ class EventoController extends Controller
 
     public function showEventoDoctorNurseList()
     {
-        //event with category
         $event = Event::with('category')->get();
         return view('Evento/doctor-nurse-list', compact('event'));
     }
@@ -371,6 +376,7 @@ class EventoController extends Controller
 
     public function showEventoSettings()
     {
+        
         return view('Evento/settings');
     }
 
@@ -386,7 +392,9 @@ class EventoController extends Controller
 
     public function showEventoSettingsMember()
     {
-        return view('Evento/settings-member');
+        $user= User::with('roles')->get();
+        $role = role::all();
+        return view('Evento/settings-member',compact('user','role'));
     }
 
     public function showEventoSettingsEmail()

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
+use App\Models\Routes;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -18,9 +20,13 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'remember_token' => Str::random(10),
-            'role' => 'admin',
+            'role' => function () {
+                return Routes::factory()->create()->id;
+            },
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 

@@ -31,6 +31,7 @@ class EventFactory extends Factory
                 return Category::factory()->create()->id;
             },
             
+            
         
         ];
     }

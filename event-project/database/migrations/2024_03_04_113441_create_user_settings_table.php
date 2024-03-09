@@ -35,6 +35,7 @@ class CreateUserSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_settings');
+        Schema::connection($this->connection)->dropIfExists('user_settings');
+
     }
 }

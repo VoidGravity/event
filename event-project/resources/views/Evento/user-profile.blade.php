@@ -793,7 +793,7 @@
                                                             <div class="nk-block-head-content">
                                                                 <h5 class="nk-block-title">Security Settings</h5>
                                                                 <div class="nk-block-des">
-                                                                    <p>These settings are helps you keep your account secure.</p>
+                                                                    <p>These settings will help you to keep your account secure.</p>
                                                                 </div>
                                                             </div>
                                                         </div><!-- .nk-block-head -->

@@ -44,6 +44,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserSetting::class);
     }
+    public function roles()
+    {
+        return $this->hasOne(Role::class);
+    }
 
 
     /**

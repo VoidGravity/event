@@ -26,6 +26,8 @@ class CreateEventsTable extends Migration
             $table->foreignId('user_id')->constrained();//done
             $table->foreignId('category_id')->constrained(); //done
             $table->dateTime('deleted_at')->nullable(); //done
+            $table->string('status')->default('inactive'); //done
+            $table->string('auto_reserve')->default('OFF');//
 
             $table->timestamps();
         });

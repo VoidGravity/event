@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CategoryFactory extends Factory
+class PermissionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,10 +14,12 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
-            'created_at' => now(),
-            'updated_at' => now()
-            
+            'permission' => $this->faker->randomElement([
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]),
         ];
     }
 }

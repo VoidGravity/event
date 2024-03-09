@@ -622,7 +622,7 @@
                                                     <div class="nk-block-between">
                                                         <div class="nk-block-head-content">
                                                             <h5 class="title fw-medium">User Settings</h5>
-                                                            <span>These settings are helps youto add or manage user.</span>
+                                                            <span>These settings will help you to keep your account secure</span>
                                                             <span class="text-success"><em class="icon ni ni-shield-check"></em></span>
                                                         </div><!-- .nk-block-head-content -->
                                                         <div class="nk-block-head-content align-self-start d-lg-none">
@@ -631,39 +631,36 @@
                                                     </div><!-- .nk-block-between -->
                                                 </div><!-- .nk-block-head -->
                                                 <div class="form-group">
-                                                    <div class="row g-gs">
-                                                        <div class="col-md-6">
-                                                            <label class="form-label">Select User</label>
-                                                            <div class="form-control-wrap">
-                                                                <select class="form-select js-select2" data-placeholder="Select User">
-                                                                    <option value="">Select User</option>
-                                                                    <option value="option_select_name">Abu Bin Ishtiyak</option>
-                                                                    <option value="option_select_name">Ashley Lawson</option>
-                                                                    <option value="option_select_name">Joe Larson</option>
-                                                                    <option value="option_select_name">Joe Larson</option>
-                                                                    <option value="option_select_name">Frances Burns</option>
-                                                                    <option value="option_select_name">Victoria Lynch</option>
-                                                                    <option value="option_select_name">Jane Harris</option>
-                                                                    <option value="option_select_name">Emma Walker</option>
-                                                                    <option value="option_select_name">Patrick Newman</option>
-                                                                    <option value="option_select_name">Victoria Lynch</option>
-                                                                </select>
-                                                            </div>
-                                                            <span class="form-note text-success mt-1">Add one or more user at a time who is not a current user of this space</span>
-                                                        </div><!-- .col -->
-                                                        <div class="col-md-6">
-                                                            <label class="form-label">Select Role</label>
-                                                            <div class="form-control-wrap">
-                                                                <select class="form-select js-select2" data-placeholder="Select Role">
-                                                                    <option value="">Select Role</option>
-                                                                    <option value="option_select_role">Administrator</option>
-                                                                    <option value="option_select_role">Doctor</option>
-                                                                    <option value="option_select_role">Receptionist</option>
-                                                                </select>
-                                                            </div>
-                                                        </div><!-- .col -->
-                                                    </div><!-- .row -->
-                                                    <a href="#" class="btn btn-primary mt-2">Add Selected</a>
+                                                    {{-- <form action="" method="POST"> --}}
+
+                                                        <div class="row g-gs">
+                                                            <div class="col-md-6">
+                                                                <label class="form-label">Select User</label>
+                                                                <div class="form-control-wrap">
+                                                                    <select name="user" class="form-select js-select2" data-placeholder="Select User">
+                                                                        <option value="">Select User by email</option>
+                                                                        @forEach($user as $item)
+                                                                        <option value="{{$item->id}}">{{$item->email}}</option>
+                                                                        @endforeach
+                                                                        
+                                                                    </select>
+                                                                </div>
+                                                                <span class="form-note text-success mt-1">Add one or more user at a time who is not a current user of this space</span>
+                                                            </div><!-- .col -->
+                                                            <div class="col-md-6">
+                                                                <label class="form-label">Select Role</label>
+                                                                <div class="form-control-wrap">
+                                                                    <select name="role" class="form-select js-select2" data-placeholder="Select Role">
+                                                                        <option value="">Select Role</option>
+                                                                        @forEach($role as $item)
+                                                                        <option value="{{$item->id}}">{{$item->role}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div><!-- .col -->
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary mt-2">Add Selected</button>
+                                                    {{-- </form> --}}
                                                 </div>
                                                 <div class="nk-block card card-bordered mt-5">
                                                     <table class="table table-ulogs">
@@ -677,48 +674,16 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @forEach($user as $item)
                                                             <tr>
-                                                                <td class="tb-col-os">Abu Bin Ishtiyak</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">info@softnio.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Doctor</span></td>
-                                                                <td class="tb-col-time"><span>10 Feb 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td class="tb-col-os">{{$item->name}}</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">{{$item->email}}</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">{{$item->roles->role}}</span></td>
+                                                                <td class="tb-col-time"><span>{{$item->created_at}}</span>
+                                                                <td class="tb-col-action"><a href="{{route('delate/user',['id'=>{{$item->id}}])}}" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Ashley Lawson</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">AshleyLawson@.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Receptionist</span></td>
-                                                                <td class="tb-col-time"><span>17 Feb 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Joe Larson</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">joelarson123@gmail.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Doctor</span></td>
-                                                                <td class="tb-col-time"><span>31 Jan 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Jane Harris</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">Jane@Harris.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Administrator</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11 Jan 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Frances Burns</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">Frances@Burns.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Doctor</span></td>
-                                                                <td class="tb-col-time"><span>17 Feb 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Victoria Lynch</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">Victoria@Lynch.com</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">Administrator</span></td>
-                                                                <td class="tb-col-time"><span>11 jan 2020</span>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
+                                                            @endforeach
+                                                            
                                                         </tbody>
                                                     </table>
                                                 </div>
