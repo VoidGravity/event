@@ -21,7 +21,7 @@
               
                 <li class="nk-menu-item">
                     <a href="{{ route('Evento/doctor-nurse-list') }}" class="nk-menu-link"><span
-                            class="nk-menu-text">Doctors / Nurses</span></a>
+                            class="nk-menu-text">Event List</span></a>
                 </li>
             </ul><!-- .nk-menu-sub -->
         </li><!-- .nk-menu-item -->
