@@ -73,10 +73,12 @@ class ReservationController extends Controller
             $ReservationId = $Reservation->id;
 
             $userEmail = User::find($userid)->email;
+            $event = Event::find($eventid);
+            
             Log::info('User id ' . $userid);
             Log::info('Event id ' . $eventid);
             Log::info('Reservation id ' . $ReservationId);
-            Mail::to($userEmail)->send(new ticket($userid, $eventid, $ReservationId));
+            Mail::to($userEmail)->send(new ticket($userid, $event, $ReservationId));
             Log::info('Email sent to ' . $userEmail);
         }
 

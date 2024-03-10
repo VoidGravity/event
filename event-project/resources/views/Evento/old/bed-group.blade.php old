@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Bed allotment List | DashLite Admin Template</title>
+    <title>Bed Group List | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -278,12 +278,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -314,15 +309,18 @@
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
                                 <div class="nk-block-head nk-block-head-sm">
-                                    <div class="nk-block-between g-3">
+                                    <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Bed Allotment</h3>
-                                        </div>
-                                        <div class="nk-block-head-content">
-                                            <a data-bs-toggle="modal" href="#addInBed" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                            <a data-bs-toggle="modal" href="#addInBed" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Pataient</span></a>
+                                            <h3 class="nk-block-title page-title">Bed Group Lists</h3>
+                                            <div class="nk-block-des text-soft">
+                                                <p>You have total 7 types bed group.</p>
+                                            </div>
                                         </div><!-- .nk-block-head-content -->
-                                    </div>
+                                        <div class="nk-block-head-content">
+                                            <a data-bs-toggle="modal" href="#addBed" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                            <a data-bs-toggle="modal" href="#addBed" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Bed Group</span></a>
+                                        </div><!-- .nk-block-head-content -->
+                                    </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
                                 <div class="nk-block">
                                     <div class="card card-bordered card-stretch">
@@ -334,8 +332,8 @@
                                                             <div class="form-wrap w-150px">
                                                                 <select class="form-select js-select2" data-search="off" data-placeholder="Bulk Action">
                                                                     <option value="">Bulk Action</option>
-                                                                    <option value="change">Change Bed</option>
-                                                                    <option value="discharged">Discharged</option>
+                                                                    <option value="cstatus">Change Status</option>
+                                                                    <option value="delete">Delete</option>
                                                                 </select>
                                                             </div>
                                                             <div class="btn-wrap">
@@ -366,7 +364,7 @@
                                                                                     </a>
                                                                                     <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
                                                                                         <div class="dropdown-head">
-                                                                                            <span class="sub-title dropdown-title">Filter Allotment</span>
+                                                                                            <span class="sub-title dropdown-title">Filter Bed Type</span>
                                                                                             <div class="dropdown">
                                                                                                 <a href="#" class="btn btn-sm btn-icon">
                                                                                                     <em class="icon ni ni-more-h"></em>
@@ -377,36 +375,26 @@
                                                                                             <div class="row gx-6 gy-3">
                                                                                                 <div class="col-6">
                                                                                                     <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Group</label>
+                                                                                                        <label class="overline-title overline-title-alt">Type</label>
                                                                                                         <select class="form-select js-select2">
                                                                                                             <option value="any">Select</option>
+                                                                                                            <option value="FemaleWard">Female Ward</option>
+                                                                                                            <option value="Male Ward">Male Ward</option>
+                                                                                                            <option value="Cabin">Cabin</option>
                                                                                                             <option value="icu">ICU</option>
+                                                                                                            <option value="pacu">PACU</option>
                                                                                                             <option value="nicu">NICU</option>
-                                                                                                            <option value="ward">Ward</option>
-                                                                                                            <option value="cabin">Cabin</option>
                                                                                                         </select>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="col-6">
                                                                                                     <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Admit Date</label>
-                                                                                                        <div class="form-control-wrap">
-                                                                                                            <div class="form-icon form-icon-right">
-                                                                                                                <em class="icon ni ni-calendar"></em>
-                                                                                                            </div>
-                                                                                                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Discharge Date</label>
-                                                                                                        <div class="form-control-wrap">
-                                                                                                            <div class="form-icon form-icon-right">
-                                                                                                                <em class="icon ni ni-calendar"></em>
-                                                                                                            </div>
-                                                                                                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
-                                                                                                        </div>
+                                                                                                        <label class="overline-title overline-title-alt">Status</label>
+                                                                                                        <select class="form-select js-select2">
+                                                                                                            <option value="any">Any Status</option>
+                                                                                                            <option value="active">Active</option>
+                                                                                                            <option value="inactive">Inactive</option>
+                                                                                                        </select>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="col-12">
@@ -454,14 +442,14 @@
                                                     <div class="card-body">
                                                         <div class="search-content">
                                                             <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
-                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by bed name">
+                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by  bed name">
                                                             <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
                                                         </div>
                                                     </div>
                                                 </div><!-- .card-search -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner p-0">
-                                                <div class="nk-tb-list nk-tb-ulist">
+                                                <div class="nk-tb-list nk-tb-ulist is-compact">
                                                     <div class="nk-tb-item nk-tb-head">
                                                         <div class="nk-tb-col nk-tb-col-check">
                                                             <div class="custom-control custom-control-sm custom-checkbox notext">
@@ -469,11 +457,26 @@
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col"><span>No</span></div>
-                                                        <div class="nk-tb-col tb-col-sm"><span>Group</span></div>
-                                                        <div class="nk-tb-col tb-col-mb"><span>Patient</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span>Admit</span></div>
-                                                        <div class="nk-tb-col"><span>Discharge</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Icon</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Group</span></div>
+                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Capacity</span></div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px"><span class="sub-text">Description</span></div>
+                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Status</span></div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1 my-n1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger me-n1" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit Selected</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Seleted</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
@@ -483,27 +486,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">101</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">ICU</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm bg-primary">
-                                                                    <span>A</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Abu Bin Ishtiyak</span>
-                                                                    <span>UD01544</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">18/12/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/1.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">18/13/2020</span>
+                                                            <span class="fw-bold">Female Ward</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>40</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">A separate bed in a hospital, typically one allocated to a particular type of female patient.</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-success">Active</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -514,27 +526,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">102</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">NICU</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Amelia Grant</span>
-                                                                    <span>UD01489</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">20/12/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/2.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">24/12/2020</span>
+                                                            <span class="fw-bold">Male Ward</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>40</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">Separate bed in a hospital, typically one allocated to a particular type of male patient</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-success">Active</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -545,27 +566,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">201</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Ward</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Kristen Hawkins</span>
-                                                                    <span>UD01434</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">13/05/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/3.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">24/05/2020</span>
+                                                            <span class="fw-bold">Special Unit</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>30</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">A separate bed in a hospital, typically one allocated to a particular type of patient who need extra care.</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-success">Active</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -576,27 +606,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">201</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Ward</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm bg-purple-dim">
-                                                                    <span>T</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Tommy Vasquez</span>
-                                                                    <span>UD01286</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">13/05/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/4.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">15/05/2020</span>
+                                                            <span class="fw-bold">Cabin</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>25</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">A separate room in a hospital, typically one allocated to a particular type of patient.</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-danger">Inactive</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -607,27 +646,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">103</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">ICU</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm bg-teal-dim">
-                                                                    <span>A</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Alejandro Haynes</span>
-                                                                    <span>UD01235</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">13/05/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/5.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">--/--/----</span>
+                                                            <span class="fw-bold">ICU</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>10</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">An intensive care unit (ICU) is a special department of a hospital or healthcare facility that provides intensive care medicine.</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-success">Active</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -638,27 +686,36 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">304</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Cabin</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/d-sm.jpg')}}" alt="">
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Brooke Harmon</span>
-                                                                    <span>UD01223</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">16/05/2020</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/6.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">18/05/2020</span>
+                                                            <span class="fw-bold">PACU</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>15</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">The PACU is a critical care unit where the patient's vital signs are closely observed, pain management begins, and fluids are given.</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-status text-success">Active</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -669,134 +726,83 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="fw-medium">306</span>
+                                                            <span class="tb-thumb">
+                                                                <img src="{{asset('images/hospital/7.png')}}" alt="" class="thumb w-40px">
+                                                            </span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Cabin</span>
+                                                        <div class="nk-tb-col">
+                                                            <span class="fw-bold">NICU</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar  sm bg-gray">
-                                                                    <span>T</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Trevor Miller</span>
-                                                                    <span>UD01124</span>
-                                                                </div>
-                                                            </div>
+                                                            <span>20</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">18/05/2020</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">--/--/----</span>
-                                                        </div>
-                                                    </div><!-- .nk-tb-item -->
-                                                    <div class="nk-tb-item">
-                                                        <div class="nk-tb-col nk-tb-col-check">
-                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input" id="uid8">
-                                                                <label class="custom-control-label" for="uid8"></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="fw-medium">106</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">NICU</span>
+                                                        <div class="nk-tb-col tb-col-md w-max-250px">
+                                                            <span class="d-flex"><span class="text-ellipsis">When babies are born early, have health problems, or a difficult birth they go to the hospital's NICU</span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/c-sm.jpg')}}" alt="">
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Lonnie Ferguson</span>
-                                                                    <span>UD01120</span>
-                                                                </div>
-                                                            </div>
+                                                            <span class="tb-status text-success">Active</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">19/06/2020</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">22/06/2020</span>
-                                                        </div>
-                                                    </div><!-- .nk-tb-item -->
-                                                    <div class="nk-tb-item">
-                                                        <div class="nk-tb-col nk-tb-col-check">
-                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input" id="uid9">
-                                                                <label class="custom-control-label" for="uid9"></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="fw-medium">207</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Ward</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm bg-danger-dim">
-                                                                    <span>M</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Mack Kennedy</span>
-                                                                    <span>UD00954</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">20/06/2020</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">21/06/2020</span>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a data-bs-toggle="modal" href="#editBed"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
-                                                    <div class="nk-tb-item">
-                                                        <div class="nk-tb-col nk-tb-col-check">
-                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input" id="uid10">
-                                                                <label class="custom-control-label" for="uid10"></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="fw-medium">208</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-sm">
-                                                            <span class="tb-lead-sub">Ward</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <div class="user-card">
-                                                                <div class="user-avatar sm bg-warning">
-                                                                    <span>I</span>
-                                                                </div>
-                                                                <div class="user-info">
-                                                                    <span class="tb-lead">Inez Wilkerson</span>
-                                                                    <span>UD00472</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-date">22/06/2020</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">24/06/2020</span>
-                                                        </div>
-                                                    </div><!-- .nk-tb-item -->
-                                                </div>
+                                                </div><!-- .nk-tb-list -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner">
-                                                <ul class="pagination justify-content-center justify-content-md-start">
-                                                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                                </ul><!-- .pagination -->
+                                                <div class="nk-block-between-md g-3">
+                                                    <div class="g">
+                                                        <ul class="pagination justify-content-center justify-content-md-start">
+                                                            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                            <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                        </ul><!-- .pagination -->
+                                                    </div>
+                                                    <div class="g">
+                                                        <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
+                                                            <div>Page</div>
+                                                            <div>
+                                                                <select class="form-select js-select2" data-search="on" data-dropdown="xs center">
+                                                                    <option value="page-1">1</option>
+                                                                    <option value="page-2">2</option>
+                                                                    <option value="page-4">4</option>
+                                                                    <option value="page-5">5</option>
+                                                                    <option value="page-6">6</option>
+                                                                    <option value="page-7">7</option>
+                                                                    <option value="page-8">8</option>
+                                                                    <option value="page-9">9</option>
+                                                                    <option value="page-10">10</option>
+                                                                    <option value="page-11">11</option>
+                                                                    <option value="page-12">12</option>
+                                                                    <option value="page-13">13</option>
+                                                                    <option value="page-14">14</option>
+                                                                    <option value="page-15">15</option>
+                                                                    <option value="page-16">16</option>
+                                                                    <option value="page-17">17</option>
+                                                                    <option value="page-18">18</option>
+                                                                    <option value="page-19">19</option>
+                                                                    <option value="page-20">20</option>
+                                                                </select>
+                                                            </div>
+                                                            <div>OF 102</div>
+                                                        </div>
+                                                    </div><!-- .pagination-goto -->
+                                                </div><!-- .nk-block-between -->
                                             </div><!-- .card-inner -->
                                         </div><!-- .card-inner-group -->
                                     </div><!-- .card -->
@@ -935,174 +941,148 @@
             </div><!-- .modal-content -->
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
-    <!-- Add Patient-->
-    <div class="modal fade" tabindex="-1" role="dialog" id="addInBed">
+    <!-- Add Bed-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addBed">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
-                    <h5 class="modal-title">Add Patient</h5>
+                    <h5 class="modal-title">Add Bed</h5>
                     <form action="#" class="mt-4">
                         <div class="row g-gs">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="id">Patient Id (Registred Patient)</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="id" placeholder="Patient ID">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="name">Name</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="email">Email</label>
-                                    <div class="form-control-wrap">
-                                        <input type="email" class="form-control" id="email" placeholder="example@email.com">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="mobile">Mobile Number</label>
-                                    <div class="form-control-wrap">
-                                        <input type="number" class="form-control" id="mobile" placeholder="Mobile No.">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Gender</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select Gender">
-                                            <option value="">Select Gender</option>
-                                            <option value="option_select_sex">Male</option>
-                                            <option value="option_select_sex">Female</option>
-                                            <option value="option_select_sex">Others</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Bed Group</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select Bed">
-                                            <option value="">Select Bed Group</option>
-                                            <option value="option_select_bed">Male Ward - 1st Floor</option>
-                                            <option value="option_select_bed">Female Ward - 1st Floor</option>
-                                            <option value="option_select_bed">Private Ward - 2nd Floor</option>
-                                            <option value="option_select_bed">Cabin - 4th Floor</option>
-                                            <option value="option_select_bed">ICU - 3rd Floor</option>
-                                            <option value="option_select_bed">NICU - 3rd Floor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Bed Number</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select Bed Number">
-                                            <option value="">Select Bed Number</option>
-                                            <option value="option_select_bednum">101</option>
-                                            <option value="option_select_bednum">102</option>
-                                            <option value="option_select_bednum">103</option>
-                                            <option value="option_select_bednum">105</option>
-                                            <option value="option_select_bednum">201</option>
-                                            <option value="option_select_bednum">202</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Department</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select Department">
-                                            <option value="">Select Department</option>
-                                            <option value="option_select_department">Anesthesiology</option>
-                                            <option value="option_select_department">Allergy and immunology</option>
-                                            <option value="option_select_department">Cardiology</option>
-                                            <option value="option_select_department">Dermatology</option>
-                                            <option value="option_select_department">Diagnostic radiology</option>
-                                            <option value="option_select_department">Emergency medicine</option>
-                                            <option value="option_select_department">Neurology</option>
-                                            <option value="option_select_department">Obstetrics and gynecology</option>
-                                            <option value="option_select_department">Ophthalmology</option>
-                                            <option value="option_select_department">Pathology</option>
-                                            <option value="option_select_department">Pediatrics</option>
-                                            <option value="option_select_department">Psychiatry</option>
-                                            <option value="option_select_department">Surgery</option>
-                                            <option value="option_select_department">Urology</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Consulant By</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select Doctor">
-                                            <option value="">Select Doctor</option>
-                                            <option value="option_select_consulant">Ernesto Vargas</option>
-                                            <option value="option_select_consulant">Janet Snyder</option>
-                                            <option value="option_select_consulant">Amelia Grant</option>
-                                            <option value="option_select_consulant">Debra Grant</option>
-                                            <option value="option_select_consulant">Snyder Debra</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Test Reports</label>
+                                    <label class="form-label">Photo</label>
                                     <div class="form-control-wrap">
                                         <div class="form-file">
-                                            <input type="file" multiple class="form-file-input" id="testReport">
-                                            <label class="form-file-label" for="testReport">Choose files</label>
+                                            <input type="file" class="form-file-input" id="photo">
+                                            <label class="form-file-label" for="photo">Choose files</label>
                                         </div>
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Admit Date</label>
+                                    <label class="form-label" for="bed-type">Bed Type</label>
                                     <div class="form-control-wrap">
-                                        <div class="form-icon form-icon-right">
-                                            <em class="icon ni ni-calendar"></em>
-                                        </div>
-                                        <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
+                                        <input type="text" class="form-control" id="bed-type" placeholder="Bed Type">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Discharge Date</label>
+                                    <label class="form-label" for="capacity">Capacity</label>
                                     <div class="form-control-wrap">
-                                        <div class="form-icon form-icon-right">
-                                            <em class="icon ni ni-calendar"></em>
-                                        </div>
-                                        <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
+                                        <input type="text" class="form-control" id="capacity" placeholder="Capacity">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Status</label>
+                                    <div class="form-control-wrap">
+                                        <select class="form-select js-select2" data-placeholder="Select Status">
+                                            <option value="">Select</option>
+                                            <option value="option_select_status">Active</option>
+                                            <option value="option_select_status">Inactive</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description</label>
+                                    <div class="form-control-wrap">
+                                        <div class="quill-basic">
+                                            <p>Hello World!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-12">
                                 <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                     <li>
-                                        <button data-bs-dismiss="modal" class="btn btn-primary">Add Ptaient</button>
+                                        <a href="#" data-bs-dismiss="modal" class="btn btn-primary">Add Bed</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a>
+                                        <a href="#" data-bs-dismiss="modal" class="link link-light">Cancel</a>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- .modal-body -->
+            </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+    </div><!-- .modal -->
+    <!-- Edit Bed-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="editBed">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                <div class="modal-body modal-body-md">
+                    <h5 class="modal-title">Edit Bed</h5>
+                    <form action="#" class="mt-4">
+                        <div class="row g-gs">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Photo</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-file">
+                                            <input type="file" class="form-file-input" id="editPhoto">
+                                            <label class="form-file-label" for="editPhoto">Choose files</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="editBed-type">Bed Type</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="editBed-type" placeholder="Bed Type" value="Female Ward">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="editCapacity">Capacity</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="editCapacity" placeholder="Capacity" value="40">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Status</label>
+                                    <div class="form-control-wrap">
+                                        <select class="form-select js-select2" data-placeholder="Select Status">
+                                            <option value="">Select</option>
+                                            <option value="option_select_status">Active</option>
+                                            <option value="option_select_status">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description</label>
+                                    <div class="form-control-wrap">
+                                        <div class="quill-basic">
+                                            <p>A separate bed in a hospital, typically one allocated to a particular type of female patient.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-12">
+                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                    <li>
+                                        <a href="#" data-bs-dismiss="modal" class="btn btn-primary">Update</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-bs-dismiss="modal" class="link link-light">Cancel</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </form>
                 </div><!-- .modal-body -->
@@ -1113,6 +1093,9 @@
      <script src="{{asset('js/bundle.js')}}"></script>
     
     <script src="{{asset('js/scripts.js')}}"></script>
+    <link rel="stylesheet" href="./assets/css/editors/quill.css?ver=3.2.3">
+    <script src="./assets/js/libs/editors/quill.js?ver=3.2.3"></script>
+    <script src="./assets/js/editors.js?ver=3.2.3"></script>
 </body>
 
 </html>

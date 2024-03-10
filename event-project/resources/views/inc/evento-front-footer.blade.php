@@ -26,12 +26,12 @@
                     
                     <li class="my-1"><a href="find/online-events/index.html"
                             data-element-name="onlineEventsFooterLink" data-event-label="Online Events"
-                            class="ds-font-small cursor-pointer text-gray4 hover:text-white hover:no-underline">Online
+                            classck="ds-font-small cursor-pointer text-gray4 hover:text-white hover:no-underline">Online
                             Events</a></li>
                    
                 </ul>
             </nav>
-            <nav class="mb-3 w-1/3 ">Meetup<ul>
+            <nav class="mb-3 w-1/3 ">Evento<ul>
                     <li class="my-1"><a href="about/index.html" data-element-name="footer-about"
                             data-event-label="About"
                             class="ds-font-small cursor-pointer text-gray4 hover:text-white hover:no-underline">About</a>

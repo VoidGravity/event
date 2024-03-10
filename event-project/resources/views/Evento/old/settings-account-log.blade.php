@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Security Setting | DashLite Admin Template</title>
+    <title>Account Log | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -121,26 +121,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                               
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
@@ -241,23 +222,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                                    <span class="nk-menu-text">Monitor Hospital</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/birth-report')}}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/blood-bank')}}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/inventory-items')}}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                             
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
@@ -278,12 +243,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -320,94 +280,94 @@
                                                 <div class="nk-block-head nk-block-head-lg">
                                                     <div class="nk-block-between">
                                                         <div class="nk-block-head-content">
-                                                            <h5 class="title fw-medium">Security Settings</h5>
-                                                            <span>These settings are helps you keep your account secure.</span>
-                                                            <span class="text-success"><em class="icon ni ni-shield-check"></em></span>
-                                                        </div><!-- .nk-block-head-content -->
+                                                            <h5 class="title fw-medium">Account Activity</h5>
+                                                            <div class="nk-block-des">
+                                                                <p>Here is your last 20 login activities log. <span class="text-soft"><em class="icon ni ni-info text-danger"></em></span></p>
+                                                            </div>
+                                                        </div>
                                                         <div class="nk-block-head-content align-self-start d-lg-none">
                                                             <a href="#" class="toggle btn btn-icon btn-trigger mt-n1" data-target="userAside"><em class="icon ni ni-menu-alt-r"></em></a>
                                                         </div>
-                                                    </div><!-- .nk-block-between -->
+                                                    </div>
                                                 </div><!-- .nk-block-head -->
-                                                <div class="nk-block">
-                                                    <div class="card card-bordered">
-                                                        <div class="card-inner-group">
-                                                            <div class="card-inner">
-                                                                <div class="between-center flex-wrap flex-md-nowrap g-3">
-                                                                    <div class="nk-block-text">
-                                                                        <h6>Save my Activity Logs</h6>
-                                                                        <p>You can save your all activity logs including unusual activity detected.</p>
-                                                                    </div>
-                                                                    <div class="nk-block-actions">
-                                                                        <ul class="align-center gx-3">
-                                                                            <li class="order-md-last">
-                                                                                <div class="custom-control custom-switch me-n2">
-                                                                                    <input type="checkbox" class="custom-control-input" checked="" id="activity-log">
-                                                                                    <label class="custom-control-label" for="activity-log"></label>
-                                                                                </div>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- .card-inner -->
-                                                            <div class="card-inner">
-                                                                <div class="between-center flex-wrap g-3">
-                                                                    <div class="nk-block-text">
-                                                                        <h6>Change Password</h6>
-                                                                        <p>Set a unique password to protect your account.</p>
-                                                                    </div>
-                                                                    <div class="nk-block-actions flex-shrink-sm-0">
-                                                                        <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
-                                                                            <li class="order-md-last">
-                                                                                <a href="#" class="btn btn-primary">Change Password</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <em class="text-soft text-date fs-12px">Last changed: <span>Oct 2, 2019</span></em>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- .card-inner -->
-                                                            <div class="card-inner">
-                                                                <div class="between-center flex-wrap flex-md-nowrap g-3">
-                                                                    <div class="nk-block-text">
-                                                                        <h6>2 Factor Auth &nbsp; <span class="badge bg-success ms-0">Enabled</span></h6>
-                                                                        <p>Secure your account with 2FA security. When it is activated you will need to enter not only your password, but also a special code using app. You can receive this code by in mobile app. </p>
-                                                                    </div>
-                                                                    <div class="nk-block-actions">
-                                                                        <a href="#" class="btn btn-primary">Disable</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- .card-inner -->
-                                                            <div class="card-inner">
-                                                                <div class="between-center flex-wrap g-3">
-                                                                    <div class="nk-block-text">
-                                                                        <h6>Auto Logout</h6>
-                                                                        <p>Set a auto logout time to disconnect your account from all sessions.</p>
-                                                                    </div>
-                                                                    <div class="nk-block-actions flex-shrink-sm-0">
-                                                                        <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
-                                                                            <li class="order-md-last">
-                                                                                <a href="#" class="btn btn-primary">Update</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- .card-inner -->
-                                                            <div class="card-inner">
-                                                                <div class="between-center flex-wrap flex-md-nowrap g-3">
-                                                                    <div class="nk-block-text">
-                                                                        <h6>Turn on login alerts <span class="badge bg-success ms-0">Enabled</span></h6>
-                                                                        <p>Be notified if anyone logs in account from unknown or new device</p>
-                                                                    </div>
-                                                                    <div class="nk-block-actions">
-                                                                        <a href="#" class="btn btn-primary">Disable</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- .card-inner -->
-                                                        </div>
-                                                    </div><!-- .card -->
-                                                </div><!-- .nk-block -->
+                                                <div class="nk-block card card-bordered">
+                                                    <table class="table table-ulogs">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th class="tb-col-os"><span class="overline-title">Browser <span class="d-sm-none">/ IP</span></span></th>
+                                                                <th class="tb-col-ip"><span class="overline-title">IP</span></th>
+                                                                <th class="tb-col-time"><span class="overline-title">Time</span></th>
+                                                                <th class="tb-col-time"><span class="overline-title">Activity</span></th>
+                                                                <th class="tb-col-action"><span class="overline-title">&nbsp;</span></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Mozilla on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on iMac</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Mozilla on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on iMac</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Mozilla on Window</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tb-col-os">Chrome on iMac</td>
+                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
+                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
+                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div><!-- .nk-block-head -->
                                             </div><!-- .card-inner -->
                                             <div class="card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg" data-content="userAside" data-toggle-screen="lg" data-toggle-overlay="true">
                                                 <div class="card-inner-group" data-simplebar>
@@ -422,8 +382,8 @@
                                                             <li><a href="{{route('Evento/settings')}}"><em class="icon ni ni-user-fill-c"></em><span>General</span></a></li>
                                                             <li><a href="{{route('Evento/settings-member')}}"><em class="icon ni ni-bell-fill"></em><span>Users</span></a></li>
                                                             <li><a href="{{route('Evento/settings-email')}}"><em class="icon ni ni-lock-alt-fill"></em><span>E-mail</span></a></li>
-                                                            <li><a class="active" href="{{route('Evento/settings-security')}}"><em class="icon ni ni-shield-star-fill"></em><span>Security</span></a></li>
-                                                            <li><a href="{{route('Evento/settings-account-log')}}"><em class="icon ni ni-activity-round-fill"></em><span>Account activity</span></a></li>
+                                                            <li><a href="{{route('Evento/settings-security')}}"><em class="icon ni ni-shield-star-fill"></em><span>Security</span></a></li>
+                                                            <li><a class="active" href="{{route('Evento/settings-account-log')}}"><em class="icon ni ni-activity-round-fill"></em><span>Account activity</span></a></li>
                                                         </ul>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .card-inner-group -->

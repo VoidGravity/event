@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Death List | DashLite Admin Template</title>
+    <title>Birth List | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -121,26 +121,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                               
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
@@ -278,12 +259,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -316,11 +292,11 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between g-3">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Death Report</h3>
+                                            <h3 class="nk-block-title page-title">Birth Report</h3>
                                         </div>
                                         <div class="nk-block-head-content">
-                                            <a data-bs-toggle="modal" href="#addDeath" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                            <a data-bs-toggle="modal" href="#addDeath" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Death Report</span></a>
+                                            <a data-bs-toggle="modal" href="#addBirth" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                            <a data-bs-toggle="modal" href="#addBirth" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Birth Report</span></a>
                                         </div><!-- .nk-block-head-content -->
                                     </div>
                                 </div><!-- .nk-block-head -->
@@ -334,7 +310,8 @@
                                                             <div class="form-wrap w-150px">
                                                                 <select class="form-select js-select2" data-search="off" data-placeholder="Bulk Action">
                                                                     <option value="">Bulk Action</option>
-                                                                    <option value="delete">Delete</option>
+                                                                    <option value="delete">Delete Selected</option>
+                                                                    <option value="edit">Edit Selected</option>
                                                                 </select>
                                                             </div>
                                                             <div class="btn-wrap">
@@ -385,6 +362,16 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="col-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="overline-title overline-title-alt">Type</label>
+                                                                                                        <select class="form-select js-select2">
+                                                                                                            <option value="any">Select</option>
+                                                                                                            <option value="normal">Normal</option>
+                                                                                                            <option value="cesarean">Cesarean Section</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-12">
                                                                                                     <div class="form-group">
                                                                                                         <label class="overline-title overline-title-alt">Date</label>
                                                                                                         <div class="form-control-wrap">
@@ -455,8 +442,10 @@
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col"><span>Patient</span></div>
+                                                        <div class="nk-tb-col"><span>Child Name</span></div>
                                                         <div class="nk-tb-col tb-col-mb"><span class="sub-text">Gender</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Mother Name</span></div>
+                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Father Name</span></div>
                                                         <div class="nk-tb-col"><span>Date</span></div>
                                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Report</span></div>
                                                     </div><!-- .nk-tb-item -->
@@ -474,18 +463,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">John Marshall</span>
-                                                                    <span>UD01544</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Dabby Marshall</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Jack Marshall</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">18/12/2020</span>
+                                                            <span class="tb-date">18/12/2020 04:21 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death Due To Fever.</span>
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -497,23 +491,28 @@
                                                         </div>
                                                         <div class="nk-tb-col">
                                                             <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/a-sm.jpg')}}" alt="">
+                                                                <div class="user-avatar sm bg-danger-dim">
+                                                                    <span>A</span>
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Ashley Lawson</span>
-                                                                    <span>UD01489</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Jacky Lawson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Clacrk Lawson</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">19/12/2020</span>
+                                                            <span class="tb-date">19/12/2020 02:55 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death due to Blood Clute.</span>
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -525,23 +524,28 @@
                                                         </div>
                                                         <div class="nk-tb-col">
                                                             <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/b-sm.jpg')}}" alt="">
+                                                                <div class="user-avatar sm bg-danger-dim">
+                                                                    <span>K</span>
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Kristen Hawkins</span>
-                                                                    <span>UD01434</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Jacky Hawkins</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>John Lawson</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">21/12/2020</span>
+                                                            <span class="tb-date">20/12/2020 03:01 AM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Due to serious case.</span>
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -558,18 +562,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Tommy Vasquez</span>
-                                                                    <span>UD01286</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Dabby Vasquez</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Nolan Vasquez</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">22/12/2020</span>
+                                                            <span class="tb-date">22/12/2020 04:10 AM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death due to viral fever.</span>
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -586,18 +595,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Alejandro Haynes</span>
-                                                                    <span>UD01235</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Female</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Dobrah Haynes</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Zack Vasquez</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">22/12/2020</span>
+                                                            <span class="tb-date">23/12/2020 04:10 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Due to corona infected.</span>
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -609,23 +623,28 @@
                                                         </div>
                                                         <div class="nk-tb-col">
                                                             <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/d-sm.jpg')}}" alt="">
+                                                                <div class="user-avatar sm bg-warning-dim">
+                                                                    <span>B</span>
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Brooke Harmon</span>
-                                                                    <span>UD01223</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
-                                                            <span>Male</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">23/12/2020</span>
+                                                            <span>Female</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death due to Blood Clute.</span>
+                                                            <span>Marry Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Nolan Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="tb-date">24/12/2020 06:25 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -642,18 +661,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Trevor Miller</span>
-                                                                    <span>UD01124</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
-                                                            <span>Female</span>
-                                                        </div>
-                                                        <div class="nk-tb-col">
-                                                            <span class="tb-date">23/12/2020</span>
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Due to unsafe water accounted.</span>
+                                                            <span>Jarry Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Dabid Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="tb-date">25/12/2020 07:40 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -665,23 +689,28 @@
                                                         </div>
                                                         <div class="nk-tb-col">
                                                             <div class="user-card">
-                                                                <div class="user-avatar sm">
-                                                                    <img src="{{asset('images/avatar/c-sm.jpg')}}" alt="">
+                                                                <div class="user-avatar sm bg-teal-dim">
+                                                                    <span>LF</span>
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Lonnie Ferguson</span>
-                                                                    <span>UD01120</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Female</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Jacky Ferguson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Jhon Ferguson</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">24/12/2020</span>
+                                                            <span class="tb-date">25/12/2020 08:00 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Due to serious case.</span>
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -698,18 +727,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Mack Kennedy</span>
-                                                                    <span>UD00954</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Jarry Kennedy</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Zack Kennedy</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">25/12/2020</span>
+                                                            <span class="tb-date">26/12/2020 07:21 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death Due To Fever.</span>
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -726,18 +760,23 @@
                                                                 </div>
                                                                 <div class="user-info">
                                                                     <span class="tb-lead">Inez Wilkerson</span>
-                                                                    <span>UD00472</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb">
                                                             <span>Male</span>
                                                         </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Margot Wilkerson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Ezra Wilkerson</span>
+                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-date">26/12/2020</span>
+                                                            <span class="tb-date">26/12/2020 07:30 PM</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Death due to viral fever.</span>
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                 </div>
@@ -890,8 +929,8 @@
             </div><!-- .modal-content -->
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
-    <!-- Add Death Report-->
-    <div class="modal fade" tabindex="-1" role="dialog" id="addDeath">
+    <!-- Add Birth Report-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addBirth">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
@@ -901,9 +940,78 @@
                         <div class="row g-gs">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="name">Patient Name</label>
+                                    <label class="form-label" for="childName">Child Name</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="name" placeholder="Patient Name">
+                                        <input type="text" class="form-control" id="childName" placeholder="Child Name">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <div class="form-control-wrap">
+                                        <select class="form-select js-select2" data-placeholder="Select Gender">
+                                            <option value="">Select</option>
+                                            <option value="option_select_sex">Male</option>
+                                            <option value="option_select_sex">Female</option>
+                                            <option value="option_select_sex">Others</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="weight">Weight</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="weight" placeholder="Weight">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Birth Date</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-icon form-icon-right">
+                                            <em class="icon ni ni-calendar"></em>
+                                        </div>
+                                        <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Blood Group</label>
+                                    <div class="form-control-wrap">
+                                        <select class="form-select js-select2" data-placeholder="Select Group">
+                                            <option value="">Select</option>
+                                            <option value="option_select_blood">A+</option>
+                                            <option value="option_select_blood">A-</option>
+                                            <option value="option_select_blood">AB+</option>
+                                            <option value="option_select_blood">AB-</option>
+                                            <option value="option_select_blood">B+</option>
+                                            <option value="option_select_blood">B-</option>
+                                            <option value="option_select_blood">O+</option>
+                                            <option value="option_select_blood">O-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Upload Photo</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-file">
+                                            <input type="file" multiple class="form-file-input" id="customFile">
+                                            <label class="form-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="motherName">Mother Name</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="motherName" placeholder="Mother Name">
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -917,58 +1025,23 @@
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Death Date</label>
+                                    <label class="form-label" for="fatherName">Father Name</label>
                                     <div class="form-control-wrap">
-                                        <div class="form-icon form-icon-right">
-                                            <em class="icon ni ni-calendar"></em>
-                                        </div>
-                                        <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
+                                        <input type="text" class="form-control" id="fatherName" placeholder="Father Name">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="guardianName">Guardian Name</label>
+                                    <label class="form-label" for="number">Mobile Number</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="guardianName" placeholder="Guardian Name">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="number">Guardian Phone</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="number" placeholder="Guardian Phone">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="receiverName">Receiver Name</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="receiverName" placeholder="Receiver Name">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="receiverNumber">Receiver Phone</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="receiverNumber" placeholder="Receiver Phone">
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="receiverAddress">Receiver Address</label>
-                                    <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="receiverAddress" placeholder="Receiver Address">
+                                        <input type="text" class="form-control" id="number" placeholder="Mobile Number">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-label">Report</label>
+                                    <label class="form-label">Description</label>
                                     <div class="form-control-wrap">
                                         <div class="quill-basic">
                                             <p>Hello World!</p>
@@ -979,7 +1052,7 @@
                             <div class="col-12">
                                 <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                     <li>
-                                        <button data-bs-dismiss="modal" class="btn btn-primary">Add Death Report</button>
+                                        <button data-bs-dismiss="modal" class="btn btn-primary">Add Birth Report</button>
                                     </li>
                                     <li>
                                         <a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a>

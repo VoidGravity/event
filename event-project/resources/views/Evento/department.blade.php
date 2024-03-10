@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Department List | DashLite Admin Template</title>
+    <title>Category List</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -121,26 +121,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                               
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
@@ -172,126 +153,8 @@
                             </li><!-- .nk-menu-item -->
                         </ul><!-- .nk-menu -->
                     </div>
-                    <div class="nk-menu-content menu-active" data-content="navHospital">
-                        <h5 class="title">Hospital Manegment</h5>
-                        <ul class="nk-menu">
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/index')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                                    <span class="nk-menu-text">Dashboard</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/appointment')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-note-add-fill"></em></span>
-                                    <span class="nk-menu-text">Appointment List</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
-                                    <span class="nk-menu-text">Event</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Event</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-list')}}" class="nk-menu-link"><span class="nk-menu-text">IPD / OPD Patients</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-profile')}}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-plus-medi-fill"></em></span>
-                                    <span class="nk-menu-text">Doctors / Nurses</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Doctor / Nurses</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expense</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                                    <span class="nk-menu-text">Monitor Hospital</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/birth-report')}}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/blood-bank')}}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/inventory-items')}}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
-                                    <span class="nk-menu-text">Misc Pages</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-group')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Group</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-allotment')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Allotment</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/department')}}" class="nk-menu-link"><span class="nk-menu-text">Department</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/death-report')}}" class="nk-menu-link"><span class="nk-menu-text">Death Report</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/settings')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
-                                    <span class="nk-menu-text">Setting</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                        </ul><!-- .nk-menu -->
-                    </div>
+                    @include('inc.sidebar')
+
                     
                     
                     
@@ -316,9 +179,8 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Department Lists</h3>
+                                            <h3 class="nk-block-title page-title">Category list</h3>
                                             <div class="nk-block-des text-soft">
-                                                <p>You have total 12 departments.</p>
                                             </div>
                                         </div><!-- .nk-block-head-content -->
                                         <div class="nk-block-head-content">
@@ -330,129 +192,6 @@
                                     <div class="card card-bordered card-stretch">
                                         <div class="card-inner-group">
                                             
-                                            <div class="card-inner position-relative card-tools-toggle">
-                                                <div class="card-title-group">
-                                                    <div class="card-tools">
-                                                        <div class="form-inline flex-nowrap gx-3">
-                                                            <div class="form-wrap w-150px">
-                                                                <select class="form-select js-select2" data-search="off" data-placeholder="Bulk Action">
-                                                                    <option value="">Bulk Action</option>
-                                                                    <option value="cstatus">Change Status</option>
-                                                                    <option value="delete">Delete</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="btn-wrap">
-                                                                <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light disabled">Apply</button></span>
-                                                                <span class="d-md-none"><button class="btn btn-dim btn-outline-light btn-icon disabled"><em class="icon ni ni-arrow-right"></em></button></span>
-                                                            </div>
-                                                        </div><!-- .form-inline -->
-                                                    </div><!-- .card-tools -->
-                                                    <div class="card-tools me-n1">
-                                                        <ul class="btn-toolbar gx-1">
-                                                            <li>
-                                                                <a href="#" class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
-                                                            </li><!-- li -->
-                                                            <li class="btn-toolbar-sep"></li><!-- li -->
-                                                            <li>
-                                                                <div class="toggle-wrap">
-                                                                    <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-menu-right"></em></a>
-                                                                    <div class="toggle-content" data-content="cardTools">
-                                                                        <ul class="btn-toolbar gx-1">
-                                                                            <li class="toggle-close">
-                                                                                <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-arrow-left"></em></a>
-                                                                            </li><!-- li -->
-                                                                            <li>
-                                                                                <div class="dropdown">
-                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                                        <div class="dot dot-primary"></div>
-                                                                                        <em class="icon ni ni-filter-alt"></em>
-                                                                                    </a>
-                                                                                    <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
-                                                                                        <div class="dropdown-head">
-                                                                                            <span class="sub-title dropdown-title">Filter Department</span>
-                                                                                            <div class="dropdown">
-                                                                                                <a href="#" class="btn btn-sm btn-icon">
-                                                                                                    <em class="icon ni ni-more-h"></em>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="dropdown-body dropdown-body-rg">
-                                                                                            <div class="row gx-6 gy-3">
-                                                                                                <div class="col-6">
-                                                                                                    <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Department</label>
-                                                                                                        <select class="form-select js-select2">
-                                                                                                            <option value="any">Departments</option>
-                                                                                                            <option value="medicine">Medicine</option>
-                                                                                                            <option value="gastroenterology">Gastroenterology</option>
-                                                                                                            <option value="cardiology">Cardiology</option>
-                                                                                                            <option value="orthopaedics">Orthopaedics</option>
-                                                                                                            <option value="neurology">Neurology</option>
-                                                                                                            <option value="urology">Urology</option>
-                                                                                                        </select>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-6">
-                                                                                                    <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Status</label>
-                                                                                                        <select class="form-select js-select2">
-                                                                                                            <option value="any">Any Status</option>
-                                                                                                            <option value="active">Active</option>
-                                                                                                            <option value="inactive">Inactive</option>
-                                                                                                        </select>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <button type="button" class="btn btn-secondary">Filter</button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="dropdown-foot between">
-                                                                                            <a class="clickable" href="#">Reset Filter</a>
-                                                                                            <a href="#">Save Filter</a>
-                                                                                        </div>
-                                                                                    </div><!-- .filter-wg -->
-                                                                                </div><!-- .dropdown -->
-                                                                            </li><!-- li -->
-                                                                            <li>
-                                                                                <div class="dropdown">
-                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                                        <em class="icon ni ni-setting"></em>
-                                                                                    </a>
-                                                                                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                                                                        <ul class="link-check">
-                                                                                            <li><span>Show</span></li>
-                                                                                            <li class="active"><a href="#">10</a></li>
-                                                                                            <li><a href="#">20</a></li>
-                                                                                            <li><a href="#">50</a></li>
-                                                                                        </ul>
-                                                                                        <ul class="link-check">
-                                                                                            <li><span>Order</span></li>
-                                                                                            <li class="active"><a href="#">DESC</a></li>
-                                                                                            <li><a href="#">ASC</a></li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div><!-- .dropdown -->
-                                                                            </li><!-- li -->
-                                                                        </ul><!-- .btn-toolbar -->
-                                                                    </div><!-- .toggle-content -->
-                                                                </div><!-- .toggle-wrap -->
-                                                            </li><!-- li -->
-                                                        </ul><!-- .btn-toolbar -->
-                                                    </div><!-- .card-tools -->
-                                                </div><!-- .card-title-group -->
-                                                <div class="card-search search-wrap" data-search="search">
-                                                    <div class="card-body">
-                                                        <div class="search-content">
-                                                            <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
-                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by  department name">
-                                                            <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- .card-search -->
-                                            </div><!-- .card-inner -->
                                             
                                             <div class="card-inner p-0">
                                                 <div class="nk-tb-list nk-tb-ulist">

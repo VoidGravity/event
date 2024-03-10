@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use PDF;
-
+// define('PAGINATE_NUMBER', 4);
 class EventoController extends Controller
 {
     /**
@@ -40,8 +40,12 @@ class EventoController extends Controller
     }
     public function downloadPDF($id)
     {
-        $Reservation = Reservation::find($id)->with('event')->first();
+        
+        
+        $Reservation = Reservation::with('event')->find($id);
+        // $event = Event::find($Reservation->event_id);
         $imagePath = public_path('EventImages/' . $Reservation->event->image);
+        // dd($Reservation);
         $type = pathinfo($imagePath, PATHINFO_EXTENSION);
         // convert image to base64
         $data = file_get_contents($imagePath);
@@ -65,7 +69,7 @@ class EventoController extends Controller
                         'name' => $name,
 
                     ],
-                    'unit_amount' => 100,
+                    'unit_amount' => $price*10,
                 ],
                 'quantity' => 1,
             ]],
@@ -94,11 +98,13 @@ class EventoController extends Controller
 
 
         if ($request->has('location') && $request->location != null) {
-            $event = Event::where('location', 'like', '%' . $request->location . '%')->with('category')->get();
+            $event = Event::where('location', 'like', '%' . $request->location . '%')->with('category')->paginate(env('PAGINATE_NUMBER'));
+            
         } elseif ($request->has('start_date') && $request->start_date != null) {
-            $event = Event::where('start_date', 'like', '%' . $request->start_date . '%')->with('category')->get();
+            $event = Event::where('start_date', 'like', '%' . $request->start_date . '%')->with('category')->paginate(env('PAGINATE_NUMBER'));
+            
         } elseif ($request->has('category_id') && $request->categories != null) {
-            $event = Event::where('category_id', $request->categories)->with('category')->get();
+            $event = Event::where('category_id', $request->categories)->with('category')->paginate(env('PAGINATE_NUMBER'));
         }
 
         return view('front/events', compact('event'));
@@ -112,7 +118,7 @@ class EventoController extends Controller
     public function showLanding()
     {
         //with pagination
-        $event = Event::with('category')->paginate(16);
+        $event = Event::with('category')->paginate(env('PAGINATE_NUMBER'));
 
 
         return view('front/events', compact('event'));
@@ -426,13 +432,13 @@ class EventoController extends Controller
 
         $event = Event::where('title', 'like', '%' . $request->title . '%')
             ->with('category')
-            ->paginate(16);
+            ->paginate(env('PAGINATE_NUMBER'));
 
         if ($request->has('start_date') && $request->start_date != null) {
             $event = Event::where('title', 'like', '%' . $request->title . '%')
                 ->orWhere('start_date', 'like', '%' . $request->start_date . '%')
                 ->with('category')
-                ->paginate(16);
+                ->paginate(env('PAGINATE_NUMBER'));
         }
         return view('front/events', compact('event'));
     }

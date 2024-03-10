@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Add Doctor - Hospital Manegment | DashLite Admin Template</title>
+    <title>Email Setting | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -121,26 +121,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expence</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                               
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
@@ -241,23 +222,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                                    <span class="nk-menu-text">Monitor Hospital</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/birth-report')}}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/blood-bank')}}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/inventory-items')}}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
+                             
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
@@ -278,12 +243,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -313,202 +273,128 @@
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
-                                <div class="nk-block-head nk-block-head-sm">
-                                    <div class="nk-block-between">
-                                        <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Add Doctor/Nurse</h3>
-                                        </div><!-- .nk-block-head-content -->
-                                    </div><!-- .nk-block-between -->
-                                </div><!-- .nk-block-head -->
                                 <div class="nk-block">
                                     <div class="card card-bordered">
-                                        <div class="card-inner">
-                                            <div class="row gy-4">
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="first-name">First Name</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="first-name" placeholder="First Name" required>
+                                        <div class="card-aside-wrap">
+                                            <div class="card-inner card-inner-lg">
+                                                <div class="nk-block-head nk-block-head-lg">
+                                                    <div class="nk-block-between">
+                                                        <div class="nk-block-head-content">
+                                                            <h5 class="nk-block-title">E-mail settings</h5>
+                                                            <span>These settings are helps you modify your e-mail.</span>
+                                                        </div><!-- .nk-block-head-content -->
+                                                        <div class="nk-block-head-content align-self-start d-lg-none">
+                                                            <a href="#" class="toggle btn btn-icon btn-trigger mt-n1" data-target="userAside"><em class="icon ni ni-menu-alt-r"></em></a>
                                                         </div>
                                                     </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="last-name">Last Name</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Gender</label>
-                                                        <div class="form-control-wrap">
-                                                            <select class="form-select js-select2" data-placeholder="Select Gender">
-                                                                <option value="">Select Gender</option>
-                                                                <option value="option_select_gender">Male</option>
-                                                                <option value="option_select_gender">Female</option>
-                                                                <option value="option_select_gender">Other</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Date of Birth</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-icon form-icon-right">
-                                                                <em class="icon ni ni-calendar"></em>
+                                                </div><!-- .nk-block-head -->
+                                                <div class="nk-block">
+                                                    <form action="#" class="gy-3 form-settings">
+                                                        <div class="row g-3 align-center">
+                                                            <div class="col-lg-5">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="site-name">Email</label>
+                                                                    <span class="form-note">Specify the email of your hospital.</span>
+                                                                </div>
                                                             </div>
-                                                            <input type="text" class="form-control date-picker-alt" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="phone-no">Phone</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="number" class="form-control" id="phone-no" placeholder="Phone no">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="email">Email</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="email" class="form-control" id="email" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="password">Password</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="password" class="form-control" id="password" placeholder="Password">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Adddress</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="address" placeholder="Address">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Designation</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="designation" placeholder="Designation">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Department</label>
-                                                        <div class="form-control-wrap">
-                                                            <select class="form-select js-select2" data-placeholder="Select Department">
-                                                                <option value="">Select</option>
-                                                                <option value="default_option">Allergy and immunology</option>
-                                                                <option value="option_select_department">Anesthesiology</option>
-                                                                <option value="option_select_department">Cardiology</option>
-                                                                <option value="option_select_department">Dermatology</option>
-                                                                <option value="option_select_department">Diagnostic radiology</option>
-                                                                <option value="option_select_department">Emergency medicine</option>
-                                                                <option value="option_select_department">Neurology</option>
-                                                                <option value="option_select_department">Obstetrics and gynecology</option>
-                                                                <option value="option_select_department">Ophthalmology</option>
-                                                                <option value="option_select_department">Pathology</option>
-                                                                <option value="option_select_department">Pediatrics</option>
-                                                                <option value="option_select_department">Psychiatry</option>
-                                                                <option value="option_select_department">Surgery</option>
-                                                                <option value="option_select_department">Urology</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Specialist</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="specialist" placeholder="Specialist">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Upload Photo</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-file">
-                                                                <input type="file" multiple class="form-file-input" id="customFile">
-                                                                <label class="form-file-label" for="customFile">Choose file</label>
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="site-name" value="info@softnio.com">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">National ID</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-file">
-                                                                <input type="file" multiple class="form-file-input" id="nid">
-                                                                <label class="form-file-label" for="nid">Choose file</label>
+                                                        <div class="row g-3 align-center">
+                                                            <div class="col-lg-5">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="site-email">Password</label>
+                                                                    <span class="form-note">Specify the email password.</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="site-email" value="Nio35@**">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Certificates</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-file">
-                                                                <input type="file" multiple class="form-file-input" id="certificates">
-                                                                <label class="form-file-label" for="certificates">Choose files</label>
+                                                        <div class="row g-3 align-center">
+                                                            <div class="col-lg-5">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="site-copyright">SMTP Host</label>
+                                                                    <span class="form-note">Specify the SMTP host of your email address.</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="site-copyright" value="https://www.softnio.com">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Joining Date</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-icon form-icon-right">
-                                                                <em class="icon ni ni-calendar"></em>
+                                                        <div class="row g-3 align-center">
+                                                            <div class="col-lg-5">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">SMTP Port</label>
+                                                                    <span class="form-note">Specify the email SMTP port.</span>
+                                                                </div>
                                                             </div>
-                                                            <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-xxl-3 col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Status</label>
-                                                        <div class="form-control-wrap">
-                                                            <select class="form-select js-select2">
-                                                                <option value="default_option">Active</option>
-                                                                <option value="option_select_status">Inactive</option>
-                                                                <option value="option_select_status">Pending</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Short Biography</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="quill-basic">
-                                                                <p>Hello World!</p>
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="site-port" value="921">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!--col-->
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary">Add Doctor/Nurse</button>
-                                                    </div>
-                                                </div><!--col-->
-                                            </div><!--row-->
-                                        </div><!-- .card-inner-group -->
+                                                        <div class="row g-3 align-center">
+                                                            <div class="col-lg-5">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">SMTP Encryption</label>
+                                                                    <span class="form-note">Specify the encryption of your hospital email.</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" name="site-url" value="ITS">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row g-3">
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group mt-2">
+                                                                    <button type="submit" class="btn btn-lg btn-primary">Update</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div><!-- .nk-block-head -->
+                                            </div><!-- .card-inner -->
+                                            <div class="card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg" data-content="userAside" data-toggle-screen="lg" data-toggle-overlay="true">
+                                                <div class="card-inner-group" data-simplebar>
+                                                    <div class="card-inner">
+                                                        <h3 class="nk-block-title page-title">Settings</h3>
+                                                        <div class="nk-block-des text-soft">
+                                                            <p>Here you can change and edit your needs</p>
+                                                        </div>
+                                                    </div><!-- .card-inner -->
+                                                    <div class="card-inner p-0">
+                                                        <ul class="link-list-menu">
+                                                            <li><a href="{{route('Evento/settings')}}"><em class="icon ni ni-user-fill-c"></em><span>General</span></a></li>
+                                                            <li><a href="{{route('Evento/settings-member')}}"><em class="icon ni ni-bell-fill"></em><span>Users</span></a></li>
+                                                            <li><a class="active" href="{{route('Evento/settings-email')}}"><em class="icon ni ni-lock-alt-fill"></em><span>E-mail</span></a></li>
+                                                            <li><a href="{{route('Evento/settings-security')}}"><em class="icon ni ni-shield-star-fill"></em><span>Security</span></a></li>
+                                                            <li><a href="{{route('Evento/settings-account-log')}}"><em class="icon ni ni-activity-round-fill"></em><span>Account activity</span></a></li>
+                                                        </ul>
+                                                    </div><!-- .card-inner -->
+                                                </div><!-- .card-inner-group -->
+                                            </div><!-- card-aside -->
+                                        </div><!-- card-aside-wrap -->
                                     </div><!-- .card -->
                                 </div><!-- .nk-block -->
                             </div>
@@ -649,9 +535,6 @@
      <script src="{{asset('js/bundle.js')}}"></script>
     
     <script src="{{asset('js/scripts.js')}}"></script>
-    <link rel="stylesheet" href="./assets/css/editors/quill.css?ver=3.2.3">
-    <script src="./assets/js/libs/editors/quill.js?ver=3.2.3"></script>
-    <script src="./assets/js/editors.js?ver=3.2.3"></script>
 </body>
 
 </html>

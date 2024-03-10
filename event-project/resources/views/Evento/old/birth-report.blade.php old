@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Expense List | DashLite Admin Template</title>
+    <title>Birth List | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -278,12 +278,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -314,136 +309,36 @@
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
                                 <div class="nk-block-head nk-block-head-sm">
-                                    <div class="nk-block-between">
+                                    <div class="nk-block-between g-3">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Expense</h3>
-                                        </div><!-- .nk-block-head-content -->
+                                            <h3 class="nk-block-title page-title">Birth Report</h3>
+                                        </div>
                                         <div class="nk-block-head-content">
-                                            <div class="toggle-wrap nk-block-tools-toggle">
-                                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
-                                                <div class="toggle-expand-content" data-content="pageMenu">
-                                                    <ul class="nk-block-tools g-3">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span><span class="d-none d-md-inline"></span>Filtered By</span></a>
-                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><span>Last 7 Days</span></a></li>
-                                                                        <li><a href="#"><span>Last 30 Days</span></a></li>
-                                                                        <li><a href="#"><span>Last 6 Month</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="nk-block-tools-opt">
-                                                            <a data-bs-toggle="modal" class="btn btn-primary" href="#addExpense"><em class="icon ni ni-plus"></em><span>Add Expense</span></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- .toggle-wrap -->
+                                            <a data-bs-toggle="modal" href="#addBirth" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                            <a data-bs-toggle="modal" href="#addBirth" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Birth Report</span></a>
                                         </div><!-- .nk-block-head-content -->
-                                    </div><!-- .nk-block-between -->
+                                    </div>
                                 </div><!-- .nk-block-head -->
-                                <div class="nk-block">
-                                    <div class="row g-gs">
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title">
-                                                                <h6 class="title">Electricity Charges</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="data-group">
-                                                                <div class="amount">$7,955</div>
-                                                                <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="electricity"></canvas>
-                                                                </div>
-                                                            </div>
-                                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.23%</span><span> vs. last month</span></div>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .nk-ecwg -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title">
-                                                                <h6 class="title">Equipements</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="data-group">
-                                                                <div class="amount">$8,830</div>
-                                                                <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="equipements"></canvas>
-                                                                </div>
-                                                            </div>
-                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>1.12%</span><span> vs. last month</span></div>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .nk-ecwg -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title ">
-                                                                <h6 class="title">Maintenance</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="data-group">
-                                                                <div class="amount">$8,974</div>
-                                                                <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="maintenance"></canvas>
-                                                                </div>
-                                                            </div>
-                                                            <div class="info"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.36%</span><span> vs. last month</span></div>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .nk-ecwg -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title">
-                                                                <h6 class="title">Rents</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="data-group">
-                                                                <div class="amount">$30,485</div>
-                                                                <div class="nk-ecwg6-ck">
-                                                                    <canvas class="ecommerce-line-chart-s3" id="rents"></canvas>
-                                                                </div>
-                                                            </div>
-                                                            <div class="info"><span class="change up text-primary"><em class="icon ni ni-arrow-long-up"></em>1.34%</span><span> vs. last month</span></div>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .nk-ecwg -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                </div><!-- .nk-block -->
                                 <div class="nk-block">
                                     <div class="card card-bordered card-stretch">
                                         <div class="card-inner-group">
                                             <div class="card-inner position-relative card-tools-toggle">
                                                 <div class="card-title-group">
-                                                    <div class="card-title">
-                                                        <h5 class="title">Expenses List</h5>
-                                                    </div>
+                                                    <div class="card-tools">
+                                                        <div class="form-inline flex-nowrap gx-3">
+                                                            <div class="form-wrap w-150px">
+                                                                <select class="form-select js-select2" data-search="off" data-placeholder="Bulk Action">
+                                                                    <option value="">Bulk Action</option>
+                                                                    <option value="delete">Delete Selected</option>
+                                                                    <option value="edit">Edit Selected</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="btn-wrap">
+                                                                <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light disabled">Apply</button></span>
+                                                                <span class="d-md-none"><button class="btn btn-dim btn-outline-light btn-icon disabled"><em class="icon ni ni-arrow-right"></em></button></span>
+                                                            </div>
+                                                        </div><!-- .form-inline -->
+                                                    </div><!-- .card-tools -->
                                                     <div class="card-tools me-n1">
                                                         <ul class="btn-toolbar gx-1">
                                                             <li>
@@ -451,29 +346,98 @@
                                                             </li><!-- li -->
                                                             <li class="btn-toolbar-sep"></li><!-- li -->
                                                             <li>
-                                                                <div class="dropdown">
-                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                        <em class="icon ni ni-setting"></em>
-                                                                    </a>
-                                                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
-                                                                        <ul class="link-check">
-                                                                            <li><span>Show</span></li>
-                                                                            <li class="active"><a href="#">10</a></li>
-                                                                            <li><a href="#">20</a></li>
-                                                                            <li><a href="#">50</a></li>
-                                                                        </ul>
-                                                                        <ul class="link-check">
-                                                                            <li><span>Order</span></li>
-                                                                            <li class="active"><a href="#">DESC</a></li>
-                                                                            <li><a href="#">ASC</a></li>
-                                                                        </ul>
-                                                                        <ul class="link-check">
-                                                                            <li><span>Density</span></li>
-                                                                            <li class="active"><a href="#">Regular</a></li>
-                                                                            <li><a href="#">Compact</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div><!-- .dropdown -->
+                                                                <div class="toggle-wrap">
+                                                                    <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-menu-right"></em></a>
+                                                                    <div class="toggle-content" data-content="cardTools">
+                                                                        <ul class="btn-toolbar gx-1">
+                                                                            <li class="toggle-close">
+                                                                                <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-arrow-left"></em></a>
+                                                                            </li><!-- li -->
+                                                                            <li>
+                                                                                <div class="dropdown">
+                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
+                                                                                        <div class="dot dot-primary"></div>
+                                                                                        <em class="icon ni ni-filter-alt"></em>
+                                                                                    </a>
+                                                                                    <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
+                                                                                        <div class="dropdown-head">
+                                                                                            <span class="sub-title dropdown-title">Filter Report</span>
+                                                                                            <div class="dropdown">
+                                                                                                <a href="#" class="btn btn-sm btn-icon">
+                                                                                                    <em class="icon ni ni-more-h"></em>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="dropdown-body dropdown-body-rg">
+                                                                                            <div class="row gx-6 gy-3">
+                                                                                                <div class="col-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="overline-title overline-title-alt">Gender</label>
+                                                                                                        <select class="form-select js-select2">
+                                                                                                            <option value="any">Select</option>
+                                                                                                            <option value="male">Male</option>
+                                                                                                            <option value="female">Female</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="overline-title overline-title-alt">Type</label>
+                                                                                                        <select class="form-select js-select2">
+                                                                                                            <option value="any">Select</option>
+                                                                                                            <option value="normal">Normal</option>
+                                                                                                            <option value="cesarean">Cesarean Section</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="overline-title overline-title-alt">Date</label>
+                                                                                                        <div class="form-control-wrap">
+                                                                                                            <div class="form-icon form-icon-right">
+                                                                                                                <em class="icon ni ni-calendar"></em>
+                                                                                                            </div>
+                                                                                                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <button type="button" class="btn btn-secondary">Filter</button>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="dropdown-foot between">
+                                                                                            <a class="clickable" href="#">Reset Filter</a>
+                                                                                            <a href="#">Save Filter</a>
+                                                                                        </div>
+                                                                                    </div><!-- .filter-wg -->
+                                                                                </div><!-- .dropdown -->
+                                                                            </li><!-- li -->
+                                                                            <li>
+                                                                                <div class="dropdown">
+                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
+                                                                                        <em class="icon ni ni-setting"></em>
+                                                                                    </a>
+                                                                                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
+                                                                                        <ul class="link-check">
+                                                                                            <li><span>Show</span></li>
+                                                                                            <li class="active"><a href="#">10</a></li>
+                                                                                            <li><a href="#">20</a></li>
+                                                                                            <li><a href="#">50</a></li>
+                                                                                        </ul>
+                                                                                        <ul class="link-check">
+                                                                                            <li><span>Order</span></li>
+                                                                                            <li class="active"><a href="#">DESC</a></li>
+                                                                                            <li><a href="#">ASC</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div><!-- .dropdown -->
+                                                                            </li><!-- li -->
+                                                                        </ul><!-- .btn-toolbar -->
+                                                                    </div><!-- .toggle-content -->
+                                                                </div><!-- .toggle-wrap -->
                                                             </li><!-- li -->
                                                         </ul><!-- .btn-toolbar -->
                                                     </div><!-- .card-tools -->
@@ -482,26 +446,27 @@
                                                     <div class="card-body">
                                                         <div class="search-content">
                                                             <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
-                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by expense head">
+                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by name or id">
                                                             <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
                                                         </div>
                                                     </div>
                                                 </div><!-- .card-search -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner p-0">
-                                                <div class="nk-tb-list nk-tb-ulist is-compact">
-                                                    <div class="nk-tb-item nk-tb-head bg-lighter">
+                                                <div class="nk-tb-list nk-tb-ulist">
+                                                    <div class="nk-tb-item nk-tb-head">
                                                         <div class="nk-tb-col nk-tb-col-check">
                                                             <div class="custom-control custom-control-sm custom-checkbox notext">
                                                                 <input type="checkbox" class="custom-control-input" id="uid">
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Invoice ID</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Category</span></div>
-                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Date</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Expense Head</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Amount</span></div>
+                                                        <div class="nk-tb-col"><span>Child Name</span></div>
+                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Gender</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Mother Name</span></div>
+                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Father Name</span></div>
+                                                        <div class="nk-tb-col"><span>Date</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Report</span></div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
@@ -510,20 +475,30 @@
                                                                 <label class="custom-control-label" for="uid1"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#746F5K2</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Hospital Rent</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-primary-dim">
+                                                                    <span>J</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">John Marshall</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>23 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Building rent</span>
+                                                            <span>Dabby Marshall</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Jack Marshall</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$2300.00</span>
+                                                            <span class="tb-date">18/12/2020 04:21 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -533,20 +508,30 @@
                                                                 <label class="custom-control-label" for="uid2"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#546H74W</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>EKG/ECG Machines</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-danger-dim">
+                                                                    <span>A</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Ashley Lawson</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>12 Jan 2020</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span> Equipements</span>
+                                                            <span>Jacky Lawson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Clacrk Lawson</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$3020.00</span>
+                                                            <span class="tb-date">19/12/2020 02:55 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -556,20 +541,30 @@
                                                                 <label class="custom-control-label" for="uid3"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#87X6A44</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Fuel Charge</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-danger-dim">
+                                                                    <span>K</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Kristen Hawkins</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>26 Dec 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Fuel Charge</span>
+                                                            <span>Jacky Hawkins</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>John Lawson</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$560.00</span>
+                                                            <span class="tb-date">20/12/2020 03:01 AM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -579,20 +574,30 @@
                                                                 <label class="custom-control-label" for="uid4"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#986G531</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Electricity Bill</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-purple-dim">
+                                                                    <span>T</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Tommy Vasquez</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>21 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Electricity Charges</span>
+                                                            <span>Dabby Vasquez</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Nolan Vasquez</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$5540.00</span>
+                                                            <span class="tb-date">22/12/2020 04:10 AM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -602,20 +607,30 @@
                                                                 <label class="custom-control-label" for="uid5"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#326T4M9</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Hospital Camp</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-teal-dim">
+                                                                    <span>A</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Alejandro Haynes</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>21 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Female</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Special campaign</span>
+                                                            <span>Dobrah Haynes</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Zack Vasquez</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$1200.00</span>
+                                                            <span class="tb-date">23/12/2020 04:10 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -625,20 +640,30 @@
                                                                 <label class="custom-control-label" for="uid6"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#746F5K2</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Canteen Rent</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-warning-dim">
+                                                                    <span>B</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Brooke Harmon</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>23 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Female</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Canteen Rent</span>
+                                                            <span>Marry Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Nolan Harmon</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$3350.99</span>
+                                                            <span class="tb-date">24/12/2020 06:25 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -648,20 +673,30 @@
                                                                 <label class="custom-control-label" for="uid7"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#546H74W</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Desc Bill</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-gray-dim">
+                                                                    <span>T</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Trevor Miller</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>24 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Electricity Charges</span>
+                                                            <span>Jarry Harmon</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Dabid Harmon</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$5550.00</span>
+                                                            <span class="tb-date">25/12/2020 07:40 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -671,20 +706,30 @@
                                                                 <label class="custom-control-label" for="uid8"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#87X6A44</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Pathology lab equipment</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-teal-dim">
+                                                                    <span>LF</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Lonnie Ferguson</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>25 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Female</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Equipements</span>
+                                                            <span>Jacky Ferguson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Jhon Ferguson</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$8000.00</span>
+                                                            <span class="tb-date">25/12/2020 08:00 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -694,20 +739,30 @@
                                                                 <label class="custom-control-label" for="uid9"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#69X6445</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Xray</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-danger-dim">
+                                                                    <span>M</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Mack Kennedy</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>26 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Equipements</span>
+                                                            <span>Jarry Kennedy</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Zack Kennedy</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$7050.00</span>
+                                                            <span class="tb-date">26/12/2020 07:21 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Cesarean Section.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
@@ -717,67 +772,44 @@
                                                                 <label class="custom-control-label" for="uid10"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="fw-medium"><a href="{{route('Evento/invoice-details')}}">#4206469</a></span>
-                                                        </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Lift Maintenance</span>
+                                                            <div class="user-card">
+                                                                <div class="user-avatar sm bg-warning-dim">
+                                                                    <span>I</span>
+                                                                </div>
+                                                                <div class="user-info">
+                                                                    <span class="tb-lead">Inez Wilkerson</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>27 Jan 2019</span>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span>Male</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>Maintenance</span>
+                                                            <span>Margot Wilkerson</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Ezra Wilkerson</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="tb-amount">$2100.00</span>
+                                                            <span class="tb-date">26/12/2020 07:30 PM</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>Normal Delivery.</span>
                                                         </div>
                                                     </div><!-- .nk-tb-item -->
-                                                </div><!-- .nk-tb-list -->
+                                                </div>
                                             </div><!-- .card-inner -->
                                             <div class="card-inner">
-                                                <div class="nk-block-between-md g-3">
-                                                    <div class="g">
-                                                        <ul class="pagination justify-content-center justify-content-md-start">
-                                                            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                            <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                                        </ul><!-- .pagination -->
-                                                    </div>
-                                                    <div class="g">
-                                                        <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
-                                                            <div>Page</div>
-                                                            <div>
-                                                                <select class="form-select js-select2" data-search="on" data-dropdown="xs center">
-                                                                    <option value="page-1">1</option>
-                                                                    <option value="page-2">2</option>
-                                                                    <option value="page-4">4</option>
-                                                                    <option value="page-5">5</option>
-                                                                    <option value="page-6">6</option>
-                                                                    <option value="page-7">7</option>
-                                                                    <option value="page-8">8</option>
-                                                                    <option value="page-9">9</option>
-                                                                    <option value="page-10">10</option>
-                                                                    <option value="page-11">11</option>
-                                                                    <option value="page-12">12</option>
-                                                                    <option value="page-13">13</option>
-                                                                    <option value="page-14">14</option>
-                                                                    <option value="page-15">15</option>
-                                                                    <option value="page-16">16</option>
-                                                                    <option value="page-17">17</option>
-                                                                    <option value="page-18">18</option>
-                                                                    <option value="page-19">19</option>
-                                                                    <option value="page-20">20</option>
-                                                                </select>
-                                                            </div>
-                                                            <div>OF 102</div>
-                                                        </div>
-                                                    </div><!-- .pagination-goto -->
-                                                </div><!-- .nk-block-between -->
+                                                <ul class="pagination justify-content-center justify-content-md-start">
+                                                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                </ul><!-- .pagination -->
                                             </div><!-- .card-inner -->
                                         </div><!-- .card-inner-group -->
                                     </div><!-- .card -->
@@ -916,34 +948,47 @@
             </div><!-- .modal-content -->
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
-    <!-- Add Expense-->
-    <div class="modal fade" tabindex="-1" role="dialog" id="addExpense">
+    <!-- Add Birth Report-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addBirth">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
-                    <h5 class="modal-title">Add Expense</h5>
+                    <h5 class="modal-title">Add Birth Report</h5>
                     <form action="#" class="mt-4">
                         <div class="row g-gs">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="invoiceId">Invoice ID</label>
+                                    <label class="form-label" for="childName">Child Name</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="invoiceId" placeholder="Invoice ID">
+                                        <input type="text" class="form-control" id="childName" placeholder="Child Name">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="category">Category</label>
+                                    <label class="form-label">Gender</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="category" placeholder="Category">
+                                        <select class="form-select js-select2" data-placeholder="Select Gender">
+                                            <option value="">Select</option>
+                                            <option value="option_select_sex">Male</option>
+                                            <option value="option_select_sex">Female</option>
+                                            <option value="option_select_sex">Others</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Date</label>
+                                    <label class="form-label" for="weight">Weight</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="weight" placeholder="Weight">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Birth Date</label>
                                     <div class="form-control-wrap">
                                         <div class="form-icon form-icon-right">
                                             <em class="icon ni ni-calendar"></em>
@@ -951,33 +996,88 @@
                                         <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
                                     </div>
                                 </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Blood Group</label>
+                                    <div class="form-control-wrap">
+                                        <select class="form-select js-select2" data-placeholder="Select Group">
+                                            <option value="">Select</option>
+                                            <option value="option_select_blood">A+</option>
+                                            <option value="option_select_blood">A-</option>
+                                            <option value="option_select_blood">AB+</option>
+                                            <option value="option_select_blood">AB-</option>
+                                            <option value="option_select_blood">B+</option>
+                                            <option value="option_select_blood">B-</option>
+                                            <option value="option_select_blood">O+</option>
+                                            <option value="option_select_blood">O-</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div><!--col-->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="expenseHead">Expense Head</label>
+                                    <label class="form-label">Upload Photo</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="expenseHead" placeholder="Expense Head">
+                                        <div class="form-file">
+                                            <input type="file" multiple class="form-file-input" id="customFile">
+                                            <label class="form-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="motherName">Mother Name</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="motherName" placeholder="Mother Name">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="amount">Amount</label>
+                                    <label class="form-label" for="patientId">Patient ID</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="amount" placeholder="$100">
+                                        <input type="text" class="form-control" id="patientId" placeholder="#P6985">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="fatherName">Father Name</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="fatherName" placeholder="Father Name">
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="number">Mobile Number</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="number" placeholder="Mobile Number">
                                     </div>
                                 </div>
                             </div><!-- .col -->
                             <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Description</label>
+                                    <div class="form-control-wrap">
+                                        <div class="quill-basic">
+                                            <p>Hello World!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--col-->
+                            <div class="col-12">
                                 <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                     <li>
-                                        <a href="#" data-bs-dismiss="modal" class="btn btn-primary">Add Expense</a>
+                                        <button data-bs-dismiss="modal" class="btn btn-primary">Add Birth Report</button>
                                     </li>
                                     <li>
-                                        <a href="#" data-bs-dismiss="modal" class="link link-light">Cancel</a>
+                                        <a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div><!-- .col -->
                         </div>
                     </form>
                 </div><!-- .modal-body -->
@@ -988,7 +1088,9 @@
      <script src="{{asset('js/bundle.js')}}"></script>
     
     <script src="{{asset('js/scripts.js')}}"></script>
-    <script src="./assets/js/charts/hospital-report.js?ver=3.2.3"></script>
+    <link rel="stylesheet" href="./assets/css/editors/quill.css?ver=3.2.3">
+    <script src="./assets/js/libs/editors/quill.js?ver=3.2.3"></script>
+    <script src="./assets/js/editors.js?ver=3.2.3"></script>
 </body>
 
 </html>

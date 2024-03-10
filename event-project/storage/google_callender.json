@@ -1,0 +1,15 @@
+{
+    "web": {
+        "client_id": "688224284419-mmvi4ih7k6ti1enhhjilghc7bc1fv5uf.apps.googleusercontent.com",
+        "project_id": "evento-416020",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": [
+            "http://127.0.0.1:8000",
+            "http://127.0.0.1:8000/google/callback",
+            "http://127.0.0.1:8000/auth/google/callback"
+        ]
+    }
+}

@@ -19,12 +19,12 @@ class ticket extends Mailable
      */
 
     public $userid;
-    public $eventid;
+    public $event;
     public $ReservationId;
-    public function __construct($userid, $eventid, $ReservationId)
+    public function __construct($userid, $event, $ReservationId)
     {
         $this->userid = $userid;
-        $this->eventid = $eventid;
+        $this->event = $event;
         $this->ReservationId = $ReservationId;
     }
 
@@ -38,7 +38,7 @@ class ticket extends Mailable
         return $this->subject('Ticket')
             ->view('front.ticket')->with([
                 'userid' => $this->userid,
-                'eventid' => $this->eventid,
+                'event' => $this->event,
                 'ReservationId' => $this->ReservationId,
             ]);
     }

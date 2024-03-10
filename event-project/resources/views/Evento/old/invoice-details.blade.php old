@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Account Log | DashLite Admin Template</title>
+    <title>Invoice Details | DashLite Admin Template</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -278,12 +278,7 @@
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
+                            
                             <li class="nk-menu-item">
                                 <a href="{{route('Evento/settings')}}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
@@ -313,123 +308,120 @@
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
+                                <div class="nk-block-head">
+                                    <div class="nk-block-between g-3">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title">Invoice <strong class="text-primary small">#746F5K2</strong></h3>
+                                            <div class="nk-block-des text-soft">
+                                                <ul class="list-inline">
+                                                    <li>Created At: <span class="text-base">18 Dec, 2019 01:02 PM</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="nk-block-head-content">
+                                            <a href="{{route('Evento/invoice-list')}}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                                            <a href="{{route('Evento/invoice-list')}}" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
+                                        </div>
+                                    </div>
+                                </div><!-- .nk-block-head -->
                                 <div class="nk-block">
-                                    <div class="card card-bordered">
-                                        <div class="card-aside-wrap">
-                                            <div class="card-inner card-inner-lg">
-                                                <div class="nk-block-head nk-block-head-lg">
-                                                    <div class="nk-block-between">
-                                                        <div class="nk-block-head-content">
-                                                            <h5 class="title fw-medium">Account Activity</h5>
-                                                            <div class="nk-block-des">
-                                                                <p>Here is your last 20 login activities log. <span class="text-soft"><em class="icon ni ni-info text-danger"></em></span></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="nk-block-head-content align-self-start d-lg-none">
-                                                            <a href="#" class="toggle btn btn-icon btn-trigger mt-n1" data-target="userAside"><em class="icon ni ni-menu-alt-r"></em></a>
-                                                        </div>
+                                    <div class="invoice">
+                                        <div class="invoice-action">
+                                            <a class="btn btn-icon btn-lg btn-white btn-dim btn-outline-primary" href="{{route('Evento/invoice-print')}}" target="_blank"><em class="icon ni ni-printer-fill"></em></a>
+                                        </div><!-- .invoice-actions -->
+                                        <div class="invoice-wrap">
+                                            <div class="invoice-brand text-center">
+                                                <img src="{{asset('images/logo-dark.png')}}" srcset="./images/logo-dark2x.png 2x" alt="">
+                                            </div>
+                                            <div class="invoice-head">
+                                                <div class="invoice-contact">
+                                                    <span class="overline-title">Invoice To</span>
+                                                    <div class="invoice-contact-info">
+                                                        <h4 class="title">Gregory Ander son</h4>
+                                                        <ul class="list-plain">
+                                                            <li><em class="icon ni ni-map-pin-fill"></em><span>House #65, 4328 Marion Street<br>Newbury, VT 05051</span></li>
+                                                            <li><em class="icon ni ni-call-fill"></em><span>+012 8764 556</span></li>
+                                                        </ul>
                                                     </div>
-                                                </div><!-- .nk-block-head -->
-                                                <div class="nk-block card card-bordered">
-                                                    <table class="table table-ulogs">
-                                                        <thead class="table-light">
+                                                </div>
+                                                <div class="invoice-desc">
+                                                    <h3 class="title">Invoice</h3>
+                                                    <ul class="list-plain">
+                                                        <li class="invoice-id"><span>Invoice ID</span>:<span>66K5W3</span></li>
+                                                        <li class="invoice-date"><span>Date</span>:<span>26 Jan, 2020</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div><!-- .invoice-head -->
+                                            <div class="invoice-bills">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
                                                             <tr>
-                                                                <th class="tb-col-os"><span class="overline-title">Browser <span class="d-sm-none">/ IP</span></span></th>
-                                                                <th class="tb-col-ip"><span class="overline-title">IP</span></th>
-                                                                <th class="tb-col-time"><span class="overline-title">Time</span></th>
-                                                                <th class="tb-col-time"><span class="overline-title">Activity</span></th>
-                                                                <th class="tb-col-action"><span class="overline-title">&nbsp;</span></th>
+                                                                <th class="w-150px">Item ID</th>
+                                                                <th class="w-60">Description</th>
+                                                                <th>Price</th>
+                                                                <th>Qty</th>
+                                                                <th>Amount</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td class="tb-col-os">Chrome on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td>24108054</td>
+                                                                <td>Dashlite - Conceptual App Dashboard - Regular License</td>
+                                                                <td>$40.00</td>
+                                                                <td>5</td>
+                                                                <td>$200.00</td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="tb-col-os">Mozilla on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td>24108054</td>
+                                                                <td>6 months premium support</td>
+                                                                <td>$25.00</td>
+                                                                <td>1</td>
+                                                                <td>$25.00</td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="tb-col-os">Chrome on iMac</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td>23604094</td>
+                                                                <td>Invest Management Dashboard - Regular License</td>
+                                                                <td>$131.25</td>
+                                                                <td>1</td>
+                                                                <td>$131.25</td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="tb-col-os">Chrome on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Mozilla on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Chrome on iMac</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Chrome on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-success ms-0">Updated</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Mozilla on Window</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-danger ms-0">Deleted</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="tb-col-os">Chrome on iMac</td>
-                                                                <td class="tb-col-ip"><span class="sub-text">192.149.122.128</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text">11:34 PM</span></td>
-                                                                <td class="tb-col-time"><span class="sub-text"><span class="badge bg-primary ms-0">Created</span></span></td>
-                                                                <td class="tb-col-action"><a href="#" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                                                                <td>23604094</td>
+                                                                <td>6 months premium support</td>
+                                                                <td>$78.75</td>
+                                                                <td>1</td>
+                                                                <td>$78.75</td>
                                                             </tr>
                                                         </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td colspan="2"></td>
+                                                                <td colspan="2">Subtotal</td>
+                                                                <td>$435.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"></td>
+                                                                <td colspan="2">Processing fee</td>
+                                                                <td>$10.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"></td>
+                                                                <td colspan="2">TAX</td>
+                                                                <td>$43.50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"></td>
+                                                                <td colspan="2">Grand Total</td>
+                                                                <td>$478.50</td>
+                                                            </tr>
+                                                        </tfoot>
                                                     </table>
-                                                </div><!-- .nk-block-head -->
-                                            </div><!-- .card-inner -->
-                                            <div class="card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg" data-content="userAside" data-toggle-screen="lg" data-toggle-overlay="true">
-                                                <div class="card-inner-group" data-simplebar>
-                                                    <div class="card-inner">
-                                                        <h3 class="nk-block-title page-title">Settings</h3>
-                                                        <div class="nk-block-des text-soft">
-                                                            <p>Here you can change and edit your needs</p>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                    <div class="card-inner p-0">
-                                                        <ul class="link-list-menu">
-                                                            <li><a href="{{route('Evento/settings')}}"><em class="icon ni ni-user-fill-c"></em><span>General</span></a></li>
-                                                            <li><a href="{{route('Evento/settings-member')}}"><em class="icon ni ni-bell-fill"></em><span>Users</span></a></li>
-                                                            <li><a href="{{route('Evento/settings-email')}}"><em class="icon ni ni-lock-alt-fill"></em><span>E-mail</span></a></li>
-                                                            <li><a href="{{route('Evento/settings-security')}}"><em class="icon ni ni-shield-star-fill"></em><span>Security</span></a></li>
-                                                            <li><a class="active" href="{{route('Evento/settings-account-log')}}"><em class="icon ni ni-activity-round-fill"></em><span>Account activity</span></a></li>
-                                                        </ul>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .card-inner-group -->
-                                            </div><!-- card-aside -->
-                                        </div><!-- card-aside-wrap -->
-                                    </div><!-- .card -->
+                                                    <div class="nk-notes ff-italic fs-12px text-soft"> Invoice was created on a computer and is valid without the signature and seal. </div>
+                                                </div>
+                                            </div><!-- .invoice-bills -->
+                                        </div><!-- .invoice-wrap -->
+                                    </div><!-- .invoice -->
                                 </div><!-- .nk-block -->
                             </div>
                         </div>

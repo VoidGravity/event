@@ -53,9 +53,12 @@
             <div class="block sm:hidden xmedia"></div>
             <div class="sm:ml-4 xs:block xmedia">
                 <div class="flex items-center space-x-5">
-                    
-                    <a id="login-link" data-element-name="header-loginLink" data-event-label="Login click variant2" class="ds-font-small-medium text-gray7 hover:text-viridian hover:no-underline" href="{{route('auth/login')}}">Log in</a>
+                    @if (Auth::check())
+                    <a id="register-link" class="ds-font-small-medium text-gray7 hover:text-viridian hover:no-underline s17sl16g justify-center whitespace-nowrap" data-element-name="header-registerLink" data-event-label="Sign up variant2" href="{{route('auth/logout')}}">logout</a>
+                    @else
                     <a id="register-link" class="ds-font-small-medium text-gray7 hover:text-viridian hover:no-underline s17sl16g justify-center whitespace-nowrap" data-element-name="header-registerLink" data-event-label="Sign up variant2" href="{{route('auth/register')}}">Sign up</a>
+                    <a id="login-link" data-element-name="header-loginLink" data-event-label="Login click variant2" class="ds-font-small-medium text-gray7 hover:text-viridian hover:no-underline" href="{{route('auth/login')}}">Log in</a>
+                    @endif
                 </div>
             </div>
         </div>

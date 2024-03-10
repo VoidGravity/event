@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Doctors / Nurse List | DashLite Admin Template</title>
+    <title>Event List</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('css/dashlite.css')}}">
 
@@ -172,126 +172,8 @@
                             </li><!-- .nk-menu-item -->
                         </ul><!-- .nk-menu -->
                     </div>
-                    <div class="nk-menu-content menu-active" data-content="navHospital">
-                        <h5 class="title">Hospital Manegment</h5>
-                        <ul class="nk-menu">
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/index')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                                    <span class="nk-menu-text">Dashboard</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/appointment')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-note-add-fill"></em></span>
-                                    <span class="nk-menu-text">Appointment List</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
-                                    <span class="nk-menu-text">Event</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Event</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-list')}}" class="nk-menu-link"><span class="nk-menu-text">IPD / OPD Patients</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/patient-profile')}}" class="nk-menu-link"><span class="nk-menu-text">Patient Profile</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-plus-medi-fill"></em></span>
-                                    <span class="nk-menu-text">Doctors / Nurses</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-add')}}" class="nk-menu-link"><span class="nk-menu-text">Add Doctor / Nurses</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/doctor-nurse-list')}}" class="nk-menu-link"><span class="nk-menu-text">Doctors / Nurses</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Finance</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/income-list')}}" class="nk-menu-link"><span class="nk-menu-text">Income</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/expense-list')}}" class="nk-menu-link"><span class="nk-menu-text">Expense</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-list')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/invoice-details')}}" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                                    <span class="nk-menu-text">Monitor Hospital</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/birth-report')}}" class="nk-menu-link"><span class="nk-menu-text">Birth Report</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/blood-bank')}}" class="nk-menu-link"><span class="nk-menu-text">Blood Bank</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/inventory-items')}}" class="nk-menu-link"><span class="nk-menu-text">Inventory Items Reports</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
-                                    <span class="nk-menu-text">Misc Pages</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-group')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Group</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/bed-allotment')}}" class="nk-menu-link"><span class="nk-menu-text">Bed Allotment</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/department')}}" class="nk-menu-link"><span class="nk-menu-text">Department</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('Evento/death-report')}}" class="nk-menu-link"><span class="nk-menu-text">Death Report</span></a>
-                                    </li>
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/user-profile')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                                    <span class="nk-menu-text">User Profile</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{route('Evento/settings')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
-                                    <span class="nk-menu-text">Setting</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                        </ul><!-- .nk-menu -->
-                    </div>
+                    @include('inc.sidebar')
+
                     
                     
                     
@@ -316,16 +198,9 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Doctor/Nurse</h3>
+                                            <h3 class="nk-block-title page-title">Event list</h3>
                                         </div><!-- .nk-block-head-content -->
-                                        <div class="nk-block-head-content">
-                                            <ul class="nk-block-tools g-3">
-                                                <li class="nk-block-tools-opt">
-                                                    <a href="{{route('Evento/doctor-nurse-add')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                    <a href="{{route('Evento/doctor-nurse-add')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Doctor / Nurse</span></a>
-                                                </li>
-                                            </ul>
-                                        </div><!-- .nk-block-head-content -->
+                                        
                                     </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
                                 <div class="row g-gs">

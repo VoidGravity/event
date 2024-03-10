@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalendarEventController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -38,27 +39,37 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 
-Route::get('/success', [ReservationController::class, 'showSucess'])->name('success');
-Route::get('/fail', [ReservationController::class, 'showFail'])->name('fail');
-Route::get('/downloadPDF/{id}', [EventoController::class, 'downloadPDF'])->name('downloadPDF');
 // Route::get('/webhook', [ApiControl::class, 'showSucess'])->name('fail');
 
-//login
+//authentication
 Route::get('/auth/login', [AuthController::class, 'showAuthLogin'])->name('auth/login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth/login');
 Route::get('/auth/register', [AuthController::class, 'showAuthRegister'])->name('auth/register');
 Route::post('/auth/register', [AuthController::class, 'register'])->name('auth/register');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth/logout');
 //reset password
 Route::get('auth/forgot-password', [AuthController::class, 'showAuthForgotPassword'])->name('auth.forgot-password');
 Route::get('password/reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/update', [AuthController::class, 'resetPassword'])->name('password.update');
 Route::post('auth/resetpassword', [AuthController::class, 'AuthResetPassword'])->name('password.email');
 Route::get('auth/auth-success', [AuthController::class, 'authSuccess'])->name('auth/auth-success');
+//landing page
 Route::get('/', [EventoController::class, 'showLanding'])->name('Evento/landning');
+Route::post('/front/search', [EventoController::class, 'frontSearch'])->name('front/search');
+Route::post('front/filter', [EventoController::class, 'frontFilter'])->name('front/filter');
 
-//midlware admin 
+
+//midlware 
 Route::middleware(['admin'])->group(function () {
-    
+    //google callender 
+    Route::get('/add-to-google-calendar/{id}', [CalendarEventController::class, 'addEventToGoogleCalendar'])->name('add-to-google-calendar');
+
+    // othters
+
+    Route::get('/success', [ReservationController::class, 'showSucess'])->name('success');
+    Route::get('/fail', [ReservationController::class, 'showFail'])->name('fail');
+
+    Route::get('/downloadPDF/{id}', [EventoController::class, 'downloadPDF'])->name('downloadPDF');
     //checkout 
     Route::get('/checkout/{id}', [EventoController::class, 'showCheckout'])->name('checkout');
     Route::get('/checkout/success', [EventoController::class, 'checkoutSuccess'])->name('checkout/sucess');
@@ -73,8 +84,6 @@ Route::middleware(['admin'])->group(function () {
     // Route::post('testroute', [EventoController::class, 'testroute'])->name('testroute'); //hold
     Route::get('/Evento/patient-list', [EventoController::class, 'showEventoPatientList'])->name('Evento/patient-list');
     //event user
-    //search
-    Route::post('/front/search', [EventoController::class, 'frontSearch'])->name('front/search');
     //end seearch
     Route::get('/Evento/patient-profile', [EventoController::class, 'showEventoPatientProfile'])->name('Evento/patient-profile');
     Route::get('/Evento/doctor-nurse-add', [EventoController::class, 'showEventoDoctorNurseAdd'])->name('Evento/doctor-nurse-add');
@@ -102,18 +111,16 @@ Route::middleware(['admin'])->group(function () {
     //single
     Route::get('/single/{id}', [EventoController::class, 'showSingle'])->name('single');
     //front filter
-    Route::post('front/filter', [EventoController::class, 'frontFilter'])->name('front/filter');
     //approuve / cancell reservaition
-    
+    //pages
     Route::get('approuve/reservation/{id}', [EventoController::class, 'approuveReservation'])->name('approuve/reservation');
     Route::get('cancel/reservation/{id}', [EventoController::class, 'cancellReservation'])->name('cancel/reservation');
-    
+
     Route::get('/Evento/death-report', [EventoController::class, 'showEventoDeathReport'])->name('Evento/death-report');
     Route::get('/Evento/user-profile', [EventoController::class, 'showEventoUserProfile'])->name('Evento/user-profile');
     Route::get('/Evento/settings', [EventoController::class, 'showEventoSettings'])->name('Evento/settings');
     Route::get('/index', [IndexController::class, 'showIndex'])->name('index');
     Route::get('/Evento/settings-account-log', [EventoController::class, 'showEventoSettingsAccountLog'])->name('Evento/settings-account-log');
-    Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth/logout');
     Route::get('/add-customer', [AddCustomerController::class, 'showAddCustomer'])->name('add-customer');
     Route::get('/customer', [CustomerController::class, 'showCustomer'])->name('customer');
     Route::get('/customer-ledger', [CustomerLedgerController::class, 'showCustomerLedger'])->name('customer-ledger');
@@ -144,14 +151,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/Evento/settings-email', [EventoController::class, 'showEventoSettingsEmail'])->name('Evento/settings-email');
     Route::get('/Evento/settings-security', [EventoController::class, 'showEventoSettingsSecurity'])->name('Evento/settings-security');
     Route::get('/user-profile', [UserProfileController::class, 'showUserProfile'])->name('user-profile');
-    
-    
+
+
     // Route::get('/auth/github/callback', function () {
     //     $user = Socialite::driver($provider)->user();
-     
+
     //     // $user->token
     // });
 
 
 
-});    
+});

@@ -75,7 +75,10 @@
                                                 </span>
                                                 <div class="mt-6 sm:mt-0">
                                                     <div class="my-2.5">
-                                                        <div><button tabindex="0" role="button" class="cursor-pointer text-viridian ds-font-body-medium xs:w-[316px] sm:w-full max-w-[380px] mb-4 s17sl16g" data-event-label="add-event-to-calendar" aria-expanded="true">Add to calendar</button></div>
+                                                        <div><button tabindex="0" role="button" class="cursor-pointer text-viridian ds-font-body-medium xs:w-[316px] sm:w-full max-w-[380px] mb-4 s17sl16g" data-event-label="add-event-to-calendar" aria-expanded="true">
+                                                            <a href="{{ route('add-to-google-calendar',['id'=>$reservation->event->id]) }}">Add to Google Calendar</a>
+    
+                                                        </button></div>
                                                         <div class="flex gap-4">
                                                             <div class="sm:w-full"><button class="h-12 items-center max-w-[380px] xs:w-[316px] sm:w-full  flex justify-center font-medium py-3.5 lg:py-2.5 lg:px-8 px-4 rounded-lg border-2 border-viridian rounded-lg leading-8 transition-all fill-current text-viridian hover:border-buttonHoverSecondary focus:outline focus:outline-offset-2 focus:outline-2 focus:outline-viridian" aria-label="Share event Meetup HTB Morocco : 9th Event" tabindex="0" data-element-name="share-btn-share-click" data-event-label="share-btn-share-click" data-testid="share-btn">
                                                                     <div class="flex items-center flex-row-reverse">

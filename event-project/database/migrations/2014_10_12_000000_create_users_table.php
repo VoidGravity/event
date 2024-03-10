@@ -20,7 +20,8 @@ return new class extends Migration
             $table->foreignId('role_id')->nullable();
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
-            
+            $table->text('token')->nullable(); // Using text to ensure it can store long strings
+            $table->string('refreshToken')->nullable(); // If you expect a refresh token, otherwise you can leave this out
             $table->rememberToken();
             $table->timestamps();
         });
