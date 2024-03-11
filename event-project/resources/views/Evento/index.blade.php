@@ -200,14 +200,7 @@
                                         
                                     </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
-                                <div class="nk-block">
-                                    <div class="row g-gs">
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <?php
+                                <?php
                                                             $approvedEventCount = 0;
                                                             $organisateurCount = 0;
                                                             $reservationCount = 0;
@@ -236,6 +229,15 @@
                                                                 }
                                                             }
                                                             ?>
+                                <div class="nk-block">
+                                    <div class="row g-gs">
+                                        @if (Auth::user()->role_id == 1)
+                                        <div class="col-xxl-3 col-sm-6">
+                                            <div class="card">
+                                                <div class="nk-ecwg nk-ecwg6">
+                                                    <div class="card-inner">
+                                                        <div class="card-title-group">
+                                                            
                                                             <div class="card-title">
                                                                 <h6 class="title">Total events</h6>
                                                             </div>
@@ -275,29 +277,7 @@
                                                 </div><!-- .nk-ecwg -->
                                             </div><!-- .card -->
                                         </div><!-- .col -->
-                                        <div class="col-xxl-3 col-sm-6">
-                                            <div class="card">
-                                                <div class="nk-ecwg nk-ecwg6">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group">
-                                                            <div class="card-title ">
-                                                                <h6 class="title">Reservation</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="data-group">
-                                                                <div class="amount">
-                                                                    {{ count($reservation) }}</div>
-                                                                <div class="nk-ecwg6-ck">
-                                                                    {{-- <canvas class="ecommerce-line-chart-s3" id="labIncome"></canvas> --}}
-                                                                </div>
-                                                            </div>
-                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $reservationCount }}</span><span>Aprouved reservations</span></div>
-                                                        </div>
-                                                    </div><!-- .card-inner -->
-                                                </div><!-- .nk-ecwg -->
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
+                                        
 
                                         <div class="col-xxl-3 col-sm-6">
                                             <div class="card">
@@ -317,6 +297,30 @@
                                                                 </div>
                                                             </div>
                                                             <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $categoryCount }}</span><span>Added today</span></div>
+                                                        </div>
+                                                    </div><!-- .card-inner -->
+                                                </div><!-- .nk-ecwg -->
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                        @endif
+                                        <div class="col-xxl-3 col-sm-6">
+                                            <div class="card">
+                                                <div class="nk-ecwg nk-ecwg6">
+                                                    <div class="card-inner">
+                                                        <div class="card-title-group">
+                                                            <div class="card-title ">
+                                                                <h6 class="title">Reservation</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data">
+                                                            <div class="data-group">
+                                                                <div class="amount">
+                                                                    {{ count($reservation) }}</div>
+                                                                <div class="nk-ecwg6-ck">
+                                                                    {{-- <canvas class="ecommerce-line-chart-s3" id="labIncome"></canvas> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>{{ $reservationCount }}</span><span>Aprouved reservations</span></div>
                                                         </div>
                                                     </div><!-- .card-inner -->
                                                 </div><!-- .nk-ecwg -->

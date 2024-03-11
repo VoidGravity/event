@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Mail\PasswordResetMail;
-
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -199,7 +199,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password), // Use Hash facade correctly
-            'role_id' => '1', // Set the default role or use $request->role if provided and validated
+            'role_id' => Role::where('name', 'user')->first()->id, 
         ]);
 
         // After successful registration, you might want to log the user in and redirect them

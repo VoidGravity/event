@@ -43,6 +43,12 @@ class EventoController extends Controller
         
         
         $Reservation = Reservation::with('event')->find($id);
+        if ($Reservation->event->user_id != auth()->user()->id) {
+            return redirect()->back()->with('error', 'You are not allowed to download this ticket.');
+        }
+        if ($Reservation->status == "cancelled") {
+            return redirect()->back()->with('error', 'You can not download a ticket for a cancelled reservation.');
+        }
         // $event = Event::find($Reservation->event_id);
         $imagePath = public_path('EventImages/' . $Reservation->event->image);
         // dd($Reservation);
@@ -93,7 +99,8 @@ class EventoController extends Controller
     {
         $validated = $request->validate([
             'categories' => 'required_without:location',
-            'location' => 'required_without:category_id',
+            'location' => 
+            'required_without:category_id',
         ]);
 
 
@@ -190,8 +197,15 @@ class EventoController extends Controller
     }
     public function ShoweditEvent($id)
     {
+
+        $userId = auth()->user()->id;
+        
         $event = Event::find($id);
-        $category = Category::all();
+        if ($event->user_id != $userId) {
+           // redirect to a routee 
+           return redirect()->route('Evento/doctor-nurse-list')->with('error', 'You are not allowed to edit this event.');
+        }     
+           $category = Category::all();
         return view('Evento/editEvent', compact('event', 'category'));
     }
     public function editEvent($id, Request $request)
@@ -329,8 +343,15 @@ class EventoController extends Controller
 
     public function showEventoDoctorNurseList()
     {
-        $event = Event::with('category')->get();
-        return view('Evento/doctor-nurse-list', compact('event'));
+        $id = auth()->user()->id;
+        $userROle = User::with('role')->where('id', $id)->first();
+        if ($userROle->role->name == "admin") {
+            $event = Event::with('category')->get();
+            return view('Evento/doctor-nurse-list', compact('event'));
+        } else {
+            $event = Event::with('category')->where('user_id', $id)->get();
+            return view('Evento/doctor-nurse-list', compact('event'));
+        }
     }
 
     public function showEventoIncomeList()

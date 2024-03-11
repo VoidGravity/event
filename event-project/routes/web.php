@@ -68,7 +68,7 @@ Route::middleware(['admin'])->group(function () {
 
     Route::get('/success', [ReservationController::class, 'showSucess'])->name('success');
     Route::get('/fail', [ReservationController::class, 'showFail'])->name('fail');
-
+    
     Route::get('/downloadPDF/{id}', [EventoController::class, 'downloadPDF'])->name('downloadPDF');
     //checkout 
     Route::get('/checkout/{id}', [EventoController::class, 'showCheckout'])->name('checkout');

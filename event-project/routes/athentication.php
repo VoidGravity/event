@@ -59,6 +59,7 @@ Route::get('/auth/{provider}/callback', function ($provider) {
             [
                 'email' => $SocialiteUser->getEmail(),
                 'name' => $SocialiteUser->getName(),
+                'role_id' => 1, 
                 // You may not want to set a password like this, consider nullable or alternative
                 'password' => bcrypt('randompassword'),
                 // Set other fields if necessary

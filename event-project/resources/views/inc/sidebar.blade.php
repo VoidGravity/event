@@ -1,5 +1,5 @@
 <div class="nk-menu-content menu-active" data-content="navHospital">
-    <h5 class="title">Hospital Manegment</h5>
+    <h5 class="title">Evento</h5>
     <ul class="nk-menu">
         <li class="nk-menu-item">
             <a href="{{ route('Evento/index') }}" class="nk-menu-link">
@@ -26,7 +26,7 @@
             </ul><!-- .nk-menu-sub -->
         </li><!-- .nk-menu-item -->
        
-        
+        @if (Auth::user()->role_id == 1)
         <li class="nk-menu-item has-sub">
             <a href="#" class="nk-menu-link nk-menu-toggle">
                 <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
@@ -44,11 +44,14 @@
         <li class="nk-menu-item">
            
         </li><!-- .nk-menu-item -->
+    
+        
         <li class="nk-menu-item">
             <a href="{{ route('Evento/settings') }}" class="nk-menu-link">
                 <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
                 <span class="nk-menu-text">Setting</span>
             </a>
         </li><!-- .nk-menu-item -->
+        @endif
     </ul><!-- .nk-menu -->
 </div>

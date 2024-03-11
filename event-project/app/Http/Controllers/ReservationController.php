@@ -10,13 +10,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Stripe\Stripe;
+
 use Stripe\Webhook;
 
 class ReservationController extends Controller
 {
     public function showSucess()
     {
-        
+
         $userid = auth()->user()->id;
         $reservation = Reservation::where('user_id', $userid)->first();
 
@@ -52,6 +53,7 @@ class ReservationController extends Controller
         if ($event->type == 'checkout.session.completed') {
             Log::info('CHECKOUT SESSION CONDIOTION WAS MET');
             $session = $event->data->object;
+            
 
             Reservation::create([
                 // 'event_id' => 1,
@@ -69,12 +71,13 @@ class ReservationController extends Controller
                 Log::error("User not found with ID: $userid");
             }
             $eventid = $session->metadata->event_id;
+            
             $Reservation = Reservation::where('stripe_payment_intent_id', $session->payment_intent)->first();
             $ReservationId = $Reservation->id;
 
             $userEmail = User::find($userid)->email;
             $event = Event::find($eventid);
-            
+
             Log::info('User id ' . $userid);
             Log::info('Event id ' . $eventid);
             Log::info('Reservation id ' . $ReservationId);
