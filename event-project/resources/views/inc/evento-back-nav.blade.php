@@ -10,11 +10,10 @@
                     <img class="logo-dark logo-img" src="{{ asset('images/logo-dark.png') }}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
             </div><!-- .nk-header-brand -->
-           
+
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
-                    
-                    
+
                     <li class="dropdown notification-dropdown">
                         <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
                             <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
@@ -26,35 +25,37 @@
                             </div> --}}
                             <div class="dropdown-body">
                                 <div class="nk-notification">
+                                    @if ($reservation->isNotEmpty())
+                                     @foreach ($reservation as $item)
+                                            @if ($item->status == 'cancelled' || $item->status == 'approved' || $item->status == 'inactive' || $item->status == 'completed')
+                                                @continue
+                                            @endif
 
-                                    @foreach ($reservation as $item)
-                                    @if ($item->status == 'cancelled')
-                                    @continue
+                                            <div class="nk-notification-item dropdown-inner">
+                                                @if ($item->status == 'pending')
+                                                    <div class="nk-notification-icon">
+                                                        <a href="{{ route('approuve/reservation', ['id' => $item->event->id]) }}">
+
+                                                            <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
+                                                        </a>
+                                                        <a href="{{ route('cancel/reservation', ['id' => $item->event->id]) }}">
+
+                                                            <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                        </a>
+                                                        {{-- @elseif ($item->status == 'approved') --}}
+
+                                                    </div>
+                                                    <div class="nk-notification-content">
+                                                        <div class="nk-notification-text">You have a <span class="change up text-danger">reservation</span> request</div>
+
+                                                        <div class="nk-notification-time">2 hrs ago</div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <p>No events with reservations found.</p>
                                     @endif
-                                    <div class="nk-notification-item dropdown-inner">
-                                        @if ($item->status == 'pending')
-                                        <div class="nk-notification-icon">
-                                            <a href="{{route('approuve/reservation',['id'=>$item->id])}}">
-                                                
-                                                <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                            </a>
-                                            <a href="{{route('cancel/reservation',['id'=>$item->id])}}">
-                                            
-                                                <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                            </a>
-                                            {{-- @elseif ($item->status == 'approved') --}}
-                                            
-                                        </div>
-                                        <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have a <span class="change up text-danger">reservation</span> request</div>
-                                            
-                                            <div class="nk-notification-time">2 hrs ago</div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    @endforeach
-                                    
-                                    
                                 </div><!-- .nk-notification -->
                             </div><!-- .nk-dropdown-body -->
                             {{-- <div class="dropdown-foot center">
@@ -62,7 +63,7 @@
                             </div> --}}
                         </div>
                     </li>
-                    
+
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle me-n1" data-bs-toggle="dropdown">
                             <div class="user-toggle">

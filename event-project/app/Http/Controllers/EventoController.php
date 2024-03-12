@@ -26,7 +26,9 @@ class EventoController extends Controller
     }
     public function approuveReservation($id)
     {
+        // dd($id);
         $reservation = Reservation::find($id);
+        // dd($reservation);
         $reservation->status = "approved";
         $reservation->save();
         return redirect()->back()->with('success', 'Reservation approved successfully.');

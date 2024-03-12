@@ -19,7 +19,8 @@ class ReservationController extends Controller
     {
 
         $userid = auth()->user()->id;
-        $reservation = Reservation::where('user_id', $userid)->first();
+        $reservation = Reservation::where('user_id', $userid)->orderBy('id', 'desc')->first();
+        // dd($reservation);
 
         return view('front.success', compact('reservation'));
     }
@@ -54,7 +55,7 @@ class ReservationController extends Controller
             Log::info('CHECKOUT SESSION CONDIOTION WAS MET');
             $session = $event->data->object;
             
-
+            
             Reservation::create([
                 // 'event_id' => 1,
                 // 'user_id' => 1,
@@ -64,6 +65,14 @@ class ReservationController extends Controller
                 'stripe_payment_intent_id' => $session->payment_intent,
             ]);
             log::info('Reservation created');
+            $singleEvent = Event::find($session->metadata->event_id);
+            $SignleReserve = Reservation::where('stripe_payment_intent_id', $session->payment_intent);
+            if ($singleEvent->auto_reserve=='ON') {
+                    //auto update reservation status to approved
+                    $SignleReserve->update([
+                        'status' => 'approved',
+                    ]);
+            } 
             //send email
             $userid = $session->metadata->user_id;
             $user = User::find($userid);
@@ -71,7 +80,7 @@ class ReservationController extends Controller
                 Log::error("User not found with ID: $userid");
             }
             $eventid = $session->metadata->event_id;
-            
+
             $Reservation = Reservation::where('stripe_payment_intent_id', $session->payment_intent)->first();
             $ReservationId = $Reservation->id;
 
