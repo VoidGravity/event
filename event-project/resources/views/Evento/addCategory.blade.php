@@ -615,7 +615,7 @@
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
-                                                                    <button type="submit" class="btn btn-primary">edit category</button>
+                                                                    <button type="submit" class="btn btn-primary">Add category</button>
                                                                 </div>
                                                             </div><!--col-->
                                                         </div><!--row-->
